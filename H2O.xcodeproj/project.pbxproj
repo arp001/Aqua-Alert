@@ -1,0 +1,350 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		762EF89D1DC57CD000FF6D0C /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */; };
+		762EF89E1DC57CD000FF6D0C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 762EF8971DC57CD000FF6D0C /* Info.plist */; };
+		762EF89F1DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 762EF8991DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig */; };
+		762EF8A01DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 762EF89A1DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m */; };
+		762EF8A21DC5897700FF6D0C /* PersonalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EF8A11DC5897700FF6D0C /* PersonalDetailsViewController.swift */; };
+		763265211DC575050077CCEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763265201DC575050077CCEE /* AppDelegate.swift */; };
+		763265231DC575050077CCEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763265221DC575050077CCEE /* LoginViewController.swift */; };
+		763265261DC575050077CCEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763265241DC575050077CCEE /* Main.storyboard */; };
+		763265281DC575050077CCEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 763265271DC575050077CCEE /* Assets.xcassets */; };
+		7632652B1DC575050077CCEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763265291DC575050077CCEE /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		762EF8951DC57CCF00FF6D0C /* H2O-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "H2O-Bridging-Header.h"; sourceTree = "<group>"; };
+		762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		762EF8971DC57CD000FF6D0C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		762EF8981DC57CD000FF6D0C /* SwiftGifOrigin.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = SwiftGifOrigin.modulemap; sourceTree = "<group>"; };
+		762EF8991DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SwiftGifOrigin.xcconfig; sourceTree = "<group>"; };
+		762EF89A1DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SwiftGifOrigin-dummy.m"; sourceTree = "<group>"; };
+		762EF89B1DC57CD000FF6D0C /* SwiftGifOrigin-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-prefix.pch"; sourceTree = "<group>"; };
+		762EF89C1DC57CD000FF6D0C /* SwiftGifOrigin-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-umbrella.h"; sourceTree = "<group>"; };
+		762EF8A11DC5897700FF6D0C /* PersonalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalDetailsViewController.swift; path = ../PersonalDetailsViewController.swift; sourceTree = "<group>"; };
+		7632651D1DC575050077CCEE /* H2O.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H2O.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		763265201DC575050077CCEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		763265221DC575050077CCEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		763265251DC575050077CCEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		763265271DC575050077CCEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7632652A1DC575050077CCEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7632652C1DC575050077CCEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7632651A1DC575040077CCEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		762EF8941DC57CBC00FF6D0C /* Swift-GIF */ = {
+			isa = PBXGroup;
+			children = (
+				762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */,
+				762EF8971DC57CD000FF6D0C /* Info.plist */,
+				762EF8981DC57CD000FF6D0C /* SwiftGifOrigin.modulemap */,
+				762EF8991DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig */,
+				762EF89A1DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m */,
+				762EF89B1DC57CD000FF6D0C /* SwiftGifOrigin-prefix.pch */,
+				762EF89C1DC57CD000FF6D0C /* SwiftGifOrigin-umbrella.h */,
+				762EF8951DC57CCF00FF6D0C /* H2O-Bridging-Header.h */,
+			);
+			name = "Swift-GIF";
+			sourceTree = "<group>";
+		};
+		763265141DC575040077CCEE = {
+			isa = PBXGroup;
+			children = (
+				762EF8941DC57CBC00FF6D0C /* Swift-GIF */,
+				7632651F1DC575050077CCEE /* H2O */,
+				7632651E1DC575050077CCEE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7632651E1DC575050077CCEE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7632651D1DC575050077CCEE /* H2O.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7632651F1DC575050077CCEE /* H2O */ = {
+			isa = PBXGroup;
+			children = (
+				763265221DC575050077CCEE /* LoginViewController.swift */,
+				763265201DC575050077CCEE /* AppDelegate.swift */,
+				762EF8A11DC5897700FF6D0C /* PersonalDetailsViewController.swift */,
+				763265241DC575050077CCEE /* Main.storyboard */,
+				763265271DC575050077CCEE /* Assets.xcassets */,
+				763265291DC575050077CCEE /* LaunchScreen.storyboard */,
+				7632652C1DC575050077CCEE /* Info.plist */,
+			);
+			path = H2O;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7632651C1DC575040077CCEE /* H2O */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7632652F1DC575050077CCEE /* Build configuration list for PBXNativeTarget "H2O" */;
+			buildPhases = (
+				763265191DC575040077CCEE /* Sources */,
+				7632651A1DC575040077CCEE /* Frameworks */,
+				7632651B1DC575040077CCEE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = H2O;
+			productName = H2O;
+			productReference = 7632651D1DC575050077CCEE /* H2O.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		763265151DC575040077CCEE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Arpit;
+				TargetAttributes = {
+					7632651C1DC575040077CCEE = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = CQDJWATK2L;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 763265181DC575040077CCEE /* Build configuration list for PBXProject "H2O" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 763265141DC575040077CCEE;
+			productRefGroup = 7632651E1DC575050077CCEE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7632651C1DC575040077CCEE /* H2O */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7632651B1DC575040077CCEE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				762EF89F1DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig in Resources */,
+				762EF89E1DC57CD000FF6D0C /* Info.plist in Resources */,
+				7632652B1DC575050077CCEE /* LaunchScreen.storyboard in Resources */,
+				763265281DC575050077CCEE /* Assets.xcassets in Resources */,
+				763265261DC575050077CCEE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		763265191DC575040077CCEE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				762EF89D1DC57CD000FF6D0C /* UIImage+Gif.swift in Sources */,
+				762EF8A21DC5897700FF6D0C /* PersonalDetailsViewController.swift in Sources */,
+				762EF8A01DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m in Sources */,
+				763265231DC575050077CCEE /* LoginViewController.swift in Sources */,
+				763265211DC575050077CCEE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		763265241DC575050077CCEE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				763265251DC575050077CCEE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		763265291DC575050077CCEE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7632652A1DC575050077CCEE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7632652D1DC575050077CCEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7632652E1DC575050077CCEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		763265301DC575050077CCEE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = CQDJWATK2L;
+				INFOPLIST_FILE = H2O/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Arpit.H2O;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "H2O-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		763265311DC575050077CCEE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = CQDJWATK2L;
+				INFOPLIST_FILE = H2O/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Arpit.H2O;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "H2O-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		763265181DC575040077CCEE /* Build configuration list for PBXProject "H2O" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7632652D1DC575050077CCEE /* Debug */,
+				7632652E1DC575050077CCEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7632652F1DC575050077CCEE /* Build configuration list for PBXNativeTarget "H2O" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				763265301DC575050077CCEE /* Debug */,
+				763265311DC575050077CCEE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 763265151DC575040077CCEE /* Project object */;
+}
