@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class PersonalDetailsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
-
-    @IBOutlet weak var genderLabel: UITextField!
+    
+    @IBOutlet weak var nameText: UITextField!
+    var ref: FIRDatabaseReference!
+    @IBOutlet weak var genderText: UITextField!
     @IBOutlet weak var genderDropDown: UIPickerView!
-    @IBOutlet weak var weightLabel: UITextField!
-    @IBOutlet weak var unitsLabel: UITextField!
+    @IBOutlet weak var weightText: UITextField!
+    @IBOutlet weak var unitsText: UITextField!
     
     @IBOutlet weak var unitsDropDown: UIPickerView!
     @IBOutlet weak var weightDropDown: UIPickerView!
@@ -52,11 +55,11 @@ class PersonalDetailsViewController: UIViewController, UIPickerViewDelegate, UIP
         unitsDropDown.delegate = self
         weightDropDown.dataSource = self
         weightDropDown.delegate = self
-        weightLabel.delegate = self
-        unitsLabel.delegate = self
+        weightText.delegate = self
+        unitsText.delegate = self
         genderDropDown.delegate = self
         genderDropDown.dataSource = self
-        genderLabel.delegate = self
+        genderText.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,26 +70,27 @@ class PersonalDetailsViewController: UIViewController, UIPickerViewDelegate, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegatesAndDataSources()
-        unitsLabel.addTarget(self, action: #selector(touchDetected), for: UIControlEvents.touchDown)
-        weightLabel.addTarget(self, action: #selector(touchDetected), for: UIControlEvents.touchDown)
-        genderLabel.addTarget(self, action: #selector(touchDetected), for: UIControlEvents.touchDown)
+        unitsText.addTarget(self, action: #selector(touchDetected), for: UIControlEvents.touchDown)
+        weightText.addTarget(self, action: #selector(touchDetected), for: UIControlEvents.touchDown)
+        genderText.addTarget(self, action: #selector(touchDetected), for: UIControlEvents.touchDown)
         setLists()
+        ref = FIRDatabase.database().reference()
         // Do any additional setup after loading the view.
     }
     
     func touchDetected(textField: UITextField){
         // user touched on the label
-        if textField == weightLabel {
+        if textField == weightText {
             unitsDropDown.isHidden = true
             genderDropDown.isHidden = true
             weightDropDown.isHidden = false
         }
-        else if textField == unitsLabel {
+        else if textField == unitsText {
             genderDropDown.isHidden = true
             weightDropDown.isHidden = true
             unitsDropDown.isHidden = false
         }
-        else if textField == genderLabel {
+        else if textField == genderText {
             weightDropDown.isHidden = true
             unitsDropDown.isHidden = true
             genderDropDown.isHidden = false
@@ -132,16 +136,16 @@ class PersonalDetailsViewController: UIViewController, UIPickerViewDelegate, UIP
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if pickerView == unitsDropDown {
-            self.unitsLabel.text = self.unitsList[row]
+            self.unitsText.text = self.unitsList[row]
             self.unitsDropDown.isHidden = true;
         }
         
         else if pickerView == weightDropDown{
-            self.weightLabel.text = self.weightList[row]
+            self.weightText.text = self.weightList[row]
             self.weightDropDown.isHidden = true
         }
         else if pickerView == genderDropDown {
-            self.genderLabel.text = self.genderList[row]
+            self.genderText.text = self.genderList[row]
             self.genderDropDown.isHidden = true
         }
     }
@@ -151,6 +155,12 @@ class PersonalDetailsViewController: UIViewController, UIPickerViewDelegate, UIP
         return false
     }
     
+    @IBAction func confirmButtonPressed() {
+        // handle incomplete profile here!
+        
+        // this is our user profile
+        let profile = UserInfo(name: nameText.text!, weight: weightText.text!, weightUnit: unitsText.text!, gender: genderText.text!)
+    }
     /*
     // MARK: - Navigation
 

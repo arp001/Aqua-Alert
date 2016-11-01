@@ -80,7 +80,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   What's your weight?" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eX-YH-Nlj">
                                 <frame key="frameInset" minY="184" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" red="0.23201987147331238" green="0.59937077760696411" blue="0.98538404703140259" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -99,27 +99,27 @@
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="reT-er-rog">
-                                <frame key="frameInset" minX="6" minY="275" height="77" maxX="182"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="shadowColor" catalog="System" colorSpace="catalog"/>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   What's your name?" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsC-7K-kvP">
                                 <frame key="frameInset" minY="72" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   What's your gender?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ter-1K-RaB">
-                                <frame key="frameInset" minY="300" width="375" height="52"/>
+                                <frame key="frameInset" minY="290" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" red="0.23201987147331238" green="0.59937077760696411" blue="0.98538404703140259" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="reT-er-rog">
+                                <frame key="frameInset" minX="6" minY="278" height="77" maxX="182"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="shadowColor" catalog="System" colorSpace="catalog"/>
+                            </pickerView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Male/Female" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ETT-2Q-2A1">
                                 <frame key="frameInset" minX="16" minY="360" width="328" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -128,26 +128,36 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ek9-LO-9W8">
-                                <frame key="frameInset" minX="16" minY="390" height="68" maxX="31"/>
+                                <frame key="frameInset" minX="23" minY="404" height="68" maxX="24"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="shadowColor" catalog="System" colorSpace="catalog"/>
                             </pickerView>
                             <pickerView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgQ-6G-sgn">
-                                <frame key="frameInset" minX="194" minY="275" height="77" maxX="7"/>
+                                <frame key="frameInset" minX="189" minY="278" height="77" maxX="12"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="shadowColor" catalog="System" colorSpace="catalog"/>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVp-fY-TOm">
+                                <frame key="frameInset" minX="121" minY="521" width="121" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmButtonPressed" destination="5iI-Rc-VBF" eventType="touchUpInside" id="Pjl-GR-cZF"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="shadowColor" catalog="System" colorSpace="catalog"/>
                     </view>
                     <navigationItem key="navigationItem" title="Personal Details" id="HO8-fU-ea2"/>
                     <connections>
                         <outlet property="genderDropDown" destination="ek9-LO-9W8" id="GZy-Sw-nlc"/>
-                        <outlet property="genderLabel" destination="ETT-2Q-2A1" id="WP7-7u-hrj"/>
+                        <outlet property="genderText" destination="ETT-2Q-2A1" id="WP7-7u-hrj"/>
+                        <outlet property="nameText" destination="vpe-F9-6lg" id="cAo-Cy-r55"/>
                         <outlet property="unitsDropDown" destination="zgQ-6G-sgn" id="cKc-sg-VYl"/>
-                        <outlet property="unitsLabel" destination="JGS-U2-D3e" id="03w-EU-ON8"/>
+                        <outlet property="unitsText" destination="JGS-U2-D3e" id="03w-EU-ON8"/>
                         <outlet property="weightDropDown" destination="reT-er-rog" id="CAC-7Z-9CJ"/>
-                        <outlet property="weightLabel" destination="rAS-eF-lme" id="umr-fP-oNy"/>
+                        <outlet property="weightText" destination="rAS-eF-lme" id="umr-fP-oNy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1R8-KJ-CFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -157,18 +167,19 @@
         <!--Navigation Controller-->
         <scene sceneID="FIX-kV-IAC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gBS-Ug-xPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U8e-Oc-P9K" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bqn-cB-umR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.22956976294517517" green="0.599315345287323" blue="0.98537033796310425" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="5iI-Rc-VBF" kind="relationship" relationship="rootViewController" id="SJ8-3h-5Ol"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBS-Ug-xPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1080.8" y="122.78860569715144"/>
         </scene>
