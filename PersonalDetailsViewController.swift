@@ -160,6 +160,9 @@ class PersonalDetailsViewController: UIViewController, UIPickerViewDelegate, UIP
         
         // this is our user profile
         let profile = UserInfo(name: nameText.text!, weight: weightText.text!, weightUnit: unitsText.text!, gender: genderText.text!)
+        print("name is: \(nameText.text)")
+        let profileRef = ref.child(nameText.text!.lowercased())
+        profileRef.setValue(profile.toDict())
     }
     /*
     // MARK: - Navigation

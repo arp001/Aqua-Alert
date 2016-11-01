@@ -7,16 +7,22 @@
 //
 
 import Foundation
+import Firebase
 
 class UserInfo {
-    var name: String
-    var weight: String
-    var weightUnit: String
-    var gender: String
+    let name: String
+    let weight: String
+    let weightUnit: String
+    let gender: String
+    //let ref: FIRDatabaseReference?
     init(name: String, weight: String, weightUnit: String, gender: String){
         self.name = name
         self.weight = weight
         self.weightUnit = weightUnit
         self.gender = gender
+        //self.ref = FIRDatabase.database().reference()
+    }
+    func toDict() -> Any {
+        return ["name": name, "weight": weight, "weightUnit":weightUnit,"gender":gender]
     }
 }

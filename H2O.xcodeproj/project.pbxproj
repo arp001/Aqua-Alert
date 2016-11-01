@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		761409171DC84B0500D241C5 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 761409161DC84B0500D241C5 /* GoogleService-Info (1).plist */; };
+		761409171DC84B0500D241C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 761409161DC84B0500D241C5 /* GoogleService-Info.plist */; };
 		761409191DC84DE600D241C5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761409181DC84DE600D241C5 /* UserInfo.swift */; };
 		762EF89D1DC57CD000FF6D0C /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */; };
 		762EF89E1DC57CD000FF6D0C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 762EF8971DC57CD000FF6D0C /* Info.plist */; };
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		6792434835A3EA295D354849 /* Pods-H2O.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-H2O.debug.xcconfig"; path = "Pods/Target Support Files/Pods-H2O/Pods-H2O.debug.xcconfig"; sourceTree = "<group>"; };
-		761409161DC84B0500D241C5 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		761409161DC84B0500D241C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		761409181DC84DE600D241C5 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		762EF8951DC57CCF00FF6D0C /* H2O-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "H2O-Bridging-Header.h"; sourceTree = "<group>"; };
 		762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
@@ -88,8 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				763265271DC575050077CCEE /* Assets.xcassets */,
+				761409161DC84B0500D241C5 /* GoogleService-Info.plist */,
 				7632652C1DC575050077CCEE /* Info.plist */,
-				761409161DC84B0500D241C5 /* GoogleService-Info (1).plist */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -222,7 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				762EF89F1DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig in Resources */,
-				761409171DC84B0500D241C5 /* GoogleService-Info (1).plist in Resources */,
+				761409171DC84B0500D241C5 /* GoogleService-Info.plist in Resources */,
 				762EF89E1DC57CD000FF6D0C /* Info.plist in Resources */,
 				7632652B1DC575050077CCEE /* LaunchScreen.storyboard in Resources */,
 				763265281DC575050077CCEE /* Assets.xcassets in Resources */,
