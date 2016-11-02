@@ -16,6 +16,7 @@ PODS:
   - FirebaseDatabase (3.0.3):
     - FirebaseAnalytics (~> 3.3)
   - FirebaseInstanceID (1.0.8)
+  - Former (1.5.0)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
   - GoogleSymbolUtilities (1.1.2)
@@ -25,6 +26,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
+  - Former
 
 SPEC CHECKSUMS:
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
@@ -32,10 +34,11 @@ SPEC CHECKSUMS:
   FirebaseCore: 5a885548bbc5f0c410b04f8e9ac9d73ff1221907
   FirebaseDatabase: 750a4a0fe18ef114318876fd654b2d9c671e0992
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  Former: 8f9f41e51eceb75e47b4275147795ec477b121ec
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
 
-PODFILE CHECKSUM: 4963f6410029e1ecf9a67a3c5a155b2c1b99e3f1
+PODFILE CHECKSUM: 053e93a242e1f0b30378d6dc0cab3f119bbb78fa
 
 COCOAPODS: 1.0.1

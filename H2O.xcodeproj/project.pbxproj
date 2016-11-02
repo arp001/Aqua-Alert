@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		396E93031DC9AC6C0048690E /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396E93021DC9AC6C0048690E /* FormViewController.swift */; };
 		761409171DC84B0500D241C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 761409161DC84B0500D241C5 /* GoogleService-Info.plist */; };
 		761409191DC84DE600D241C5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761409181DC84DE600D241C5 /* UserInfo.swift */; };
 		762EF89D1DC57CD000FF6D0C /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */; };
 		762EF89E1DC57CD000FF6D0C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 762EF8971DC57CD000FF6D0C /* Info.plist */; };
 		762EF89F1DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 762EF8991DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig */; };
 		762EF8A01DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 762EF89A1DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m */; };
-		762EF8A21DC5897700FF6D0C /* PersonalDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EF8A11DC5897700FF6D0C /* PersonalDetailsViewController.swift */; };
 		763265211DC575050077CCEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763265201DC575050077CCEE /* AppDelegate.swift */; };
 		763265231DC575050077CCEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763265221DC575050077CCEE /* LoginViewController.swift */; };
 		763265261DC575050077CCEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763265241DC575050077CCEE /* Main.storyboard */; };
@@ -23,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		396E93021DC9AC6C0048690E /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		6792434835A3EA295D354849 /* Pods-H2O.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-H2O.debug.xcconfig"; path = "Pods/Target Support Files/Pods-H2O/Pods-H2O.debug.xcconfig"; sourceTree = "<group>"; };
 		761409161DC84B0500D241C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		761409181DC84DE600D241C5 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -34,7 +35,6 @@
 		762EF89A1DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SwiftGifOrigin-dummy.m"; sourceTree = "<group>"; };
 		762EF89B1DC57CD000FF6D0C /* SwiftGifOrigin-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-prefix.pch"; sourceTree = "<group>"; };
 		762EF89C1DC57CD000FF6D0C /* SwiftGifOrigin-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-umbrella.h"; sourceTree = "<group>"; };
-		762EF8A11DC5897700FF6D0C /* PersonalDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalDetailsViewController.swift; path = ../PersonalDetailsViewController.swift; sourceTree = "<group>"; };
 		7632651D1DC575050077CCEE /* H2O.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H2O.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		763265201DC575050077CCEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		763265221DC575050077CCEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -97,9 +97,9 @@
 		7614091D1DC84E9E00D241C5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				396E93021DC9AC6C0048690E /* FormViewController.swift */,
 				763265201DC575050077CCEE /* AppDelegate.swift */,
 				763265221DC575050077CCEE /* LoginViewController.swift */,
-				762EF8A11DC5897700FF6D0C /* PersonalDetailsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -286,7 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				762EF89D1DC57CD000FF6D0C /* UIImage+Gif.swift in Sources */,
-				762EF8A21DC5897700FF6D0C /* PersonalDetailsViewController.swift in Sources */,
+				396E93031DC9AC6C0048690E /* FormViewController.swift in Sources */,
 				762EF8A01DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m in Sources */,
 				763265231DC575050077CCEE /* LoginViewController.swift in Sources */,
 				761409191DC84DE600D241C5 /* UserInfo.swift in Sources */,

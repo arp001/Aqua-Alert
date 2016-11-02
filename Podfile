@@ -8,4 +8,5 @@ target 'H2O' do
   # Pods for H2O
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod "Former"
 end
