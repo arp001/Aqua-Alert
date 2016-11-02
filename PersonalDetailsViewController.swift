@@ -11,6 +11,7 @@ import Firebase
 
 class PersonalDetailsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
+    @IBOutlet weak var waterIntakeText: UITextField!
     @IBOutlet weak var nameText: UITextField!
     var ref: FIRDatabaseReference!
     @IBOutlet weak var genderText: UITextField!
@@ -145,6 +146,7 @@ class PersonalDetailsViewController: UIViewController, UIPickerViewDelegate, UIP
             self.weightDropDown.isHidden = true
         }
         else if pickerView == genderDropDown {
+            waterIntakeText.text = "1850"
             self.genderText.text = self.genderList[row]
             self.genderDropDown.isHidden = true
         }
@@ -161,8 +163,20 @@ class PersonalDetailsViewController: UIViewController, UIPickerViewDelegate, UIP
         // this is our user profile
         let profile = UserInfo(name: nameText.text!, weight: weightText.text!, weightUnit: unitsText.text!, gender: genderText.text!)
         print("name is: \(nameText.text)")
-        let profileRef = ref.child(nameText.text!.lowercased())
+        // store data in Firebase
+        let uniqueID = UUID().uuidString // creating a unique identifier for the person
+        let defaults = UserDefaults.standard
+        // storing the info in Database
+        let profileRef = ref.child(uniqueID)
         profileRef.setValue(profile.toDict())
+        defaults.set(uniqueID, forKey: "identifier") // storing the UID in UserDefaults
+//        let childRef = ref.child("arpit hamirwasia")
+//        // attach listeners and retrieve data
+//        childRef.updateChildValues(["isFun": "No"])
+//        childRef.observe(.value, with: {(snapshot) in
+//            print("data retrieved!")
+//            print(snapshot.value)
+//        })
     }
     /*
     // MARK: - Navigation
