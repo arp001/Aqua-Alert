@@ -19,6 +19,7 @@
 		763265261DC575050077CCEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763265241DC575050077CCEE /* Main.storyboard */; };
 		763265281DC575050077CCEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 763265271DC575050077CCEE /* Assets.xcassets */; };
 		7632652B1DC575050077CCEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763265291DC575050077CCEE /* LaunchScreen.storyboard */; };
+		764A0E1A1DCAE262009D0CB6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764A0E191DCAE262009D0CB6 /* ProfileViewController.swift */; };
 		9082FECD67487426912F0D52 /* Pods_H2O.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFD1892D0178883A1C085E /* Pods_H2O.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		763265271DC575050077CCEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7632652A1DC575050077CCEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7632652C1DC575050077CCEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		764A0E191DCAE262009D0CB6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C2EFD1892D0178883A1C085E /* Pods_H2O.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_H2O.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD19DB5F0CE57BC93F9D14B5 /* Pods-H2O.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-H2O.release.xcconfig"; path = "Pods/Target Support Files/Pods-H2O/Pods-H2O.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				763265241DC575050077CCEE /* Main.storyboard */,
+				764A0E191DCAE262009D0CB6 /* ProfileViewController.swift */,
 				763265291DC575050077CCEE /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -289,6 +292,7 @@
 				396E93031DC9AC6C0048690E /* FormViewController.swift in Sources */,
 				762EF8A01DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m in Sources */,
 				763265231DC575050077CCEE /* LoginViewController.swift in Sources */,
+				764A0E1A1DCAE262009D0CB6 /* ProfileViewController.swift in Sources */,
 				761409191DC84DE600D241C5 /* UserInfo.swift in Sources */,
 				763265211DC575050077CCEE /* AppDelegate.swift in Sources */,
 			);

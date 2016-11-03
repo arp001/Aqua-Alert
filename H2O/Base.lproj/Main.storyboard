@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vGP-lU-rNi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -84,7 +84,6 @@
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="confirmButtonPressed" destination="5iI-Rc-VBF" eventType="touchUpInside" id="Htg-fp-Sa1"/>
-                                    <segue destination="vGP-lU-rNi" kind="presentation" id="DrO-3U-s8u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,7 +117,7 @@
         <!--Profile-->
         <scene sceneID="JMU-QR-CM4">
             <objects>
-                <viewController id="7Cb-Fy-smI" sceneMemberID="viewController">
+                <viewController title="Profile" id="7Cb-Fy-smI" customClass="ProfileViewController" customModule="H2O" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N6V-Sy-HYF"/>
                         <viewControllerLayoutGuide type="bottom" id="1OT-hv-p4v"/>
@@ -126,22 +125,33 @@
                     <view key="view" contentMode="scaleToFill" id="MxZ-HY-0A1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxQ-RW-G67">
+                                <rect key="frame" x="157" y="549" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="animateButtonTapped:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="ZSd-Hr-y0E"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="E43-5C-Dqk"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="waterwater" id="E43-5C-Dqk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-Py-oAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4002" y="-217"/>
+            <point key="canvasLocation" x="4000.8000000000002" y="-217.24137931034485"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yST-7B-q1M">
             <objects>
                 <tabBarController id="vGP-lU-rNi" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="eBt-Eh-fxM">
+                    <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="centered" id="eBt-Eh-fxM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                        <color key="barTintColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </tabBar>
                     <connections>
                         <segue destination="7Cb-Fy-smI" kind="relationship" relationship="viewControllers" id="pcC-dy-DtL"/>
@@ -172,4 +182,7 @@
             <point key="canvasLocation" x="1080.8" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="waterwater" width="16" height="16"/>
+    </resources>
 </document>

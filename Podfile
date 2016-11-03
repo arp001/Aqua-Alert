@@ -9,4 +9,5 @@ target 'H2O' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod "Former"
+  pod 'KDCircularProgress'
 end
