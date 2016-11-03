@@ -8,16 +8,26 @@
 
 import UIKit
 import KDCircularProgress
+import ZFRippleButton
 
 class ProfileViewController: UIViewController {
+    
+    @IBOutlet weak var plusButton: ZFRippleButton!
     var progress: KDCircularProgress!
+    override func viewWillAppear(_ animated: Bool) {
+        plusButton.rippleOverBounds = true
+        plusButton.buttonCornerRadius = 12.0
+        plusButton.clipsToBounds = true
+        plusButton.backgroundColor = .black
+        plusButton.shadowRippleEnable = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(white: 0.22, alpha: 1)
         
         progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         progress.startAngle = -90
-        progress.progressThickness = 0.2
+        progress.progressThickness = 0.8
         progress.trackThickness = 0.6
         progress.clockwise = true
         progress.gradientRotateSpeed = 2
@@ -30,7 +40,7 @@ class ProfileViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func animateButtonTapped(_ sender: UIButton) {
+    @IBAction func plusButtonTapped(_ sender: ZFRippleButton) {
         progress.animate(0, toAngle: 250, duration: 5) { completed in
             if completed {
                 print("animation stopped, completed")
@@ -39,6 +49,7 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+
     /*
     // MARK: - Navigation
 

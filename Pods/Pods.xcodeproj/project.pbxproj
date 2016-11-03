@@ -7,168 +7,195 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		002CC2BFE1BF0D6883EAA72B55EBDA72 /* SelectorDatePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC9391A4F595DA469FB679433E78E1F /* SelectorDatePickerRowFormer.swift */; };
-		0248D844F00EA447E0BCF48D8615C0A2 /* FormLabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80699A3308434E6B7D06F000433338C2 /* FormLabelHeaderView.swift */; };
-		043AE90438947CFDBB906E145A417B7C /* CustomRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB443A0E70B2C821A12A8D85B96FB2 /* CustomRowFormer.swift */; };
-		099788C8A0F4AC704C6D6B1DDD832AF0 /* FormStepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1849E4ADD71F5FA259E5C7B8D1625E7F /* FormStepperCell.swift */; };
-		12937A4F554E9DEF35546F7E53092A89 /* FormTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234149C102FA81D1C4D6E6BDF92AFA3E /* FormTextViewCell.swift */; };
-		174CC2269909901D491DF64ACCA8C37E /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA98CE73D0CD3A92AC056D026A7FCA8B /* FormCell.swift */; };
-		2827F0609108B69322A9981B5E1E4116 /* Former.h in Headers */ = {isa = PBXBuildFile; fileRef = D4EE0FC6F91BB2B9DA57B0BBB6D62791 /* Former.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2AF26A3FD0FC8792772A07404BADFB69 /* KDCircularProgress-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0293AA9665CAF397E4FBBDE407987FA /* KDCircularProgress-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2E556C5FBB781A9708783A30B2124797 /* StepperRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6D1F86E843B27E4A0C36BD6B945358 /* StepperRowFormer.swift */; };
-		3280A95CB7FF1A2501113F3F521CA237 /* FormSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B2072E75D3CAD246CBAAFBBD3505DD /* FormSwitchCell.swift */; };
-		3721E91E880030C73BBAE614B479E4EB /* ViewFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E251D6168FF399F49976F57D818DE5 /* ViewFormer.swift */; };
-		3DC0A86E4D89A401477364CF8CD73A98 /* InlinePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4181F373A01FB7570F85437C60298A95 /* InlinePickerRowFormer.swift */; };
-		40A72ADEA22A07A31673387DDEFF9139 /* FormerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDC4458813B80E60F4159A9EF15A385 /* FormerProtocol.swift */; };
-		452A4FB41B239ADA1F50D077E6D52C2A /* FormInlinePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B1B22416CF5FBBCDA9389B58CDB729 /* FormInlinePickerCell.swift */; };
-		4D9B38B065F35F633FA49D606F8150BD /* FormDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA374EB69E0122F46C7806B1839BBA /* FormDatePickerCell.swift */; };
-		4E099D4A0452BCA807FC249DFF719922 /* SectionFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB24634C6999E938275C3C4B07D0F1F /* SectionFormer.swift */; };
-		5427D5D1E3D2159A06A86275920518EA /* CheckRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DABF4FCE542FD8EE188FAEF83D6D78B /* CheckRowFormer.swift */; };
-		57DB472403F3FEF372E7A6FBF66DB87E /* FormPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43724E120A72A10533EDB009531EAAD /* FormPickerCell.swift */; };
+		002CC2BFE1BF0D6883EAA72B55EBDA72 /* SelectorDatePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A375E06CE2D95DC828E943E9C1910C9 /* SelectorDatePickerRowFormer.swift */; };
+		0248D844F00EA447E0BCF48D8615C0A2 /* FormLabelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB512EE56F047E3F799C2ABFB0B29E50 /* FormLabelHeaderView.swift */; };
+		043AE90438947CFDBB906E145A417B7C /* CustomRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB4FA45F1C90A68EC8FE852BE218981 /* CustomRowFormer.swift */; };
+		099788C8A0F4AC704C6D6B1DDD832AF0 /* FormStepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5C6DBDF2C2DED7C5718CC5C0A02B73 /* FormStepperCell.swift */; };
+		12937A4F554E9DEF35546F7E53092A89 /* FormTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44E90354BE77A3726A96E1865639EF5 /* FormTextViewCell.swift */; };
+		174CC2269909901D491DF64ACCA8C37E /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2359321426A0B35ACF5D6DC6C1D2D1A6 /* FormCell.swift */; };
+		1B8A5F41832CCDA5DC9DE3A63827331E /* ZFRippleButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 393739094D10AC7A5FC7A58596506960 /* ZFRippleButton-dummy.m */; };
+		2827F0609108B69322A9981B5E1E4116 /* Former.h in Headers */ = {isa = PBXBuildFile; fileRef = EBD81A4CFF9D2D78DE11C50D79B5BFA7 /* Former.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2AF26A3FD0FC8792772A07404BADFB69 /* KDCircularProgress-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 113807B33178C829B54ACFD3836489B0 /* KDCircularProgress-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2E556C5FBB781A9708783A30B2124797 /* StepperRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE5DEC9C1C2E779BD80C1096309CC53 /* StepperRowFormer.swift */; };
+		3280A95CB7FF1A2501113F3F521CA237 /* FormSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C7A35F9078D014E825F9E6E87C35FB /* FormSwitchCell.swift */; };
+		3721E91E880030C73BBAE614B479E4EB /* ViewFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF506427DDD0604EA659D62C71C2CDCB /* ViewFormer.swift */; };
+		382A14EDE81F8508B351333B1AC694B9 /* ZFRippleButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 49649B0F2A41F383A96981DE71E7A7B4 /* ZFRippleButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DC0A86E4D89A401477364CF8CD73A98 /* InlinePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B555D8C5F5C89F14DDE2423A8818C267 /* InlinePickerRowFormer.swift */; };
+		40A72ADEA22A07A31673387DDEFF9139 /* FormerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FC7EDACA814F526CFE77BC45CBEE130 /* FormerProtocol.swift */; };
+		452A4FB41B239ADA1F50D077E6D52C2A /* FormInlinePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE39ED8B1B790C5712137066AB22E887 /* FormInlinePickerCell.swift */; };
+		4D9B38B065F35F633FA49D606F8150BD /* FormDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17B6D5A889DF7EF33FC69AFC2032680 /* FormDatePickerCell.swift */; };
+		4E099D4A0452BCA807FC249DFF719922 /* SectionFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9681B695AFFC8279370BC07DCB3B0B0A /* SectionFormer.swift */; };
+		53282885D4257508461429CA906EC66E /* Pods-H2O-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E9BB641BA7C8D52B52AFE6816C1E66 /* Pods-H2O-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5427D5D1E3D2159A06A86275920518EA /* CheckRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B6101747A9117140E0A3859ACD20E3 /* CheckRowFormer.swift */; };
+		57DB472403F3FEF372E7A6FBF66DB87E /* FormPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521A4509045A560EBC57A6AD72257E5F /* FormPickerCell.swift */; };
 		5BD477ACEDEC9DC483ECA24B10F5FE0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
-		5BDEB1941727713E10C17996AD91D910 /* SwitchRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3991638C5CFED826AD03994B5F8ADC6 /* SwitchRowFormer.swift */; };
-		5DA8F0E77126E515FFC036C41207A2BF /* BaseViewFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87B8AC2BCF127ACB7AF02F1CD3CA1D5 /* BaseViewFormer.swift */; };
-		6216987541D6C08CCF13940601043053 /* KDCircularProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3635A1421E88DC8B9CC52FA4BC5E7DD6 /* KDCircularProgress-dummy.m */; };
-		633ADB525829CACC2F8E33D6CC7AB4F0 /* DatePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FC310744A57C84295A951AD1F4F745A /* DatePickerRowFormer.swift */; };
-		67D88B09B3CBD2FBDFD595D4225AC714 /* FormCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFAAC4C54CB8D01CD560D9B705B9F8B /* FormCheckCell.swift */; };
-		6C3EC5853048EFD36D2805895A8E057A /* SegmentedRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E3F95B7C3D46274ED590B7C3430F1 /* SegmentedRowFormer.swift */; };
-		6C7C70448AAF11557E75C2197D0083D3 /* LabelViewFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D56B4C26F995A75A53D9F596903EAD0 /* LabelViewFormer.swift */; };
-		74D81C785F26A24C43C1B0A6B7182248 /* BaseRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EF16E7AA0E1D98031B6ACF6F6D0429 /* BaseRowFormer.swift */; };
-		7873BF12564A7CA735F2D8D90C22E8FB /* InlineDatePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D536776372390FFF43B789F79DADC0 /* InlineDatePickerRowFormer.swift */; };
-		7D13532E5F5277FB1762987D993E906B /* FormSelectorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B9EEE016346E8108109ACC4B3B4C4 /* FormSelectorPickerCell.swift */; };
+		5BDEB1941727713E10C17996AD91D910 /* SwitchRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22803BA637DABDF4250087338E4B062 /* SwitchRowFormer.swift */; };
+		5DA8F0E77126E515FFC036C41207A2BF /* BaseViewFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A549C50E29BBCBC382943407110E6 /* BaseViewFormer.swift */; };
+		6216987541D6C08CCF13940601043053 /* KDCircularProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 43A6565E4112EE448968873B065B5714 /* KDCircularProgress-dummy.m */; };
+		633ADB525829CACC2F8E33D6CC7AB4F0 /* DatePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE81C25FC7F84460852E910325FA9A6 /* DatePickerRowFormer.swift */; };
+		67D88B09B3CBD2FBDFD595D4225AC714 /* FormCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D89C8DF0D7A3DEE4E556E957BC19AF2 /* FormCheckCell.swift */; };
+		6C3EC5853048EFD36D2805895A8E057A /* SegmentedRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4FEA4B063F29421A9C82ADEFD29486 /* SegmentedRowFormer.swift */; };
+		6C7C70448AAF11557E75C2197D0083D3 /* LabelViewFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85584491B80CB746AA432803BF106D4F /* LabelViewFormer.swift */; };
+		74D81C785F26A24C43C1B0A6B7182248 /* BaseRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFCEB2D5E82347A8695A4CA2E814254 /* BaseRowFormer.swift */; };
+		7873BF12564A7CA735F2D8D90C22E8FB /* InlineDatePickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEA83AF71592352D68976C616CDFD0B /* InlineDatePickerRowFormer.swift */; };
+		7D13532E5F5277FB1762987D993E906B /* FormSelectorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF165E10C31AAAA1FC85A6A2E16632E1 /* FormSelectorPickerCell.swift */; };
 		883EAC0EAA98C18E458D8B2D2392CDEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
-		93FA9E8C73608A58147E1B2F0E3D687A /* LabelRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F8742182A8217492BDB38107B771C9C /* LabelRowFormer.swift */; };
-		9AA04C3C57F10B96862C52A47D583260 /* SelectorPickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3064998B43797AB9B793F699498297F7 /* SelectorPickerRowFormer.swift */; };
-		9DBBAF2EBCB60BF32F511A03663977F3 /* FormSegmentedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D597D0C8BBE4656BB05C31166B4B71A7 /* FormSegmentedCell.swift */; };
-		9F84961FB9777DB3D603922D26DFB703 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E028075772A62F0AD9ED34274992E83E /* KDCircularProgress.swift */; };
-		A8975C1982FCA38DCB3C1D6336AFE816 /* PickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFB67E27AD3D8C1F3D23D72D65522FB /* PickerRowFormer.swift */; };
-		AADB13169A72A64F2DAF2484558A17EA /* UITableViewCell+Former.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70110D4754FD7A90AFD63216CE4D56E /* UITableViewCell+Former.swift */; };
-		BECB0F4B442F029B68105B0B3FE5A27C /* RowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5FAD16BE1AB83F87DDFFF4FF5CCADF /* RowFormer.swift */; };
-		C1707396E799A044F09B593058F9616C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
-		C869F57536DAF09D0564F12F66A071F2 /* Pods-H2O-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E9BB641BA7C8D52B52AFE6816C1E66 /* Pods-H2O-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93FA9E8C73608A58147E1B2F0E3D687A /* LabelRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6AFC6C4FA92EB1775A59A7C0A6A7BA /* LabelRowFormer.swift */; };
+		9AA04C3C57F10B96862C52A47D583260 /* SelectorPickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2796D8F6FA5470066A283BEEAB746CC /* SelectorPickerRowFormer.swift */; };
+		9C3FA45C90A421DF6190235AB6B003F7 /* Pods-H2O-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08977F07004956000EDE2B774459EF9B /* Pods-H2O-dummy.m */; };
+		9DBBAF2EBCB60BF32F511A03663977F3 /* FormSegmentedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7879553CC3F73F8E530F1781F2B63718 /* FormSegmentedCell.swift */; };
+		9F84961FB9777DB3D603922D26DFB703 /* KDCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E019D96468CB5A9EBBBDAA8728777DA5 /* KDCircularProgress.swift */; };
+		A8975C1982FCA38DCB3C1D6336AFE816 /* PickerRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB0515F73EF20C929C3AF2862E7328 /* PickerRowFormer.swift */; };
+		AADB13169A72A64F2DAF2484558A17EA /* UITableViewCell+Former.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90FF124C9555B8AE121BCCD746D0EFE /* UITableViewCell+Former.swift */; };
+		B9AEA314A48B6D5D1149ADDFD4CC90B4 /* ZFRippleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85BC8C015B78C8A0C121215EA118F49 /* ZFRippleButton.swift */; };
+		BECB0F4B442F029B68105B0B3FE5A27C /* RowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4663239163A57AEE7470BFEF21EE2581 /* RowFormer.swift */; };
 		C9272D06FFA180407A509EC3A8A61AC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
-		CC72BC2A27E3D5E7558EF0E29DE9608F /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41ADE060CF7D267B65E3D5998B5CF9 /* FormViewController.swift */; };
-		D0F6C7C9787B86A475CF8716587DBFF8 /* CustomViewFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2671394F48550A198C9062AAB825A007 /* CustomViewFormer.swift */; };
-		D3902B9865245AFED32C755615EAC7BD /* FormHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878009F1009DB9217F12D94E3CDE2D26 /* FormHeaderFooterView.swift */; };
-		D4E2D41EA7073FA85F91B52BA7168592 /* Pods-H2O-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08977F07004956000EDE2B774459EF9B /* Pods-H2O-dummy.m */; };
-		D57517AD8044C5DDC55111C953B5D067 /* Former-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DEC063DEAB2A00B6CF06EA3E067D05C0 /* Former-dummy.m */; };
-		D59F9BD4BA223BC2F212BFF2E394E6B7 /* Former-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 83F05AF38B68CFE4B41ABAA6FCE5CC6F /* Former-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6619C39550F7B88EF059D4A22FFAFFD /* FormSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002986E7D77F7EADD862C58B2F7828F /* FormSliderCell.swift */; };
-		D6F04886703F9DC06929845DBD9947EB /* TextFieldRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2B1326D9EEE9D3D2359988A2CA0913 /* TextFieldRowFormer.swift */; };
-		DA7F46A9F86244A13054F6D20736D72B /* FormSelectorDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A980C80C963589816675E57B92983437 /* FormSelectorDatePickerCell.swift */; };
-		E1E2180D8113197E0CC97872828ED5C2 /* FormLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFAF2F232E92DD059338FAF2CEEA12E /* FormLabelCell.swift */; };
-		E26151CDF788721AD0E244372389F9EB /* FormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B421660575BF33EA3C9A7D5C788BC991 /* FormTextFieldCell.swift */; };
-		E40926B2B81858537B4508290684EE2D /* FormLabelFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77E2EA3394704746075E8CCA8E39AB0 /* FormLabelFooterView.swift */; };
-		EF579B14B5DC267DDF0DC7A8B282C6C8 /* FormInlineDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61159EB4136A0D23E35923E8221616BF /* FormInlineDatePickerCell.swift */; };
-		F6DA4337DD6F668DD718901B0CD7B4B5 /* Former.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B85323275706A29336070CC9E4A070 /* Former.swift */; };
-		FDDBC6340052A560147B4FB27ED18986 /* SliderRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD48A2ADEEC55BF5DD709CD91E0DB79 /* SliderRowFormer.swift */; };
-		FF54875678972D8C401702E7882D15E9 /* TextViewRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE3D8D8BDBE3DF58D2856598FC11147 /* TextViewRowFormer.swift */; };
+		CC72BC2A27E3D5E7558EF0E29DE9608F /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B115F02784E64B3DFC9ED597194719 /* FormViewController.swift */; };
+		D0F6C7C9787B86A475CF8716587DBFF8 /* CustomViewFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64F216FE4A5F9E907478E1A829FA51 /* CustomViewFormer.swift */; };
+		D3902B9865245AFED32C755615EAC7BD /* FormHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5674BD456E7208406A66142F00B913 /* FormHeaderFooterView.swift */; };
+		D57517AD8044C5DDC55111C953B5D067 /* Former-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90DC636FCDA8390F164BA8000DD8D456 /* Former-dummy.m */; };
+		D59F9BD4BA223BC2F212BFF2E394E6B7 /* Former-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BC15A9A6CB44F1266F6C1DC57B8C6EE6 /* Former-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6619C39550F7B88EF059D4A22FFAFFD /* FormSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC7E0AE74B5C6FB9D14E6A6F3AD62E2 /* FormSliderCell.swift */; };
+		D6F04886703F9DC06929845DBD9947EB /* TextFieldRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633617E09ED64BDA88DEAA471D1F9B6F /* TextFieldRowFormer.swift */; };
+		DA7F46A9F86244A13054F6D20736D72B /* FormSelectorDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C77B920DBEF1845958CB4C6A8A02F /* FormSelectorDatePickerCell.swift */; };
+		DD5CF3E6800183E77E61759F20E79664 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		E08F40A49561EBFF74C0EF3D547D248C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		E1E2180D8113197E0CC97872828ED5C2 /* FormLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF73B3555F23F045DAEE3D1F44676D1E /* FormLabelCell.swift */; };
+		E26151CDF788721AD0E244372389F9EB /* FormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3046F035862EA0BBC2029AD2DD8D3FF /* FormTextFieldCell.swift */; };
+		E40926B2B81858537B4508290684EE2D /* FormLabelFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C69F1480E06C9864FD892EDE3A3C907 /* FormLabelFooterView.swift */; };
+		EF579B14B5DC267DDF0DC7A8B282C6C8 /* FormInlineDatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DDFFB661AA341CF27AAA46F380D97D /* FormInlineDatePickerCell.swift */; };
+		F6DA4337DD6F668DD718901B0CD7B4B5 /* Former.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584D01184B29A9182DA4E782D305DBE /* Former.swift */; };
+		FDDBC6340052A560147B4FB27ED18986 /* SliderRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57E9A38BC60CA2C201C78E7D9C69D8 /* SliderRowFormer.swift */; };
+		FF54875678972D8C401702E7882D15E9 /* TextViewRowFormer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975AD1CCCAAE608BBB362D84DC863B7A /* TextViewRowFormer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3BD498887B193969FBDCA1C8997FD5BD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 980933AEBFB68262FC5D0C757539CEE4;
-			remoteInfo = Former;
-		};
-		792F9FF1025D5569B72DB6F79566787F /* PBXContainerItemProxy */ = {
+		04E2C4B285E65A550CC01703BDD0279F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9558B32FB980ED0E42BF1BD3AEC626CE;
 			remoteInfo = KDCircularProgress;
 		};
+		223C5116FF679B1337CE5CCCBE9E3EBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BCD9E55FD2130E039D829511E29B514;
+			remoteInfo = ZFRippleButton;
+		};
+		7E1253F1A2528E7C16FD69BFE25FB7D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 980933AEBFB68262FC5D0C757539CEE4;
+			remoteInfo = Former;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02CB443A0E70B2C821A12A8D85B96FB2 /* CustomRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomRowFormer.swift; path = Former/RowFormers/CustomRowFormer.swift; sourceTree = "<group>"; };
+		0070AB0365FE3D5936A7A351190DED2C /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		08084CE219EABD5C148B171507E10B9B /* Former.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Former.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08977F07004956000EDE2B774459EF9B /* Pods-H2O-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-H2O-dummy.m"; sourceTree = "<group>"; };
-		0F2E3F95B7C3D46274ED590B7C3430F1 /* SegmentedRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentedRowFormer.swift; path = Former/RowFormers/SegmentedRowFormer.swift; sourceTree = "<group>"; };
-		0FB24634C6999E938275C3C4B07D0F1F /* SectionFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SectionFormer.swift; path = Former/Commons/SectionFormer.swift; sourceTree = "<group>"; };
-		1002986E7D77F7EADD862C58B2F7828F /* FormSliderCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSliderCell.swift; path = Former/Cells/FormSliderCell.swift; sourceTree = "<group>"; };
-		1849E4ADD71F5FA259E5C7B8D1625E7F /* FormStepperCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormStepperCell.swift; path = Former/Cells/FormStepperCell.swift; sourceTree = "<group>"; };
-		1D56B4C26F995A75A53D9F596903EAD0 /* LabelViewFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LabelViewFormer.swift; path = Former/ViewFormers/LabelViewFormer.swift; sourceTree = "<group>"; };
-		234149C102FA81D1C4D6E6BDF92AFA3E /* FormTextViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormTextViewCell.swift; path = Former/Cells/FormTextViewCell.swift; sourceTree = "<group>"; };
-		2671394F48550A198C9062AAB825A007 /* CustomViewFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomViewFormer.swift; path = Former/ViewFormers/CustomViewFormer.swift; sourceTree = "<group>"; };
-		28EF16E7AA0E1D98031B6ACF6F6D0429 /* BaseRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseRowFormer.swift; path = Former/RowFormers/BaseRowFormer.swift; sourceTree = "<group>"; };
-		2A6D1F86E843B27E4A0C36BD6B945358 /* StepperRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepperRowFormer.swift; path = Former/RowFormers/StepperRowFormer.swift; sourceTree = "<group>"; };
-		2EABE694AB5EFF6C3F767D647602CB9A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3064998B43797AB9B793F699498297F7 /* SelectorPickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorPickerRowFormer.swift; path = Former/RowFormers/SelectorPickerRowFormer.swift; sourceTree = "<group>"; };
-		3635A1421E88DC8B9CC52FA4BC5E7DD6 /* KDCircularProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KDCircularProgress-dummy.m"; sourceTree = "<group>"; };
-		3F8742182A8217492BDB38107B771C9C /* LabelRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LabelRowFormer.swift; path = Former/RowFormers/LabelRowFormer.swift; sourceTree = "<group>"; };
-		3FC0FE261BE50BF8D3CAD635369F00FD /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
-		3FC310744A57C84295A951AD1F4F745A /* DatePickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatePickerRowFormer.swift; path = Former/RowFormers/DatePickerRowFormer.swift; sourceTree = "<group>"; };
-		4181F373A01FB7570F85437C60298A95 /* InlinePickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InlinePickerRowFormer.swift; path = Former/RowFormers/InlinePickerRowFormer.swift; sourceTree = "<group>"; };
+		0A375E06CE2D95DC828E943E9C1910C9 /* SelectorDatePickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorDatePickerRowFormer.swift; path = Former/RowFormers/SelectorDatePickerRowFormer.swift; sourceTree = "<group>"; };
+		0A57B7205FE0F21629C450D831B77801 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		0CB4FA45F1C90A68EC8FE852BE218981 /* CustomRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomRowFormer.swift; path = Former/RowFormers/CustomRowFormer.swift; sourceTree = "<group>"; };
+		0D5674BD456E7208406A66142F00B913 /* FormHeaderFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormHeaderFooterView.swift; path = Former/Views/FormHeaderFooterView.swift; sourceTree = "<group>"; };
+		113807B33178C829B54ACFD3836489B0 /* KDCircularProgress-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KDCircularProgress-umbrella.h"; sourceTree = "<group>"; };
+		1A74E15414EF8D0421A709DC6806079B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A8A883316093E0DC87579444A20B96D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CC819A17684518914490FE1D4BE94A9 /* KDCircularProgress.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = KDCircularProgress.modulemap; sourceTree = "<group>"; };
+		1D6AFC6C4FA92EB1775A59A7C0A6A7BA /* LabelRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LabelRowFormer.swift; path = Former/RowFormers/LabelRowFormer.swift; sourceTree = "<group>"; };
+		2359321426A0B35ACF5D6DC6C1D2D1A6 /* FormCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormCell.swift; path = Former/Cells/FormCell.swift; sourceTree = "<group>"; };
+		27F27A0B64A39476A0B057EC4E48D4DD /* Pods_H2O.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_H2O.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AB3E8CD4E61CD093FDF4A3DAD7E0574 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		2D5A549C50E29BBCBC382943407110E6 /* BaseViewFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseViewFormer.swift; path = Former/ViewFormers/BaseViewFormer.swift; sourceTree = "<group>"; };
+		3188623CB3CB22547102D7FD14EE628C /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		36AB2CC6C1045240252C593A6E90A9FD /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		393739094D10AC7A5FC7A58596506960 /* ZFRippleButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZFRippleButton-dummy.m"; sourceTree = "<group>"; };
+		3F0C5D2389D281FBF17DEFFC7E358D10 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F5C6DBDF2C2DED7C5718CC5C0A02B73 /* FormStepperCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormStepperCell.swift; path = Former/Cells/FormStepperCell.swift; sourceTree = "<group>"; };
+		41D2D7E45E320D810D5A4DA3B7E9F584 /* KDCircularProgress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KDCircularProgress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43A6565E4112EE448968873B065B5714 /* KDCircularProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KDCircularProgress-dummy.m"; sourceTree = "<group>"; };
+		4663239163A57AEE7470BFEF21EE2581 /* RowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowFormer.swift; path = Former/Commons/RowFormer.swift; sourceTree = "<group>"; };
 		47BB6058A679F993771CB802223318B6 /* Pods-H2O-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-H2O-acknowledgements.plist"; sourceTree = "<group>"; };
-		488A19FFA4A8FF77FA8854BEF621C6BC /* KDCircularProgress.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KDCircularProgress.xcconfig; sourceTree = "<group>"; };
-		4DABF4FCE542FD8EE188FAEF83D6D78B /* CheckRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckRowFormer.swift; path = Former/RowFormers/CheckRowFormer.swift; sourceTree = "<group>"; };
-		4E5FAD16BE1AB83F87DDFFF4FF5CCADF /* RowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RowFormer.swift; path = Former/Commons/RowFormer.swift; sourceTree = "<group>"; };
-		52D536776372390FFF43B789F79DADC0 /* InlineDatePickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InlineDatePickerRowFormer.swift; path = Former/RowFormers/InlineDatePickerRowFormer.swift; sourceTree = "<group>"; };
+		49649B0F2A41F383A96981DE71E7A7B4 /* ZFRippleButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZFRippleButton-umbrella.h"; sourceTree = "<group>"; };
+		4BCBD5C059613B6E94D6CB4B238593D5 /* KDCircularProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KDCircularProgress-prefix.pch"; sourceTree = "<group>"; };
+		4C69F1480E06C9864FD892EDE3A3C907 /* FormLabelFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormLabelFooterView.swift; path = Former/Views/FormLabelFooterView.swift; sourceTree = "<group>"; };
+		4D89C8DF0D7A3DEE4E556E957BC19AF2 /* FormCheckCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormCheckCell.swift; path = Former/Cells/FormCheckCell.swift; sourceTree = "<group>"; };
+		4DFCEB2D5E82347A8695A4CA2E814254 /* BaseRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseRowFormer.swift; path = Former/RowFormers/BaseRowFormer.swift; sourceTree = "<group>"; };
+		50219EA35C16646E18482BDC601D42CA /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		521A4509045A560EBC57A6AD72257E5F /* FormPickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormPickerCell.swift; path = Former/Cells/FormPickerCell.swift; sourceTree = "<group>"; };
 		532BF324DC3ACB5FB2438C255D114755 /* Pods-H2O.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-H2O.release.xcconfig"; sourceTree = "<group>"; };
-		53FD9B3CF074EE39EEB6706D2D6D9C4A /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		5DEA374EB69E0122F46C7806B1839BBA /* FormDatePickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormDatePickerCell.swift; path = Former/Cells/FormDatePickerCell.swift; sourceTree = "<group>"; };
-		5F16617961BA89FF5BB195411CC46BA0 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		61159EB4136A0D23E35923E8221616BF /* FormInlineDatePickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormInlineDatePickerCell.swift; path = Former/Cells/FormInlineDatePickerCell.swift; sourceTree = "<group>"; };
-		61E251D6168FF399F49976F57D818DE5 /* ViewFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewFormer.swift; path = Former/Commons/ViewFormer.swift; sourceTree = "<group>"; };
-		671A806FDBDDB8B01818DEB0CCFD9F39 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		5EEC6E1F8BB18707CA1CB07D12300DA7 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		633617E09ED64BDA88DEAA471D1F9B6F /* TextFieldRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFieldRowFormer.swift; path = Former/RowFormers/TextFieldRowFormer.swift; sourceTree = "<group>"; };
+		6446D7970525091CA914E98566CF3F08 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		6B64F216FE4A5F9E907478E1A829FA51 /* CustomViewFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomViewFormer.swift; path = Former/ViewFormers/CustomViewFormer.swift; sourceTree = "<group>"; };
 		71688AE7A4D8FE3B598778DF36D09156 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77B1B22416CF5FBBCDA9389B58CDB729 /* FormInlinePickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormInlinePickerCell.swift; path = Former/Cells/FormInlinePickerCell.swift; sourceTree = "<group>"; };
-		796B9EEE016346E8108109ACC4B3B4C4 /* FormSelectorPickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSelectorPickerCell.swift; path = Former/Cells/FormSelectorPickerCell.swift; sourceTree = "<group>"; };
-		7D41ADE060CF7D267B65E3D5998B5CF9 /* FormViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormViewController.swift; path = Former/Controllers/FormViewController.swift; sourceTree = "<group>"; };
-		7EBDABA90980298BA9E06439B4C2FD50 /* Former.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Former.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EFB67E27AD3D8C1F3D23D72D65522FB /* PickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerRowFormer.swift; path = Former/RowFormers/PickerRowFormer.swift; sourceTree = "<group>"; };
+		7879553CC3F73F8E530F1781F2B63718 /* FormSegmentedCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSegmentedCell.swift; path = Former/Cells/FormSegmentedCell.swift; sourceTree = "<group>"; };
+		7AEA83AF71592352D68976C616CDFD0B /* InlineDatePickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InlineDatePickerRowFormer.swift; path = Former/RowFormers/InlineDatePickerRowFormer.swift; sourceTree = "<group>"; };
 		7F28F0C9B23F4DC03488434CA9DAE787 /* Pods-H2O-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-H2O-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7FFAF2F232E92DD059338FAF2CEEA12E /* FormLabelCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormLabelCell.swift; path = Former/Cells/FormLabelCell.swift; sourceTree = "<group>"; };
-		80699A3308434E6B7D06F000433338C2 /* FormLabelHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormLabelHeaderView.swift; path = Former/Views/FormLabelHeaderView.swift; sourceTree = "<group>"; };
-		83F05AF38B68CFE4B41ABAA6FCE5CC6F /* Former-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Former-umbrella.h"; sourceTree = "<group>"; };
-		878009F1009DB9217F12D94E3CDE2D26 /* FormHeaderFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormHeaderFooterView.swift; path = Former/Views/FormHeaderFooterView.swift; sourceTree = "<group>"; };
-		8BFAAC4C54CB8D01CD560D9B705B9F8B /* FormCheckCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormCheckCell.swift; path = Former/Cells/FormCheckCell.swift; sourceTree = "<group>"; };
-		8F2B1326D9EEE9D3D2359988A2CA0913 /* TextFieldRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextFieldRowFormer.swift; path = Former/RowFormers/TextFieldRowFormer.swift; sourceTree = "<group>"; };
+		85584491B80CB746AA432803BF106D4F /* LabelViewFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LabelViewFormer.swift; path = Former/ViewFormers/LabelViewFormer.swift; sourceTree = "<group>"; };
+		8A17ADAB0618C5B89F63240832FE6E7D /* ZFRippleButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZFRippleButton.xcconfig; sourceTree = "<group>"; };
+		8D6395B10EDC167A3FC608B6BCB5CBBF /* ZFRippleButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZFRippleButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FC7EDACA814F526CFE77BC45CBEE130 /* FormerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormerProtocol.swift; path = Former/Commons/FormerProtocol.swift; sourceTree = "<group>"; };
+		90DC636FCDA8390F164BA8000DD8D456 /* Former-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Former-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		97B99E5B9E744F3558F929F6A15ADB50 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		93C7A35F9078D014E825F9E6E87C35FB /* FormSwitchCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSwitchCell.swift; path = Former/Cells/FormSwitchCell.swift; sourceTree = "<group>"; };
+		9681B695AFFC8279370BC07DCB3B0B0A /* SectionFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SectionFormer.swift; path = Former/Commons/SectionFormer.swift; sourceTree = "<group>"; };
+		975AD1CCCAAE608BBB362D84DC863B7A /* TextViewRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextViewRowFormer.swift; path = Former/RowFormers/TextViewRowFormer.swift; sourceTree = "<group>"; };
 		997CC827AF56F4A10EBB01B22E875CD2 /* Pods-H2O.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-H2O.debug.xcconfig"; sourceTree = "<group>"; };
-		A1B7309075E0E22CBF7F99A42ADCD3B4 /* Pods_H2O.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_H2O.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FC7E0AE74B5C6FB9D14E6A6F3AD62E2 /* FormSliderCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSliderCell.swift; path = Former/Cells/FormSliderCell.swift; sourceTree = "<group>"; };
+		A22803BA637DABDF4250087338E4B062 /* SwitchRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchRowFormer.swift; path = Former/RowFormers/SwitchRowFormer.swift; sourceTree = "<group>"; };
 		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A71FC16B37F9B028C3C889014C2D7507 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		A980C80C963589816675E57B92983437 /* FormSelectorDatePickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSelectorDatePickerCell.swift; path = Former/Cells/FormSelectorDatePickerCell.swift; sourceTree = "<group>"; };
-		AAD48A2ADEEC55BF5DD709CD91E0DB79 /* SliderRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderRowFormer.swift; path = Former/RowFormers/SliderRowFormer.swift; sourceTree = "<group>"; };
-		ADB6943969F7E4466EF84F3FFEAAF3CC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE50208E560AE6660CA2030059EF831D /* Former.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Former.modulemap; sourceTree = "<group>"; };
-		B421660575BF33EA3C9A7D5C788BC991 /* FormTextFieldCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormTextFieldCell.swift; path = Former/Cells/FormTextFieldCell.swift; sourceTree = "<group>"; };
-		BBDC4458813B80E60F4159A9EF15A385 /* FormerProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormerProtocol.swift; path = Former/Commons/FormerProtocol.swift; sourceTree = "<group>"; };
-		C1B85323275706A29336070CC9E4A070 /* Former.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Former.swift; path = Former/Commons/Former.swift; sourceTree = "<group>"; };
-		C3991638C5CFED826AD03994B5F8ADC6 /* SwitchRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwitchRowFormer.swift; path = Former/RowFormers/SwitchRowFormer.swift; sourceTree = "<group>"; };
+		AB512EE56F047E3F799C2ABFB0B29E50 /* FormLabelHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormLabelHeaderView.swift; path = Former/Views/FormLabelHeaderView.swift; sourceTree = "<group>"; };
+		AE39ED8B1B790C5712137066AB22E887 /* FormInlinePickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormInlinePickerCell.swift; path = Former/Cells/FormInlinePickerCell.swift; sourceTree = "<group>"; };
+		AF506427DDD0604EA659D62C71C2CDCB /* ViewFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewFormer.swift; path = Former/Commons/ViewFormer.swift; sourceTree = "<group>"; };
+		B0AB0515F73EF20C929C3AF2862E7328 /* PickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PickerRowFormer.swift; path = Former/RowFormers/PickerRowFormer.swift; sourceTree = "<group>"; };
+		B3B6101747A9117140E0A3859ACD20E3 /* CheckRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckRowFormer.swift; path = Former/RowFormers/CheckRowFormer.swift; sourceTree = "<group>"; };
+		B555D8C5F5C89F14DDE2423A8818C267 /* InlinePickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InlinePickerRowFormer.swift; path = Former/RowFormers/InlinePickerRowFormer.swift; sourceTree = "<group>"; };
+		B5DDFFB661AA341CF27AAA46F380D97D /* FormInlineDatePickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormInlineDatePickerCell.swift; path = Former/Cells/FormInlineDatePickerCell.swift; sourceTree = "<group>"; };
+		BC15A9A6CB44F1266F6C1DC57B8C6EE6 /* Former-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Former-umbrella.h"; sourceTree = "<group>"; };
+		BF165E10C31AAAA1FC85A6A2E16632E1 /* FormSelectorPickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSelectorPickerCell.swift; path = Former/Cells/FormSelectorPickerCell.swift; sourceTree = "<group>"; };
+		C08E2561AF46AA68A515A6B06226FD64 /* Former-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Former-prefix.pch"; sourceTree = "<group>"; };
 		C3E9BB641BA7C8D52B52AFE6816C1E66 /* Pods-H2O-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-H2O-umbrella.h"; sourceTree = "<group>"; };
+		C85BC8C015B78C8A0C121215EA118F49 /* ZFRippleButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZFRippleButton.swift; path = Classes/ZFRippleButton.swift; sourceTree = "<group>"; };
+		C864FC9D44EA5478921768F3F3F0190D /* ZFRippleButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZFRippleButton-prefix.pch"; sourceTree = "<group>"; };
 		C9A262CB8D561B8B29856F42B1B38529 /* Pods-H2O.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-H2O.modulemap"; sourceTree = "<group>"; };
-		CBC9391A4F595DA469FB679433E78E1F /* SelectorDatePickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorDatePickerRowFormer.swift; path = Former/RowFormers/SelectorDatePickerRowFormer.swift; sourceTree = "<group>"; };
-		CC2F930ADBEEBADABA9339F210688B7B /* Former.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Former.xcconfig; sourceTree = "<group>"; };
-		CDE3D8D8BDBE3DF58D2856598FC11147 /* TextViewRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextViewRowFormer.swift; path = Former/RowFormers/TextViewRowFormer.swift; sourceTree = "<group>"; };
-		D4EE0FC6F91BB2B9DA57B0BBB6D62791 /* Former.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Former.h; path = Former/Former.h; sourceTree = "<group>"; };
-		D597D0C8BBE4656BB05C31166B4B71A7 /* FormSegmentedCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSegmentedCell.swift; path = Former/Cells/FormSegmentedCell.swift; sourceTree = "<group>"; };
-		D6B2072E75D3CAD246CBAAFBBD3505DD /* FormSwitchCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSwitchCell.swift; path = Former/Cells/FormSwitchCell.swift; sourceTree = "<group>"; };
-		D77E2EA3394704746075E8CCA8E39AB0 /* FormLabelFooterView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormLabelFooterView.swift; path = Former/Views/FormLabelFooterView.swift; sourceTree = "<group>"; };
-		D87B8AC2BCF127ACB7AF02F1CD3CA1D5 /* BaseViewFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseViewFormer.swift; path = Former/ViewFormers/BaseViewFormer.swift; sourceTree = "<group>"; };
-		DCDD3927D55B6F6900BB5F2FA11FE421 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
-		DEC063DEAB2A00B6CF06EA3E067D05C0 /* Former-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Former-dummy.m"; sourceTree = "<group>"; };
-		E028075772A62F0AD9ED34274992E83E /* KDCircularProgress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KDCircularProgress.swift; path = KDCircularProgress/KDCircularProgress.swift; sourceTree = "<group>"; };
-		E43724E120A72A10533EDB009531EAAD /* FormPickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormPickerCell.swift; path = Former/Cells/FormPickerCell.swift; sourceTree = "<group>"; };
-		E70110D4754FD7A90AFD63216CE4D56E /* UITableViewCell+Former.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableViewCell+Former.swift"; path = "Former/Helpers/UITableViewCell+Former.swift"; sourceTree = "<group>"; };
+		CE55053DA4B01E3E411CF7F9FFDA585C /* KDCircularProgress.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KDCircularProgress.xcconfig; sourceTree = "<group>"; };
+		CE57E9A38BC60CA2C201C78E7D9C69D8 /* SliderRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SliderRowFormer.swift; path = Former/RowFormers/SliderRowFormer.swift; sourceTree = "<group>"; };
+		D17B6D5A889DF7EF33FC69AFC2032680 /* FormDatePickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormDatePickerCell.swift; path = Former/Cells/FormDatePickerCell.swift; sourceTree = "<group>"; };
+		D3046F035862EA0BBC2029AD2DD8D3FF /* FormTextFieldCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormTextFieldCell.swift; path = Former/Cells/FormTextFieldCell.swift; sourceTree = "<group>"; };
+		D3A279CB3CA4883727A800B04E79FBF2 /* Former.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Former.modulemap; sourceTree = "<group>"; };
+		D584D01184B29A9182DA4E782D305DBE /* Former.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Former.swift; path = Former/Commons/Former.swift; sourceTree = "<group>"; };
+		DA5C77B920DBEF1845958CB4C6A8A02F /* FormSelectorDatePickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormSelectorDatePickerCell.swift; path = Former/Cells/FormSelectorDatePickerCell.swift; sourceTree = "<group>"; };
+		DB63FC3B1AF2B35BE4459CD352B614A4 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		DCE5DEC9C1C2E779BD80C1096309CC53 /* StepperRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StepperRowFormer.swift; path = Former/RowFormers/StepperRowFormer.swift; sourceTree = "<group>"; };
+		DDE81C25FC7F84460852E910325FA9A6 /* DatePickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DatePickerRowFormer.swift; path = Former/RowFormers/DatePickerRowFormer.swift; sourceTree = "<group>"; };
+		DE4FEA4B063F29421A9C82ADEFD29486 /* SegmentedRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegmentedRowFormer.swift; path = Former/RowFormers/SegmentedRowFormer.swift; sourceTree = "<group>"; };
+		DF73B3555F23F045DAEE3D1F44676D1E /* FormLabelCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormLabelCell.swift; path = Former/Cells/FormLabelCell.swift; sourceTree = "<group>"; };
+		E019D96468CB5A9EBBBDAA8728777DA5 /* KDCircularProgress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KDCircularProgress.swift; path = KDCircularProgress/KDCircularProgress.swift; sourceTree = "<group>"; };
+		E3B115F02784E64B3DFC9ED597194719 /* FormViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormViewController.swift; path = Former/Controllers/FormViewController.swift; sourceTree = "<group>"; };
 		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		E9D03E18B5972380CBEDB74CCFD3C208 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		E90FF124C9555B8AE121BCCD746D0EFE /* UITableViewCell+Former.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableViewCell+Former.swift"; path = "Former/Helpers/UITableViewCell+Former.swift"; sourceTree = "<group>"; };
 		EB0FC3B267E94BE1A8A7B5A22ACE1B1A /* Pods-H2O-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-H2O-resources.sh"; sourceTree = "<group>"; };
-		EEBCE01887DD94E9A82D5FDACB18B3C2 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
-		F0293AA9665CAF397E4FBBDE407987FA /* KDCircularProgress-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KDCircularProgress-umbrella.h"; sourceTree = "<group>"; };
-		F1764C1CBB27DD2A2E5AE42CF8CD96D5 /* KDCircularProgress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KDCircularProgress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F19972668666A0EA58FDAC6BE2D3561D /* KDCircularProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KDCircularProgress-prefix.pch"; sourceTree = "<group>"; };
+		EBD81A4CFF9D2D78DE11C50D79B5BFA7 /* Former.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Former.h; path = Former/Former.h; sourceTree = "<group>"; };
+		EC093AF5BC18205D15ABDA7C72993F83 /* ZFRippleButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ZFRippleButton.modulemap; sourceTree = "<group>"; };
+		F2796D8F6FA5470066A283BEEAB746CC /* SelectorPickerRowFormer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SelectorPickerRowFormer.swift; path = Former/RowFormers/SelectorPickerRowFormer.swift; sourceTree = "<group>"; };
+		F44E90354BE77A3726A96E1865639EF5 /* FormTextViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormTextViewCell.swift; path = Former/Cells/FormTextViewCell.swift; sourceTree = "<group>"; };
 		F80E16A581B129E7F14BAA0AB9D3B28C /* Pods-H2O-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-H2O-frameworks.sh"; sourceTree = "<group>"; };
-		F922BFEEE8DA818D5689FEA071A087EA /* KDCircularProgress.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = KDCircularProgress.modulemap; sourceTree = "<group>"; };
-		FA98CE73D0CD3A92AC056D026A7FCA8B /* FormCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormCell.swift; path = Former/Cells/FormCell.swift; sourceTree = "<group>"; };
-		FB23EC1FB8DF1BE1B99331AF90C5E366 /* Former-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Former-prefix.pch"; sourceTree = "<group>"; };
+		FC420858527A598C519D613587E055B3 /* Former.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Former.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		22DD791C9FC209EE4673B641EE62B467 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E08F40A49561EBFF74C0EF3D547D248C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CACDE7DF021F1DD6E6BC843FD0A0178 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,79 +213,92 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		53F7A3A2ACCD1DD6EF99DA385FC18500 /* Frameworks */ = {
+		98AE4B59C076DDCC28FFF9E22E17B497 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1707396E799A044F09B593058F9616C /* Foundation.framework in Frameworks */,
+				DD5CF3E6800183E77E61759F20E79664 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00C694CA6552829757AB5CEA477E2688 /* Frameworks */ = {
+		01650C233B21EF3B36A033BC5A5A5E14 /* GoogleUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				97B99E5B9E744F3558F929F6A15ADB50 /* FirebaseCore.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		02B90340AB9EBAECFC9FF7C904E0877D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5F16617961BA89FF5BB195411CC46BA0 /* GoogleInterchangeUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1A526239D4FC83BFBEB9EB5BB34CBB2C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DCDD3927D55B6F6900BB5F2FA11FE421 /* FirebaseDatabase.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1A7B7D06678FA708582B77703751C144 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				75BBF5A611C1178E634191ED65465475 /* Firebase */,
-				D597CBA8691E7F8DB847B56DD298D6B0 /* FirebaseAnalytics */,
-				BF46298C116E78299E17C28B7B66819D /* FirebaseCore */,
-				65505C876938243164657F1DECA40000 /* FirebaseDatabase */,
-				3348F71F4C87ABA8A12DF97A80A5F747 /* FirebaseInstanceID */,
-				C210D760DA6E18918852FAC47E2BEF8B /* Former */,
-				AC5009E4C87C9B2AA787874CD69BE90B /* GoogleInterchangeUtilities */,
-				58BA44E19CEA0D78C84309E8E9D91D0A /* GoogleSymbolUtilities */,
-				29A9A255B6DD55074CD40FA6AEC27C94 /* GoogleUtilities */,
-				95130D89545CE60C9F12BAC09272EB4B /* KDCircularProgress */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		29A9A255B6DD55074CD40FA6AEC27C94 /* GoogleUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				37F89304660BBE6208205743552F1A45 /* Frameworks */,
+				91E892FBB9A2629949753C6D985BFE0D /* Frameworks */,
 			);
 			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
-		3348F71F4C87ABA8A12DF97A80A5F747 /* FirebaseInstanceID */ = {
+		177BFFB47AB1B507679773E816224F57 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9D03E18B5972380CBEDB74CCFD3C208 /* FIRInstanceID.h */,
-				DBBA911AFE68B3C39A5FB0EAF811327F /* Frameworks */,
+				3F0C5D2389D281FBF17DEFFC7E358D10 /* Info.plist */,
+				EC093AF5BC18205D15ABDA7C72993F83 /* ZFRippleButton.modulemap */,
+				8A17ADAB0618C5B89F63240832FE6E7D /* ZFRippleButton.xcconfig */,
+				393739094D10AC7A5FC7A58596506960 /* ZFRippleButton-dummy.m */,
+				C864FC9D44EA5478921768F3F3F0190D /* ZFRippleButton-prefix.pch */,
+				49649B0F2A41F383A96981DE71E7A7B4 /* ZFRippleButton-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ZFRippleButton";
+			sourceTree = "<group>";
+		};
+		1840BAADB6D1281EB10ED84B34FE83DD /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				E23056A2C5214C4388255023A91223ED /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		22B397F6D741D2010EECED62FF32B755 /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				50219EA35C16646E18482BDC601D42CA /* FIRInstanceID.h */,
+				24908C775AF0F7F6CD4DE5A577235221 /* Frameworks */,
 			);
 			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
-		37F89304660BBE6208205743552F1A45 /* Frameworks */ = {
+		24908C775AF0F7F6CD4DE5A577235221 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3FC0FE261BE50BF8D3CAD635369F00FD /* GoogleUtilities.framework */,
+				0A57B7205FE0F21629C450D831B77801 /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E5358D99EADA09D44C4A33075F5AA10 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6446D7970525091CA914E98566CF3F08 /* Firebase.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		2FBEF0818E1EAE6943B68017A3B4DDC5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0070AB0365FE3D5936A7A351190DED2C /* FirebaseDatabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		364AE6DF59526630DBEF7C2C8CB289A8 /* FirebaseDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				2FBEF0818E1EAE6943B68017A3B4DDC5 /* Frameworks */,
+			);
+			path = FirebaseDatabase;
+			sourceTree = "<group>";
+		};
+		430A339CC1FA0E6D08CF72218853E641 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AB3E8CD4E61CD093FDF4A3DAD7E0574 /* FirebaseCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -271,36 +311,89 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		58BA44E19CEA0D78C84309E8E9D91D0A /* GoogleSymbolUtilities */ = {
+		4AFF0C358C827F6FDF455C52D48A6966 /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				D6B0090A538E309E4AEDDE844F833799 /* Frameworks */,
+				55359C1129C6DF52F6FB5D7E2151CE4F /* Frameworks */,
 			);
 			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
-		65505C876938243164657F1DECA40000 /* FirebaseDatabase */ = {
+		55359C1129C6DF52F6FB5D7E2151CE4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1A526239D4FC83BFBEB9EB5BB34CBB2C /* Frameworks */,
-			);
-			path = FirebaseDatabase;
-			sourceTree = "<group>";
-		};
-		75BBF5A611C1178E634191ED65465475 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				E0C8A92A699CF55D68817995E91CDDA2 /* Core */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
-		766F91EB27582FD27659106442CE7AD2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				53FD9B3CF074EE39EEB6706D2D6D9C4A /* FirebaseAnalytics.framework */,
+				36AB2CC6C1045240252C593A6E90A9FD /* GoogleSymbolUtilities.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56FD784CE195A5EA59F3E0A1E4BFE3D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3188623CB3CB22547102D7FD14EE628C /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		59F6C5C38DE9DB96AA9EA0F528C3ABA2 /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				430A339CC1FA0E6D08CF72218853E641 /* Frameworks */,
+			);
+			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
+		5AE634908392C9AB1EAA84495496540D /* Former */ = {
+			isa = PBXGroup;
+			children = (
+				4DFCEB2D5E82347A8695A4CA2E814254 /* BaseRowFormer.swift */,
+				2D5A549C50E29BBCBC382943407110E6 /* BaseViewFormer.swift */,
+				B3B6101747A9117140E0A3859ACD20E3 /* CheckRowFormer.swift */,
+				0CB4FA45F1C90A68EC8FE852BE218981 /* CustomRowFormer.swift */,
+				6B64F216FE4A5F9E907478E1A829FA51 /* CustomViewFormer.swift */,
+				DDE81C25FC7F84460852E910325FA9A6 /* DatePickerRowFormer.swift */,
+				2359321426A0B35ACF5D6DC6C1D2D1A6 /* FormCell.swift */,
+				4D89C8DF0D7A3DEE4E556E957BC19AF2 /* FormCheckCell.swift */,
+				D17B6D5A889DF7EF33FC69AFC2032680 /* FormDatePickerCell.swift */,
+				EBD81A4CFF9D2D78DE11C50D79B5BFA7 /* Former.h */,
+				D584D01184B29A9182DA4E782D305DBE /* Former.swift */,
+				8FC7EDACA814F526CFE77BC45CBEE130 /* FormerProtocol.swift */,
+				0D5674BD456E7208406A66142F00B913 /* FormHeaderFooterView.swift */,
+				B5DDFFB661AA341CF27AAA46F380D97D /* FormInlineDatePickerCell.swift */,
+				AE39ED8B1B790C5712137066AB22E887 /* FormInlinePickerCell.swift */,
+				DF73B3555F23F045DAEE3D1F44676D1E /* FormLabelCell.swift */,
+				4C69F1480E06C9864FD892EDE3A3C907 /* FormLabelFooterView.swift */,
+				AB512EE56F047E3F799C2ABFB0B29E50 /* FormLabelHeaderView.swift */,
+				521A4509045A560EBC57A6AD72257E5F /* FormPickerCell.swift */,
+				7879553CC3F73F8E530F1781F2B63718 /* FormSegmentedCell.swift */,
+				DA5C77B920DBEF1845958CB4C6A8A02F /* FormSelectorDatePickerCell.swift */,
+				BF165E10C31AAAA1FC85A6A2E16632E1 /* FormSelectorPickerCell.swift */,
+				9FC7E0AE74B5C6FB9D14E6A6F3AD62E2 /* FormSliderCell.swift */,
+				3F5C6DBDF2C2DED7C5718CC5C0A02B73 /* FormStepperCell.swift */,
+				93C7A35F9078D014E825F9E6E87C35FB /* FormSwitchCell.swift */,
+				D3046F035862EA0BBC2029AD2DD8D3FF /* FormTextFieldCell.swift */,
+				F44E90354BE77A3726A96E1865639EF5 /* FormTextViewCell.swift */,
+				E3B115F02784E64B3DFC9ED597194719 /* FormViewController.swift */,
+				7AEA83AF71592352D68976C616CDFD0B /* InlineDatePickerRowFormer.swift */,
+				B555D8C5F5C89F14DDE2423A8818C267 /* InlinePickerRowFormer.swift */,
+				1D6AFC6C4FA92EB1775A59A7C0A6A7BA /* LabelRowFormer.swift */,
+				85584491B80CB746AA432803BF106D4F /* LabelViewFormer.swift */,
+				B0AB0515F73EF20C929C3AF2862E7328 /* PickerRowFormer.swift */,
+				4663239163A57AEE7470BFEF21EE2581 /* RowFormer.swift */,
+				9681B695AFFC8279370BC07DCB3B0B0A /* SectionFormer.swift */,
+				DE4FEA4B063F29421A9C82ADEFD29486 /* SegmentedRowFormer.swift */,
+				0A375E06CE2D95DC828E943E9C1910C9 /* SelectorDatePickerRowFormer.swift */,
+				F2796D8F6FA5470066A283BEEAB746CC /* SelectorPickerRowFormer.swift */,
+				CE57E9A38BC60CA2C201C78E7D9C69D8 /* SliderRowFormer.swift */,
+				DCE5DEC9C1C2E779BD80C1096309CC53 /* StepperRowFormer.swift */,
+				A22803BA637DABDF4250087338E4B062 /* SwitchRowFormer.swift */,
+				633617E09ED64BDA88DEAA471D1F9B6F /* TextFieldRowFormer.swift */,
+				975AD1CCCAAE608BBB362D84DC863B7A /* TextViewRowFormer.swift */,
+				E90FF124C9555B8AE121BCCD746D0EFE /* UITableViewCell+Former.swift */,
+				AF506427DDD0604EA659D62C71C2CDCB /* ViewFormer.swift */,
+				FE85FA67B7D2F209266685850D5D7B07 /* Support Files */,
+			);
+			path = Former;
 			sourceTree = "<group>";
 		};
 		79CA3D400132F5E385FE553DD530FCF9 /* Pods-H2O */ = {
@@ -326,112 +419,73 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				1A7B7D06678FA708582B77703751C144 /* Pods */,
-				CB70E69EEEA28B779875D981E86C9FB8 /* Products */,
+				BE1CE265A701A1285EBC1158B6B9C984 /* Pods */,
+				9739EE0D99BA61F95650114B8CF47833 /* Products */,
 				D1B564374E2B7D48F802E43C107CB849 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		95130D89545CE60C9F12BAC09272EB4B /* KDCircularProgress */ = {
+		91E892FBB9A2629949753C6D985BFE0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E028075772A62F0AD9ED34274992E83E /* KDCircularProgress.swift */,
-				CA7262D0BFCAF28F079845A8A1A8A2A6 /* Support Files */,
+				5EEC6E1F8BB18707CA1CB07D12300DA7 /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9739EE0D99BA61F95650114B8CF47833 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08084CE219EABD5C148B171507E10B9B /* Former.framework */,
+				41D2D7E45E320D810D5A4DA3B7E9F584 /* KDCircularProgress.framework */,
+				27F27A0B64A39476A0B057EC4E48D4DD /* Pods_H2O.framework */,
+				8D6395B10EDC167A3FC608B6BCB5CBBF /* ZFRippleButton.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9B422448D1C22825B86B249110730F9 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				2E5358D99EADA09D44C4A33075F5AA10 /* Core */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		AEB98D778DADE33B7861BA734C84127D /* KDCircularProgress */ = {
+			isa = PBXGroup;
+			children = (
+				E019D96468CB5A9EBBBDAA8728777DA5 /* KDCircularProgress.swift */,
+				EFC1712058338D00E0B3F6A376B485DE /* Support Files */,
 			);
 			path = KDCircularProgress;
 			sourceTree = "<group>";
 		};
-		AC5009E4C87C9B2AA787874CD69BE90B /* GoogleInterchangeUtilities */ = {
+		BE1CE265A701A1285EBC1158B6B9C984 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				02B90340AB9EBAECFC9FF7C904E0877D /* Frameworks */,
+				A9B422448D1C22825B86B249110730F9 /* Firebase */,
+				ED30D45020622E15789DE202240F7D92 /* FirebaseAnalytics */,
+				59F6C5C38DE9DB96AA9EA0F528C3ABA2 /* FirebaseCore */,
+				364AE6DF59526630DBEF7C2C8CB289A8 /* FirebaseDatabase */,
+				22B397F6D741D2010EECED62FF32B755 /* FirebaseInstanceID */,
+				5AE634908392C9AB1EAA84495496540D /* Former */,
+				1840BAADB6D1281EB10ED84B34FE83DD /* GoogleInterchangeUtilities */,
+				4AFF0C358C827F6FDF455C52D48A6966 /* GoogleSymbolUtilities */,
+				01650C233B21EF3B36A033BC5A5A5E14 /* GoogleUtilities */,
+				AEB98D778DADE33B7861BA734C84127D /* KDCircularProgress */,
+				C289962B5F4F1B0B271E96ED3C226ED8 /* ZFRippleButton */,
 			);
-			path = GoogleInterchangeUtilities;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		BF46298C116E78299E17C28B7B66819D /* FirebaseCore */ = {
+		C289962B5F4F1B0B271E96ED3C226ED8 /* ZFRippleButton */ = {
 			isa = PBXGroup;
 			children = (
-				00C694CA6552829757AB5CEA477E2688 /* Frameworks */,
+				C85BC8C015B78C8A0C121215EA118F49 /* ZFRippleButton.swift */,
+				177BFFB47AB1B507679773E816224F57 /* Support Files */,
 			);
-			path = FirebaseCore;
-			sourceTree = "<group>";
-		};
-		C210D760DA6E18918852FAC47E2BEF8B /* Former */ = {
-			isa = PBXGroup;
-			children = (
-				28EF16E7AA0E1D98031B6ACF6F6D0429 /* BaseRowFormer.swift */,
-				D87B8AC2BCF127ACB7AF02F1CD3CA1D5 /* BaseViewFormer.swift */,
-				4DABF4FCE542FD8EE188FAEF83D6D78B /* CheckRowFormer.swift */,
-				02CB443A0E70B2C821A12A8D85B96FB2 /* CustomRowFormer.swift */,
-				2671394F48550A198C9062AAB825A007 /* CustomViewFormer.swift */,
-				3FC310744A57C84295A951AD1F4F745A /* DatePickerRowFormer.swift */,
-				FA98CE73D0CD3A92AC056D026A7FCA8B /* FormCell.swift */,
-				8BFAAC4C54CB8D01CD560D9B705B9F8B /* FormCheckCell.swift */,
-				5DEA374EB69E0122F46C7806B1839BBA /* FormDatePickerCell.swift */,
-				D4EE0FC6F91BB2B9DA57B0BBB6D62791 /* Former.h */,
-				C1B85323275706A29336070CC9E4A070 /* Former.swift */,
-				BBDC4458813B80E60F4159A9EF15A385 /* FormerProtocol.swift */,
-				878009F1009DB9217F12D94E3CDE2D26 /* FormHeaderFooterView.swift */,
-				61159EB4136A0D23E35923E8221616BF /* FormInlineDatePickerCell.swift */,
-				77B1B22416CF5FBBCDA9389B58CDB729 /* FormInlinePickerCell.swift */,
-				7FFAF2F232E92DD059338FAF2CEEA12E /* FormLabelCell.swift */,
-				D77E2EA3394704746075E8CCA8E39AB0 /* FormLabelFooterView.swift */,
-				80699A3308434E6B7D06F000433338C2 /* FormLabelHeaderView.swift */,
-				E43724E120A72A10533EDB009531EAAD /* FormPickerCell.swift */,
-				D597D0C8BBE4656BB05C31166B4B71A7 /* FormSegmentedCell.swift */,
-				A980C80C963589816675E57B92983437 /* FormSelectorDatePickerCell.swift */,
-				796B9EEE016346E8108109ACC4B3B4C4 /* FormSelectorPickerCell.swift */,
-				1002986E7D77F7EADD862C58B2F7828F /* FormSliderCell.swift */,
-				1849E4ADD71F5FA259E5C7B8D1625E7F /* FormStepperCell.swift */,
-				D6B2072E75D3CAD246CBAAFBBD3505DD /* FormSwitchCell.swift */,
-				B421660575BF33EA3C9A7D5C788BC991 /* FormTextFieldCell.swift */,
-				234149C102FA81D1C4D6E6BDF92AFA3E /* FormTextViewCell.swift */,
-				7D41ADE060CF7D267B65E3D5998B5CF9 /* FormViewController.swift */,
-				52D536776372390FFF43B789F79DADC0 /* InlineDatePickerRowFormer.swift */,
-				4181F373A01FB7570F85437C60298A95 /* InlinePickerRowFormer.swift */,
-				3F8742182A8217492BDB38107B771C9C /* LabelRowFormer.swift */,
-				1D56B4C26F995A75A53D9F596903EAD0 /* LabelViewFormer.swift */,
-				7EFB67E27AD3D8C1F3D23D72D65522FB /* PickerRowFormer.swift */,
-				4E5FAD16BE1AB83F87DDFFF4FF5CCADF /* RowFormer.swift */,
-				0FB24634C6999E938275C3C4B07D0F1F /* SectionFormer.swift */,
-				0F2E3F95B7C3D46274ED590B7C3430F1 /* SegmentedRowFormer.swift */,
-				CBC9391A4F595DA469FB679433E78E1F /* SelectorDatePickerRowFormer.swift */,
-				3064998B43797AB9B793F699498297F7 /* SelectorPickerRowFormer.swift */,
-				AAD48A2ADEEC55BF5DD709CD91E0DB79 /* SliderRowFormer.swift */,
-				2A6D1F86E843B27E4A0C36BD6B945358 /* StepperRowFormer.swift */,
-				C3991638C5CFED826AD03994B5F8ADC6 /* SwitchRowFormer.swift */,
-				8F2B1326D9EEE9D3D2359988A2CA0913 /* TextFieldRowFormer.swift */,
-				CDE3D8D8BDBE3DF58D2856598FC11147 /* TextViewRowFormer.swift */,
-				E70110D4754FD7A90AFD63216CE4D56E /* UITableViewCell+Former.swift */,
-				61E251D6168FF399F49976F57D818DE5 /* ViewFormer.swift */,
-				E091C55B06435D5B520D5CEE63E1F2C7 /* Support Files */,
-			);
-			path = Former;
-			sourceTree = "<group>";
-		};
-		CA7262D0BFCAF28F079845A8A1A8A2A6 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				ADB6943969F7E4466EF84F3FFEAAF3CC /* Info.plist */,
-				F922BFEEE8DA818D5689FEA071A087EA /* KDCircularProgress.modulemap */,
-				488A19FFA4A8FF77FA8854BEF621C6BC /* KDCircularProgress.xcconfig */,
-				3635A1421E88DC8B9CC52FA4BC5E7DD6 /* KDCircularProgress-dummy.m */,
-				F19972668666A0EA58FDAC6BE2D3561D /* KDCircularProgress-prefix.pch */,
-				F0293AA9665CAF397E4FBBDE407987FA /* KDCircularProgress-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/KDCircularProgress";
-			sourceTree = "<group>";
-		};
-		CB70E69EEEA28B779875D981E86C9FB8 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7EBDABA90980298BA9E06439B4C2FD50 /* Former.framework */,
-				F1764C1CBB27DD2A2E5AE42CF8CD96D5 /* KDCircularProgress.framework */,
-				A1B7309075E0E22CBF7F99A42ADCD3B4 /* Pods_H2O.framework */,
-			);
-			name = Products;
+			path = ZFRippleButton;
 			sourceTree = "<group>";
 		};
 		D1B564374E2B7D48F802E43C107CB849 /* Targets Support Files */ = {
@@ -442,50 +496,34 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		D597CBA8691E7F8DB847B56DD298D6B0 /* FirebaseAnalytics */ = {
+		E23056A2C5214C4388255023A91223ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				766F91EB27582FD27659106442CE7AD2 /* Frameworks */,
+				DB63FC3B1AF2B35BE4459CD352B614A4 /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED30D45020622E15789DE202240F7D92 /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				56FD784CE195A5EA59F3E0A1E4BFE3D9 /* Frameworks */,
 			);
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		D6B0090A538E309E4AEDDE844F833799 /* Frameworks */ = {
+		EFC1712058338D00E0B3F6A376B485DE /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				671A806FDBDDB8B01818DEB0CCFD9F39 /* GoogleSymbolUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DBBA911AFE68B3C39A5FB0EAF811327F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A71FC16B37F9B028C3C889014C2D7507 /* FirebaseInstanceID.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E091C55B06435D5B520D5CEE63E1F2C7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				AE50208E560AE6660CA2030059EF831D /* Former.modulemap */,
-				CC2F930ADBEEBADABA9339F210688B7B /* Former.xcconfig */,
-				DEC063DEAB2A00B6CF06EA3E067D05C0 /* Former-dummy.m */,
-				FB23EC1FB8DF1BE1B99331AF90C5E366 /* Former-prefix.pch */,
-				83F05AF38B68CFE4B41ABAA6FCE5CC6F /* Former-umbrella.h */,
-				2EABE694AB5EFF6C3F767D647602CB9A /* Info.plist */,
+				1A74E15414EF8D0421A709DC6806079B /* Info.plist */,
+				1CC819A17684518914490FE1D4BE94A9 /* KDCircularProgress.modulemap */,
+				CE55053DA4B01E3E411CF7F9FFDA585C /* KDCircularProgress.xcconfig */,
+				43A6565E4112EE448968873B065B5714 /* KDCircularProgress-dummy.m */,
+				4BCBD5C059613B6E94D6CB4B238593D5 /* KDCircularProgress-prefix.pch */,
+				113807B33178C829B54ACFD3836489B0 /* KDCircularProgress-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/Former";
-			sourceTree = "<group>";
-		};
-		E0C8A92A699CF55D68817995E91CDDA2 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				EEBCE01887DD94E9A82D5FDACB18B3C2 /* Firebase.h */,
-			);
-			name = Core;
+			path = "../Target Support Files/KDCircularProgress";
 			sourceTree = "<group>";
 		};
 		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
@@ -497,14 +535,36 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		FE85FA67B7D2F209266685850D5D7B07 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D3A279CB3CA4883727A800B04E79FBF2 /* Former.modulemap */,
+				FC420858527A598C519D613587E055B3 /* Former.xcconfig */,
+				90DC636FCDA8390F164BA8000DD8D456 /* Former-dummy.m */,
+				C08E2561AF46AA68A515A6B06226FD64 /* Former-prefix.pch */,
+				BC15A9A6CB44F1266F6C1DC57B8C6EE6 /* Former-umbrella.h */,
+				1A8A883316093E0DC87579444A20B96D /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Former";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		720734D80DEB7A83725AB184F427DEF8 /* Headers */ = {
+		2E74A83DD3922B056A5E3E857C74CCCB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C869F57536DAF09D0564F12F66A071F2 /* Pods-H2O-umbrella.h in Headers */,
+				53282885D4257508461429CA906EC66E /* Pods-H2O-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E67CB17BB12FCEC1075A427D8BF2AA8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				382A14EDE81F8508B351333B1AC694B9 /* ZFRippleButton-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,6 +588,43 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		5BCD9E55FD2130E039D829511E29B514 /* ZFRippleButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CF22A2900959F330C15463FC914E9B1 /* Build configuration list for PBXNativeTarget "ZFRippleButton" */;
+			buildPhases = (
+				B91531A7E28DF1DEE78FFB274591C110 /* Sources */,
+				98AE4B59C076DDCC28FFF9E22E17B497 /* Frameworks */,
+				6E67CB17BB12FCEC1075A427D8BF2AA8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZFRippleButton;
+			productName = ZFRippleButton;
+			productReference = 8D6395B10EDC167A3FC608B6BCB5CBBF /* ZFRippleButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		70B7B99E8CF9869FF1886AE41B0996E1 /* Pods-H2O */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C049463E960427E089BC95E812A1A84 /* Build configuration list for PBXNativeTarget "Pods-H2O" */;
+			buildPhases = (
+				356C918D1DEB64D4BE1A9455D85853F4 /* Sources */,
+				22DD791C9FC209EE4673B641EE62B467 /* Frameworks */,
+				2E74A83DD3922B056A5E3E857C74CCCB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A4D1A7B70C94229929DC622A625FB36B /* PBXTargetDependency */,
+				B36FCF78B1FFB6CE30C512FDE1DE7A4C /* PBXTargetDependency */,
+				CCEDBF07F9E0010C5C9CD8F102BD0126 /* PBXTargetDependency */,
+			);
+			name = "Pods-H2O";
+			productName = "Pods-H2O";
+			productReference = 27F27A0B64A39476A0B057EC4E48D4DD /* Pods_H2O.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		9558B32FB980ED0E42BF1BD3AEC626CE /* KDCircularProgress */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 435F959228447A8BAB2744820828990E /* Build configuration list for PBXNativeTarget "KDCircularProgress" */;
@@ -542,7 +639,7 @@
 			);
 			name = KDCircularProgress;
 			productName = KDCircularProgress;
-			productReference = F1764C1CBB27DD2A2E5AE42CF8CD96D5 /* KDCircularProgress.framework */;
+			productReference = 41D2D7E45E320D810D5A4DA3B7E9F584 /* KDCircularProgress.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		980933AEBFB68262FC5D0C757539CEE4 /* Former */ = {
@@ -559,26 +656,7 @@
 			);
 			name = Former;
 			productName = Former;
-			productReference = 7EBDABA90980298BA9E06439B4C2FD50 /* Former.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A2A405A016162FED1F55261705E01EF2 /* Pods-H2O */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ECC04DEEA11716AC56570DB033575D4B /* Build configuration list for PBXNativeTarget "Pods-H2O" */;
-			buildPhases = (
-				69BC8A82B01287C56A000783EB196F76 /* Sources */,
-				53F7A3A2ACCD1DD6EF99DA385FC18500 /* Frameworks */,
-				720734D80DEB7A83725AB184F427DEF8 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9A42CB01CD890217919A8BE64CB53C34 /* PBXTargetDependency */,
-				67182184F1184B176DE55306537E033B /* PBXTargetDependency */,
-			);
-			name = "Pods-H2O";
-			productName = "Pods-H2O";
-			productReference = A1B7309075E0E22CBF7F99A42ADCD3B4 /* Pods_H2O.framework */;
+			productReference = 08084CE219EABD5C148B171507E10B9B /* Former.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -590,13 +668,16 @@
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
+					5BCD9E55FD2130E039D829511E29B514 = {
+						LastSwiftMigration = 0810;
+					};
+					70B7B99E8CF9869FF1886AE41B0996E1 = {
+						LastSwiftMigration = 0810;
+					};
 					9558B32FB980ED0E42BF1BD3AEC626CE = {
 						LastSwiftMigration = 0810;
 					};
 					980933AEBFB68262FC5D0C757539CEE4 = {
-						LastSwiftMigration = 0810;
-					};
-					A2A405A016162FED1F55261705E01EF2 = {
 						LastSwiftMigration = 0810;
 					};
 				};
@@ -609,32 +690,33 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CB70E69EEEA28B779875D981E86C9FB8 /* Products */;
+			productRefGroup = 9739EE0D99BA61F95650114B8CF47833 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				980933AEBFB68262FC5D0C757539CEE4 /* Former */,
 				9558B32FB980ED0E42BF1BD3AEC626CE /* KDCircularProgress */,
-				A2A405A016162FED1F55261705E01EF2 /* Pods-H2O */,
+				70B7B99E8CF9869FF1886AE41B0996E1 /* Pods-H2O */,
+				5BCD9E55FD2130E039D829511E29B514 /* ZFRippleButton */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		356C918D1DEB64D4BE1A9455D85853F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C3FA45C90A421DF6190235AB6B003F7 /* Pods-H2O-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		511970D55C34F108A4F93E36FF7A7BEA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6216987541D6C08CCF13940601043053 /* KDCircularProgress-dummy.m in Sources */,
 				9F84961FB9777DB3D603922D26DFB703 /* KDCircularProgress.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		69BC8A82B01287C56A000783EB196F76 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D4E2D41EA7073FA85F91B52BA7168592 /* Pods-H2O-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,25 +772,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B91531A7E28DF1DEE78FFB274591C110 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B8A5F41832CCDA5DC9DE3A63827331E /* ZFRippleButton-dummy.m in Sources */,
+				B9AEA314A48B6D5D1149ADDFD4CC90B4 /* ZFRippleButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		67182184F1184B176DE55306537E033B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KDCircularProgress;
-			target = 9558B32FB980ED0E42BF1BD3AEC626CE /* KDCircularProgress */;
-			targetProxy = 792F9FF1025D5569B72DB6F79566787F /* PBXContainerItemProxy */;
-		};
-		9A42CB01CD890217919A8BE64CB53C34 /* PBXTargetDependency */ = {
+		A4D1A7B70C94229929DC622A625FB36B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Former;
 			target = 980933AEBFB68262FC5D0C757539CEE4 /* Former */;
-			targetProxy = 3BD498887B193969FBDCA1C8997FD5BD /* PBXContainerItemProxy */;
+			targetProxy = 7E1253F1A2528E7C16FD69BFE25FB7D0 /* PBXContainerItemProxy */;
+		};
+		B36FCF78B1FFB6CE30C512FDE1DE7A4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KDCircularProgress;
+			target = 9558B32FB980ED0E42BF1BD3AEC626CE /* KDCircularProgress */;
+			targetProxy = 04E2C4B285E65A550CC01703BDD0279F /* PBXContainerItemProxy */;
+		};
+		CCEDBF07F9E0010C5C9CD8F102BD0126 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZFRippleButton;
+			target = 5BCD9E55FD2130E039D829511E29B514 /* ZFRippleButton */;
+			targetProxy = 223C5116FF679B1337CE5CCCBE9E3EBD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		01476F93E86109C95205C37BB6BC075D /* Debug */ = {
+		32F5726F69E380F12F16794A22927F9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 997CC827AF56F4A10EBB01B22E875CD2 /* Pods-H2O.debug.xcconfig */;
 			buildSettings = {
@@ -783,7 +880,7 @@
 		};
 		42E9BD60135EC29DB6462C8EF24EBA64 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC2F930ADBEEBADABA9339F210688B7B /* Former.xcconfig */;
+			baseConfigurationReference = FC420858527A598C519D613587E055B3 /* Former.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -812,7 +909,67 @@
 			};
 			name = Debug;
 		};
-		535C01722BDE4B1E401970E54D6DA142 /* Release */ = {
+		91B5F749B1527A1F736348790E5920BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE55053DA4B01E3E411CF7F9FFDA585C /* KDCircularProgress.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/KDCircularProgress/KDCircularProgress-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/KDCircularProgress/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/KDCircularProgress/KDCircularProgress.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = KDCircularProgress;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9825CCA9F4C68FEE7F30707A353EF523 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A17ADAB0618C5B89F63240832FE6E7D /* ZFRippleButton.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ZFRippleButton/ZFRippleButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZFRippleButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZFRippleButton/ZFRippleButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ZFRippleButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9C3A4650F5CDE28124F7A952FF45A2ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 532BF324DC3ACB5FB2438C255D114755 /* Pods-H2O.release.xcconfig */;
 			buildSettings = {
@@ -837,36 +994,6 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_H2O;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		91B5F749B1527A1F736348790E5920BE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 488A19FFA4A8FF77FA8854BEF621C6BC /* KDCircularProgress.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/KDCircularProgress/KDCircularProgress-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/KDCircularProgress/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/KDCircularProgress/KDCircularProgress.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = KDCircularProgress;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -918,9 +1045,40 @@
 			};
 			name = Debug;
 		};
+		B054E4BBA292A7F226537F81DECCE101 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A17ADAB0618C5B89F63240832FE6E7D /* ZFRippleButton.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ZFRippleButton/ZFRippleButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZFRippleButton/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZFRippleButton/ZFRippleButton.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ZFRippleButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		C2A193FBA896E34822E1BA51895BA061 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 488A19FFA4A8FF77FA8854BEF621C6BC /* KDCircularProgress.xcconfig */;
+			baseConfigurationReference = CE55053DA4B01E3E411CF7F9FFDA585C /* KDCircularProgress.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -951,7 +1109,7 @@
 		};
 		F45A8DB00E9DBF8E2353CF3BC19417D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC2F930ADBEEBADABA9339F210688B7B /* Former.xcconfig */;
+			baseConfigurationReference = FC420858527A598C519D613587E055B3 /* Former.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1000,20 +1158,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5C049463E960427E089BC95E812A1A84 /* Build configuration list for PBXNativeTarget "Pods-H2O" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32F5726F69E380F12F16794A22927F9D /* Debug */,
+				9C3A4650F5CDE28124F7A952FF45A2ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CF22A2900959F330C15463FC914E9B1 /* Build configuration list for PBXNativeTarget "ZFRippleButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B054E4BBA292A7F226537F81DECCE101 /* Debug */,
+				9825CCA9F4C68FEE7F30707A353EF523 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D30C336D5124961EDED1B7202DE8A490 /* Build configuration list for PBXNativeTarget "Former" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42E9BD60135EC29DB6462C8EF24EBA64 /* Debug */,
 				F45A8DB00E9DBF8E2353CF3BC19417D7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ECC04DEEA11716AC56570DB033575D4B /* Build configuration list for PBXNativeTarget "Pods-H2O" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				01476F93E86109C95205C37BB6BC075D /* Debug */,
-				535C01722BDE4B1E401970E54D6DA142 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

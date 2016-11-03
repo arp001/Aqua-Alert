@@ -23,12 +23,14 @@ PODS:
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
   - KDCircularProgress (1.5.2)
+  - ZFRippleButton (0.6)
 
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Former
   - KDCircularProgress
+  - ZFRippleButton (= 0.6)
 
 SPEC CHECKSUMS:
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
@@ -41,7 +43,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
+  ZFRippleButton: 62ea35e209757704dea697d66489fe69c13d7b77
 
-PODFILE CHECKSUM: f67a5c38e346a12cb405ab75212dd011ff56471d
+PODFILE CHECKSUM: f8e5abbfb129af7ea49a6dbc4d94150ea1bbd5f7
 
 COCOAPODS: 1.0.1
