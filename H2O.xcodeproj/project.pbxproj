@@ -141,10 +141,10 @@
 		7632651F1DC575050077CCEE /* H2O */ = {
 			isa = PBXGroup;
 			children = (
+				7614091B1DC84E7E00D241C5 /* View */,
 				7614091A1DC84E6A00D241C5 /* Model */,
 				7614091D1DC84E9E00D241C5 /* Controllers */,
 				7614091C1DC84E8F00D241C5 /* Others */,
-				7614091B1DC84E7E00D241C5 /* View */,
 			);
 			path = H2O;
 			sourceTree = "<group>";

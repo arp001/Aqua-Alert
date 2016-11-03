@@ -21,13 +21,23 @@ class InitialFormViewController: FormViewController {
     let weightInlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
         $0.titleLabel.text = "Weight"
         }.configure { row in
-            row.pickerItems = (1...100).map {
+            row.pickerItems = (30...120).map {
                 InlinePickerItem(title: "\($0) kg", value: Int($0))
             }
         }.onValueChanged { item in
             print("got here?")
     }
     
+//    let labelRow = LabelRowFormer<FormLabelCell>()
+//        .configure { row in
+//            row.text = "Halloween!"
+//        }.onSelected { row in
+//            // Do Something
+//    }
+    
+    let suggestedWaterIntake = TextFieldRowFormer<FormTextFieldCell>().configure { (row) in
+        row.placeholder = "Water intake/day Target (ml) "
+    }
     let genderInlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, String>() {
         $0.titleLabel.text = "Gender"
         }.configure { row in
@@ -44,7 +54,7 @@ class InitialFormViewController: FormViewController {
         // handle incomplete profile here!
         
         // this is our user profile
-        let profile = UserInfo(name: nameTextField.text!, weight: weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title,  gender: genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title)
+        let profile = UserInfo(name: nameTextField.text!, weight: weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title,  gender: genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title, water: suggestedWaterIntake.text!)
         // store data in Firebase
         let uniqueID = UUID().uuidString // creating a unique identifier for the person
         let defaults = UserDefaults.standard
@@ -64,7 +74,7 @@ class InitialFormViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
-        let section = SectionFormer(rowFormer: nameTextField, weightInlinePickerRow, genderInlinePickerRow)
+        let section = SectionFormer(rowFormer: nameTextField, weightInlinePickerRow,genderInlinePickerRow,suggestedWaterIntake)
             .set(headerViewFormer: header)
         former.append(sectionFormer: section)
     }

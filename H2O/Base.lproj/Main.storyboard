@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -80,10 +80,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVp-fY-TOm">
                                 <rect key="frame" x="127" y="527" width="121" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="confirmButtonPressed" destination="5iI-Rc-VBF" eventType="touchUpInside" id="Htg-fp-Sa1"/>
+                                    <segue destination="vGP-lU-rNi" kind="presentation" id="DrO-3U-s8u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -94,6 +95,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1R8-KJ-CFC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2096.8000000000002" y="110.19490254872565"/>
+        </scene>
+        <!--Progress-->
+        <scene sceneID="ZN8-lB-0ZV">
+            <objects>
+                <viewController id="TLG-tb-HsZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EvW-Sr-Sfo"/>
+                        <viewControllerLayoutGuide type="bottom" id="5LU-1L-Ks4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Ei-SQ-jOL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Progress" id="L3D-rT-zJo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lj4-t4-oyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4002" y="438"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="JMU-QR-CM4">
+            <objects>
+                <viewController id="7Cb-Fy-smI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N6V-Sy-HYF"/>
+                        <viewControllerLayoutGuide type="bottom" id="1OT-hv-p4v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MxZ-HY-0A1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="E43-5C-Dqk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-Py-oAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4002" y="-217"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yST-7B-q1M">
+            <objects>
+                <tabBarController id="vGP-lU-rNi" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="eBt-Eh-fxM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="7Cb-Fy-smI" kind="relationship" relationship="viewControllers" id="pcC-dy-DtL"/>
+                        <segue destination="TLG-tb-HsZ" kind="relationship" relationship="viewControllers" id="KSl-tn-ADN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQv-Jt-cgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3050" y="110"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FIX-kV-IAC">
