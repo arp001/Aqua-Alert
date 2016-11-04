@@ -22,7 +22,7 @@ class InitialFormViewController: FormViewController {
         $0.titleLabel.text = "Weight"
         }.configure { row in
             row.pickerItems = (30...120).map {
-                InlinePickerItem(title: "\($0) kg", value: Int($0))
+                InlinePickerItem(title: "\($0)" + "kg", value: Int($0))
             }
         }.onValueChanged { item in
             print("got here?")

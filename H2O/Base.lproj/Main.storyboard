@@ -84,6 +84,7 @@
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="confirmButtonPressed" destination="5iI-Rc-VBF" eventType="touchUpInside" id="Htg-fp-Sa1"/>
+                                    <segue destination="vGP-lU-rNi" kind="show" id="3Sx-R1-qos"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -127,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTu-Uz-cUa" customClass="ZFRippleButton" customModule="ZFRippleButton">
-                                <rect key="frame" x="167" y="549" width="40" height="40"/>
+                                <rect key="frame" x="97" y="550" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
                                 <state key="normal" title="+">
@@ -147,11 +148,33 @@
                                     <action selector="plusButtonTapped:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="53G-wS-A5F"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z12-rN-s3z" userLabel="Minus Button" customClass="ZFRippleButton" customModule="ZFRippleButton">
+                                <rect key="frame" x="219" y="550" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" name="knobColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rippleOverBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="minusButtonTapped:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="6MJ-g3-lT0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="waterwater" id="E43-5C-Dqk"/>
                     <connections>
+                        <outlet property="minusButton" destination="z12-rN-s3z" id="6t9-AV-nnF"/>
                         <outlet property="plusButton" destination="lTu-Uz-cUa" id="mdu-fA-HrE"/>
                     </connections>
                 </viewController>
