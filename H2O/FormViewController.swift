@@ -62,13 +62,6 @@ class InitialFormViewController: FormViewController {
         let profileRef = ref.child(uniqueID)
         profileRef.setValue(profile.toDict())
         defaults.set(uniqueID, forKey: "identifier") // storing the UID in UserDefaults
-        //        let childRef = ref.child("arpit hamirwasia")
-        //        // attach listeners and retrieve data
-        //        childRef.updateChildValues(["isFun": "No"])
-        //        childRef.observe(.value, with: {(snapshot) in
-        //            print("data retrieved!")
-        //            print(snapshot.value)
-        //        })
     }
     
     override func viewDidLoad() {

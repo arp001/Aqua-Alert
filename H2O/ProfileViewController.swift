@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var minusButton: ZFRippleButton!
     @IBOutlet weak var plusButton: ZFRippleButton!
     var progress: KDCircularProgress!
+    let ref = FIRDatabase.database().reference()
     var waterTarget = 0
     var waterCupSize = 35
     var currentWater = 0
@@ -62,7 +63,6 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProgress()
-        let ref = FIRDatabase.database().reference()
         let defaults = UserDefaults.standard
         let uuid = defaults.string(forKey: "identifier")
         let childRefWaterIntake = ref.child(uuid!).child("water")
@@ -70,6 +70,11 @@ class ProfileViewController: UIViewController {
             let waterString = snapshot.value as! String
             self.waterTarget = Int(waterString)!
             print("waterTarget is : \(self.waterTarget)")
+        })
+        let childRefCurrentWater = ref.child(uuid!).child("currentWater")
+        childRefCurrentWater.observe(.value, with: { (snapshot) in
+            let currentWaterInt = snapshot.value as! Int
+            self.currentWater = currentWaterInt
         })
     }
 
@@ -86,8 +91,11 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func plusButtonTapped(_ sender: ZFRippleButton) {
+        let defaults = UserDefaults.standard
+        let uuid = defaults.string(forKey: "identifier")
         progress.clockwise = true
         currentWater += waterCupSize
+        ref.child(uuid!).child("currentWater").setValue(currentWater)
         let ratio: Double = min(1.0,Double(currentWater) / Double(waterTarget))
         progressLabel.text = String(Int(ratio * 100.00)) + "%"
         let toAngle: Double = ratio * 360.0
@@ -105,7 +113,10 @@ class ProfileViewController: UIViewController {
     }
 
     @IBAction func minusButtonTapped(_ sender: ZFRippleButton) {
+        let defaults = UserDefaults.standard
+        let uuid = defaults.string(forKey: "identifier")
         currentWater = max(currentWater - waterCupSize, 0)
+        ref.child(uuid!).child("currentWater").setValue(currentWater)
         let ratio: Double = Double(currentWater) / Double(waterTarget)
         progressLabel.text = String(Int(ratio * 100)) + "%"
         let toAngle: Double = ratio * 360.0
