@@ -63,6 +63,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProgress()
+        navigationController?.navigationBar.isHidden = false
         let defaults = UserDefaults.standard
         let uuid = defaults.string(forKey: "identifier")
         let childRefWaterIntake = ref.child(uuid!).child("water")
