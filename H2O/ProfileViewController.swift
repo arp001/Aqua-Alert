@@ -13,6 +13,7 @@ import Firebase
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var changeContainerButton: ZFRippleButton!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var minusButton: ZFRippleButton!
     @IBOutlet weak var plusButton: ZFRippleButton!
@@ -43,6 +44,7 @@ class ProfileViewController: UIViewController {
         let defaults = UserDefaults.standard
         let uuid = defaults.string(forKey: "identifier")
         // Retrieving data from Firebase
+        // Keep in mind: This is asynchronous! 
         let childRefWaterIntake = ref.child(uuid!).child("water")
         childRefWaterIntake.observe(.value, with: { (snapshot) in
             let waterString = snapshot.value as! String
@@ -93,32 +95,24 @@ class ProfileViewController: UIViewController {
         print("out setupProgress")
     }
     
-    
-    func updateProgessWhenViewLoads() {
-        print("in updatePWVL")
-        let defaults = UserDefaults.standard
-        let targetAngle = defaults.double(forKey: "currentFromAngle")
-        let currentRatio = defaults.double(forKey: "currentRatio")
-        print("targetAngle is: \(targetAngle)")
-        progressLabel.text = String(Int(currentRatio * 100.0)) + "%"
-        updateProgressColor(ratio: currentRatio)
-        progress.animate(0.0, toAngle: targetAngle, duration: 0.5) { completed in
-            if completed {
-                print("animation stopped, completed")
-            } else {
-                print("animation stopped, was interrupted")
-            }
-        }
-        print("out updatePWVL")
+    func setupContainerButton() {
+        // need to figure this out later
+        changeContainerButton.shadowRippleEnable = true
+        changeContainerButton.buttonCornerRadius = 15
+        changeContainerButton.ripplePercent = 0.5
+        changeContainerButton.rippleColor = .clear
+        changeContainerButton.shadowRippleRadius = 0.5
+        changeContainerButton.trackTouchLocation = true
+        changeContainerButton.touchUpAnimationTime = 0
     }
     
     override func viewDidLoad() {
+        let defaults = UserDefaults.standard
+        defaults.set(true, forKey: "didLogin")
         super.viewDidLoad()
         setupProgress()
         navigationController?.navigationBar.isHidden = false
-        //updateProgessWhenViewLoads()
-        
-        print("cupSize is: \(self.waterCupSize)")
+        setupContainerButton()
     }
 
     func updateProgressColor(ratio: Double) -> Void {
@@ -178,6 +172,9 @@ class ProfileViewController: UIViewController {
             }
         }
         defaults.set(toAngle, forKey: "currentFromAngle")
+    }
+    @IBAction func changeContainerButtonPressed() {
+        performSegue(withIdentifier: "showContainersSegue", sender: nil)
     }
     /*
     // MARK: - Navigation

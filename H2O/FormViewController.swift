@@ -74,8 +74,6 @@ class InitialFormViewController: FormViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         let defaults = UserDefaults.standard
-        defaults.set(0.0, forKey: "currentFromAngle")
-        defaults.set(0.0, forKey: "currentRatio")
     }
 }
 
