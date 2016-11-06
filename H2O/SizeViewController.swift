@@ -16,6 +16,7 @@ class SizeViewController: UIViewController {
     let ref = FIRDatabase.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
+        tabBarController?.tabBar.isHidden = true
         if navigationController != nil {
             print("there is an nvc!")
         }

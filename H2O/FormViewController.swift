@@ -71,5 +71,11 @@ class InitialFormViewController: FormViewController {
             .set(headerViewFormer: header)
         former.append(sectionFormer: section)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        defaults.set(0.0, forKey: "currentFromAngle")
+        defaults.set(0.0, forKey: "currentRatio")
+    }
 }
 
