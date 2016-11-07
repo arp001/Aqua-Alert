@@ -86,10 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Former/Former.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KDCircularProgress/KDCircularProgress.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/PMAlertController/PMAlertController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ZFRippleButton/ZFRippleButton.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Former/Former.framework"
   install_framework "$BUILT_PRODUCTS_DIR/KDCircularProgress/KDCircularProgress.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/PMAlertController/PMAlertController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ZFRippleButton/ZFRippleButton.framework"
 fi

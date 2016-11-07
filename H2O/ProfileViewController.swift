@@ -10,6 +10,7 @@ import UIKit
 import KDCircularProgress
 import ZFRippleButton
 import Firebase
+import PMAlertController
 
 class ProfileViewController: UIViewController {
     
@@ -125,6 +126,18 @@ class ProfileViewController: UIViewController {
         changeContainerButton.touchUpAnimationTime = 0
     }
     
+    func showDailyMessage() {
+        let alertVC = PMAlertController(title: "Did you know?", description: "The human body is 70% Water! ", image: nil, style: .alert)
+        let okaction = PMAlertAction(title: "OK", style: .default, action: {() -> Void in
+            // do something when OK is pressed
+        })
+        
+        alertVC.alertTitle.textColor = .black
+        alertVC.addAction(okaction)
+        alertVC.view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        self.present(alertVC, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         let defaults = UserDefaults.standard
         defaults.set(true, forKey: "didLogin")
@@ -132,6 +145,12 @@ class ProfileViewController: UIViewController {
         setupProgress()
         navigationController?.navigationBar.isHidden = false
         setupContainerButton()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // set this to daily using UserDefaults
+        showDailyMessage()
     }
 
     func updateProgressColor(ratio: Double) -> Void {
@@ -150,7 +169,7 @@ class ProfileViewController: UIViewController {
         print("water cup size here is \(waterCupSize)")
         let defaults = UserDefaults.standard
         let uuid = defaults.string(forKey: "identifier")
-        let currentFromAngle = defaults.value(forKey: "currentFromAngle") as! Double
+        let currentFromAngle = defaults.double(forKey: "currentFromAngle")
         currentWater += waterCupSize
         let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
         baseRef.child("currentWater").setValue(currentWater)
@@ -174,7 +193,7 @@ class ProfileViewController: UIViewController {
     @IBAction func minusButtonTapped(_ sender: ZFRippleButton) {
         let defaults = UserDefaults.standard
         let uuid = defaults.string(forKey: "identifier")
-        let currentFromAngle = defaults.value(forKey: "currentFromAngle") as! Double
+        let currentFromAngle = defaults.double(forKey: "currentFromAngle")
         currentWater = max(currentWater - waterCupSize, 0)
         let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
         baseRef.child("currentWater").setValue(currentWater)
@@ -194,9 +213,11 @@ class ProfileViewController: UIViewController {
         }
         defaults.set(toAngle, forKey: "currentFromAngle")
     }
+    
     @IBAction func changeContainerButtonPressed() {
         performSegue(withIdentifier: "showContainersSegue", sender: nil)
     }
+    
     /*
     // MARK: - Navigation
 

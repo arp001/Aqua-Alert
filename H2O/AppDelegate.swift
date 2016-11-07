@@ -26,13 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let defaults = UserDefaults.standard
         
-        /*
+        
         if defaults.bool(forKey: "didLogin") == true {
             let rootController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController")
             if let window = self.window {
                 window.rootViewController = rootController
             }
-        }*/
+        }
         
         
         return true
