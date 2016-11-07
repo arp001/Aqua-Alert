@@ -13,18 +13,14 @@ class UserInfo {
     let name: String
     let weight: String
     let gender: String
-    let water: String
     let ref: FIRDatabaseReference?
-    var cupSize = 35
-    var currentWater = 0
-    init(name: String, weight: String, gender: String, water: String){
+    init(name: String, weight: String, gender: String){
         self.name = name
         self.weight = weight
         self.gender = gender
-        self.water = water
         self.ref = FIRDatabase.database().reference()
     }
     func toDict() -> Any {
-        return ["name": name, "weight": weight ,"gender":gender, "water": water, "currentWater": currentWater, "cupSize": cupSize]
+        return ["name": name, "weight": weight ,"gender":gender]
     }
 }

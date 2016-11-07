@@ -20,16 +20,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         // not really needed unless you really need it FIRDatabase.database().persistenceEnabled = true
     }
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let defaults = UserDefaults.standard
+        
+        /*
         if defaults.bool(forKey: "didLogin") == true {
             let rootController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController")
             if let window = self.window {
                 window.rootViewController = rootController
             }
-        }
+        }*/
+        
         
         return true
     }

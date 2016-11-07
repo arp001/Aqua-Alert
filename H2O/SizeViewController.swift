@@ -14,6 +14,7 @@ class SizeViewController: UIViewController {
 
     @IBOutlet weak var container35: ZFRippleButton!
     let ref = FIRDatabase.database().reference()
+    let customDate = CustomDate(date: Date())
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
@@ -69,7 +70,8 @@ class SizeViewController: UIViewController {
         print("cupsize is: \(cupSize)")
         let defaults = UserDefaults.standard
         let uuid = defaults.string(forKey: "identifier")
-        ref.child(uuid!).child("cupSize").setValue(cupSize)
+        let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
+        baseRef.child("containerSize").setValue(cupSize)
     }
     /*
     // MARK: - Navigation

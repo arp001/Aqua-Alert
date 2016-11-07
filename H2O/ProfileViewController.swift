@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var minusButton: ZFRippleButton!
     @IBOutlet weak var plusButton: ZFRippleButton!
+    let customDate = CustomDate(date: Date())
     var progress: KDCircularProgress!
     let ref = FIRDatabase.database().reference()
     var waterTarget = 20
@@ -43,23 +44,41 @@ class ProfileViewController: UIViewController {
         setupMinusButton()
         let defaults = UserDefaults.standard
         let uuid = defaults.string(forKey: "identifier")
-        // Retrieving data from Firebase
-        // Keep in mind: This is asynchronous! 
-        let childRefWaterIntake = ref.child(uuid!).child("water")
-        childRefWaterIntake.observe(.value, with: { (snapshot) in
-            let waterString = snapshot.value as! String
-            self.waterTarget = Int(waterString)!
-            print("waterTarget is : \(self.waterTarget)")
-        })
-        let childRefCurrentWater = ref.child(uuid!).child("currentWater")
-        childRefCurrentWater.observe(.value, with: { (snapshot) in
-            let currentWaterInt = snapshot.value as! Int
-            self.currentWater = currentWaterInt
-        })
-        let childRefCupSize = ref.child(uuid!).child("cupSize")
-        childRefCupSize.observe(.value, with: {(snapshot) in
-            let currentCupSize = snapshot.value as! Int
-            self.waterCupSize = currentCupSize
+        let keyForDate = customDate.formatDate()
+        let dateRef = ref.child(uuid!).child("TimeInfo").child(keyForDate)
+        dateRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.value == nil {
+                /* ok, so this means that this date hasn't yet been recorded in
+                 Firebase which means that the user opened the application
+                 on a completely new day ==> we have to reset the statistics.
+                 But, the water target, cup Size for today and yesterday remain same.
+                 First, we add the new entry to FireBase and then set the class objects
+                 to the right values using yesterday's information. */
+                
+                // base ref
+                let baseDateRef = self.ref.child(uuid!).child("TimeInfo")
+                let calendar = Calendar.current
+                let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())
+                let customYesterday = CustomDate(date: yesterday!)
+                var waterTarget = 0
+                var containerSize = 0
+                baseDateRef.child(customYesterday.formatDate()).observeSingleEvent(of: .value, with: { (snapshot) in
+                    let value = snapshot.value as? NSDictionary
+                    waterTarget = value?["waterTarget"] as! Int
+                    containerSize = value?["containerSize"] as! Int
+                })
+                
+                let waterEntry = WaterInfo()
+                waterEntry.containerSize = containerSize
+                waterEntry.waterTarget = waterTarget
+                dateRef.setValue(waterEntry.toDict())
+            }
+            else {
+                let value = snapshot.value as! NSDictionary
+                self.waterTarget = value["waterTarget"] as! Int
+                self.currentWater = value["currentWater"] as! Int
+                self.waterCupSize = value["containerSize"] as! Int
+            }
         })
     }
     
@@ -133,7 +152,8 @@ class ProfileViewController: UIViewController {
         let uuid = defaults.string(forKey: "identifier")
         let currentFromAngle = defaults.value(forKey: "currentFromAngle") as! Double
         currentWater += waterCupSize
-        ref.child(uuid!).child("currentWater").setValue(currentWater)
+        let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
+        baseRef.child("currentWater").setValue(currentWater)
         let ratio: Double = min(1.0,Double(currentWater) / Double(waterTarget))
         defaults.set(ratio, forKey: "currentRatio")
         progressLabel.text = String(Int(ratio * 100.00)) + "%"
@@ -156,7 +176,8 @@ class ProfileViewController: UIViewController {
         let uuid = defaults.string(forKey: "identifier")
         let currentFromAngle = defaults.value(forKey: "currentFromAngle") as! Double
         currentWater = max(currentWater - waterCupSize, 0)
-        ref.child(uuid!).child("currentWater").setValue(currentWater)
+        let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
+        baseRef.child("currentWater").setValue(currentWater)
         let ratio: Double = Double(currentWater) / Double(waterTarget)
         defaults.set(ratio, forKey: "currentRatio")
         progressLabel.text = String(Int(ratio * 100)) + "%"

@@ -53,14 +53,20 @@ class InitialFormViewController: FormViewController {
     @IBAction func confirmButtonPressed() {
         // handle incomplete profile here!
         
-        // this is our user profile
-        let profile = UserInfo(name: nameTextField.text!, weight: weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title,  gender: genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title, water: suggestedWaterIntake.text!)
-        // store data in Firebase
         let uniqueID = UUID().uuidString // creating a unique identifier for the person
         let defaults = UserDefaults.standard
-        // storing the info in Database
-        let profileRef = ref.child(uniqueID)
+        
+        // storing the profile info in Database
+        let profile = UserInfo(name: nameTextField.text!, weight: weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title,  gender: genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title)
+        let profileRef = ref.child(uniqueID).child("Personal")
         profileRef.setValue(profile.toDict())
+        
+        // storing water related info in Firebase
+        let waterInfo = WaterInfo()
+        waterInfo.waterTarget = Int(suggestedWaterIntake.text!)!
+        let customDate = CustomDate(date: Date())
+        let dateRef = ref.child(uniqueID).child("TimeInfo").child(customDate.formatDate())
+        dateRef.setValue(waterInfo.toDict())
         defaults.set(uniqueID, forKey: "identifier") // storing the UID in UserDefaults
     }
     

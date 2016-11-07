@@ -21,6 +21,8 @@
 		7632652B1DC575050077CCEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763265291DC575050077CCEE /* LaunchScreen.storyboard */; };
 		764A0E1A1DCAE262009D0CB6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764A0E191DCAE262009D0CB6 /* ProfileViewController.swift */; };
 		76F2421E1DCE5F1E00BE6F58 /* SizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F2421D1DCE5F1E00BE6F58 /* SizeViewController.swift */; };
+		76F242201DCFDDA600BE6F58 /* WaterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F2421F1DCFDDA600BE6F58 /* WaterInfo.swift */; };
+		76F242241DCFE02900BE6F58 /* CustomDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F242231DCFE02900BE6F58 /* CustomDate.swift */; };
 		9082FECD67487426912F0D52 /* Pods_H2O.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EFD1892D0178883A1C085E /* Pods_H2O.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		7632652C1DC575050077CCEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		764A0E191DCAE262009D0CB6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76F2421D1DCE5F1E00BE6F58 /* SizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeViewController.swift; sourceTree = "<group>"; };
+		76F2421F1DCFDDA600BE6F58 /* WaterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterInfo.swift; sourceTree = "<group>"; };
+		76F242231DCFE02900BE6F58 /* CustomDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDate.swift; sourceTree = "<group>"; };
 		C2EFD1892D0178883A1C085E /* Pods_H2O.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_H2O.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD19DB5F0CE57BC93F9D14B5 /* Pods-H2O.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-H2O.release.xcconfig"; path = "Pods/Target Support Files/Pods-H2O/Pods-H2O.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +78,9 @@
 		7614091A1DC84E6A00D241C5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76F242231DCFE02900BE6F58 /* CustomDate.swift */,
 				761409181DC84DE600D241C5 /* UserInfo.swift */,
+				76F2421F1DCFDDA600BE6F58 /* WaterInfo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -292,12 +298,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				762EF89D1DC57CD000FF6D0C /* UIImage+Gif.swift in Sources */,
+				76F242201DCFDDA600BE6F58 /* WaterInfo.swift in Sources */,
 				396E93031DC9AC6C0048690E /* FormViewController.swift in Sources */,
 				762EF8A01DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m in Sources */,
 				763265231DC575050077CCEE /* LoginViewController.swift in Sources */,
 				764A0E1A1DCAE262009D0CB6 /* ProfileViewController.swift in Sources */,
 				76F2421E1DCE5F1E00BE6F58 /* SizeViewController.swift in Sources */,
 				761409191DC84DE600D241C5 /* UserInfo.swift in Sources */,
+				76F242241DCFE02900BE6F58 /* CustomDate.swift in Sources */,
 				763265211DC575050077CCEE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
