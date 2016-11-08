@@ -75,10 +75,12 @@ class ProfileViewController: UIViewController {
                 dateRef.setValue(waterEntry.toDict())
             }
             else {
-                let value = snapshot.value as! NSDictionary
-                self.waterTarget = value["waterTarget"] as! Int
-                self.currentWater = value["currentWater"] as! Int
-                self.waterCupSize = value["containerSize"] as! Int
+                // error prone
+                let value = snapshot.value as? NSDictionary
+                print("value is: \(value)")
+                self.waterTarget = 0
+                self.currentWater = 0
+                self.waterCupSize = 0
             }
         })
     }
@@ -127,15 +129,29 @@ class ProfileViewController: UIViewController {
     }
     
     func showDailyMessage() {
-        let alertVC = PMAlertController(title: "Did you know?", description: "The human body is 70% Water! ", image: nil, style: .alert)
-        let okaction = PMAlertAction(title: "OK", style: .default, action: {() -> Void in
-            // do something when OK is pressed
-        })
         
-        alertVC.alertTitle.textColor = .black
-        alertVC.addAction(okaction)
-        alertVC.view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
-        self.present(alertVC, animated: true, completion: nil)
+        func prepareToShowAlert(completion: @escaping (String) -> Void) {
+            var desc = ""
+            ref.child("facts").observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                print("value is: \(value)")
+                desc = value?["fact" + String(1)] as! String
+                print("desc is : \(desc)")
+                completion(desc)
+            })
+        }
+        
+        prepareToShowAlert(){ (desc) in
+            let alertVC = PMAlertController(title: "Did you know?", description: desc, image: nil, style: .alert)
+            let okaction = PMAlertAction(title: "OK", style: .default, action: {() -> Void in
+                // do something when OK is pressed
+            })
+            
+            alertVC.alertTitle.textColor = .black
+            alertVC.addAction(okaction)
+            alertVC.view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+            self.present(alertVC, animated: true, completion: nil)
+        }
     }
     
     override func viewDidLoad() {
