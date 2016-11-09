@@ -132,10 +132,14 @@ class ProfileViewController: UIViewController {
         
         func prepareToShowAlert(completion: @escaping (String) -> Void) {
             var desc = ""
+            var mod = 0
             ref.child("facts").observeSingleEvent(of: .value, with: { (snapshot) in
                 let value = snapshot.value as? NSDictionary
                 print("value is: \(value)")
-                desc = value?["fact" + String(1)] as! String
+                mod = value?["number"] as! Int
+                let mod32 = UInt32(mod)
+                let index = arc4random() % mod32 + 1
+                desc = value?["fact" + String(index)] as! String
                 print("desc is : \(desc)")
                 completion(desc)
             })
