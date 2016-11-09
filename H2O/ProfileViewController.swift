@@ -57,6 +57,7 @@ class ProfileViewController: UIViewController {
                  to the right values using yesterday's information. */
                 
                 // base ref
+                defaults.set(false, forKey: "didShowDailyAlert")
                 let baseDateRef = self.ref.child(uuid!).child("TimeInfo")
                 let calendar = Calendar.current
                 let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())
@@ -67,20 +68,19 @@ class ProfileViewController: UIViewController {
                     let value = snapshot.value as? NSDictionary
                     waterTarget = value?["waterTarget"] as! Int
                     containerSize = value?["containerSize"] as! Int
+                    let waterEntry = WaterInfo()
+                    waterEntry.containerSize = containerSize
+                    waterEntry.waterTarget = waterTarget
+                    dateRef.setValue(waterEntry.toDict())
                 })
-                
-                let waterEntry = WaterInfo()
-                waterEntry.containerSize = containerSize
-                waterEntry.waterTarget = waterTarget
-                dateRef.setValue(waterEntry.toDict())
             }
             else {
                 // error prone
                 let value = snapshot.value as? NSDictionary
                 print("value is: \(value)")
-                self.waterTarget = 0
-                self.currentWater = 0
-                self.waterCupSize = 0
+                self.waterTarget = value?["waterTarget"] as! Int
+                self.currentWater = value?["currentWater"] as! Int
+                self.waterCupSize = value?["containerSize"] as! Int
             }
         })
     }
@@ -165,12 +165,16 @@ class ProfileViewController: UIViewController {
         setupProgress()
         navigationController?.navigationBar.isHidden = false
         setupContainerButton()
+        changeContainerButton.setTitle(String(waterCupSize) + " ML", for: .normal)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // set this to daily using UserDefaults
-        showDailyMessage()
+        // if the user didn't already receive a daily popup, then show one
+        if !(UserDefaults.standard.bool(forKey: "didShowDailyAlert")) {
+            showDailyMessage()
+            UserDefaults.standard.set(true, forKey: "didShowDailyAlert")
+        }
     }
 
     func updateProgressColor(ratio: Double) -> Void {
@@ -236,6 +240,7 @@ class ProfileViewController: UIViewController {
     
     @IBAction func changeContainerButtonPressed() {
         performSegue(withIdentifier: "showContainersSegue", sender: nil)
+        changeContainerButton.setTitle(String(waterCupSize) + " ML", for: .normal)
     }
     
     /*

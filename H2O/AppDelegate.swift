@@ -26,15 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let defaults = UserDefaults.standard
         
-        
+        /*
+        // set it to the first one of TabBarController to show tabBar
         if defaults.bool(forKey: "didLogin") == true {
             let rootController = storyboard.instantiateViewController(withIdentifier: "ProfileViewController")
             if let window = self.window {
                 window.rootViewController = rootController
             }
         }
-        
-        
+        */
+        defaults.set(true, forKey: "didShowDailyAlert")
         return true
     }
 

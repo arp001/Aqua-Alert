@@ -15,6 +15,7 @@ class SizeViewController: UIViewController {
     @IBOutlet weak var container35: ZFRippleButton!
     let ref = FIRDatabase.database().reference()
     let customDate = CustomDate(date: Date())
+    var containerSize = 35
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
@@ -72,15 +73,16 @@ class SizeViewController: UIViewController {
         let uuid = defaults.string(forKey: "identifier")
         let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
         baseRef.child("containerSize").setValue(cupSize)
+        containerSize = cupSize
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let destination = segue.destination as! ProfileViewController
+        destination.waterCupSize = containerSize
     }
-    */
-
 }
