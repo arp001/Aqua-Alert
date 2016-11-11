@@ -109,11 +109,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Progress" id="L3D-rT-zJo"/>
+                    <tabBarItem key="tabBarItem" title="Progress" image="ic_equalizer_3x" id="L3D-rT-zJo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj4-t4-oyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4002" y="438"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Vta-zD-5Ly">
+            <objects>
+                <viewController id="Flt-oF-fBT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DQU-oT-4R1"/>
+                        <viewControllerLayoutGuide type="bottom" id="PR2-Xz-197"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JCo-7j-l2N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="ic_settings_3x" id="gjc-wn-vJ0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOx-Rz-Uk0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3812" y="1228"/>
         </scene>
         <!--Size View Controller-->
         <scene sceneID="fhJ-dM-9cJ">
@@ -396,15 +415,16 @@
         <scene sceneID="yST-7B-q1M">
             <objects>
                 <tabBarController id="vGP-lU-rNi" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="centered" id="eBt-Eh-fxM">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="eBt-Eh-fxM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                        <color key="barTintColor" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Pj1-sX-NQv" kind="relationship" relationship="viewControllers" id="pcC-dy-DtL"/>
                         <segue destination="TLG-tb-HsZ" kind="relationship" relationship="viewControllers" id="KSl-tn-ADN"/>
+                        <segue destination="Flt-oF-fBT" kind="relationship" relationship="viewControllers" id="rdW-7n-yCh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQv-Jt-cgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -430,11 +450,11 @@
             </objects>
             <point key="canvasLocation" x="1080.8" y="122.78860569715144"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="Qvr-dA-NAk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pj1-sX-NQv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_timeline_3x" id="E43-5C-Dqk"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="ic_timeline_3x" id="E43-5C-Dqk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FAs-Ce-Tl9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -451,6 +471,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_equalizer_3x" width="36" height="36"/>
+        <image name="ic_settings_3x" width="36" height="36"/>
         <image name="ic_timeline_3x" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>

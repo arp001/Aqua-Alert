@@ -48,7 +48,8 @@ class ProfileViewController: UIViewController {
         let keyForDate = customDate.formatDate()
         let dateRef = ref.child(uuid!).child("TimeInfo").child(keyForDate)
         dateRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            if snapshot.value == nil {
+            print("snapshot.value is: \(snapshot.value)")
+            if snapshot.value as? NSDictionary == nil {
                 /* ok, so this means that this date hasn't yet been recorded in
                  Firebase which means that the user opened the application
                  on a completely new day ==> we have to reset the statistics.
@@ -164,6 +165,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         setupProgress()
         navigationController?.navigationBar.isHidden = false
+        tabBarController?.tabBar.isHidden = false
         setupContainerButton()
         changeContainerButton.setTitle(String(waterCupSize) + " ML", for: .normal)
     }
