@@ -178,6 +178,7 @@ class ProfileViewController: UIViewController {
         let defaults = UserDefaults.standard
         defaults.set(true, forKey: "didLogin")
         setupProgress()
+        self.navigationItem.setHidesBackButton(true, animated: false)
         navigationController?.navigationBar.isHidden = false
         tabBarController?.tabBar.isHidden = false
         setupContainerButton()

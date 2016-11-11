@@ -12,10 +12,21 @@ import Firebase
 
 class SizeViewController: UIViewController {
 
-    @IBOutlet weak var container35: ZFRippleButton!
     let ref = FIRDatabase.database().reference()
     let customDate = CustomDate(date: Date())
-    var containerSize = 35
+    var containerSize = 0
+    
+    @IBOutlet weak var container1: ZFRippleButton!
+    @IBOutlet weak var container2: ZFRippleButton!
+    @IBOutlet weak var container3: ZFRippleButton!
+    @IBOutlet weak var container4: ZFRippleButton!
+    @IBOutlet weak var container5: ZFRippleButton!
+    @IBOutlet weak var container6: ZFRippleButton!
+    func formatButton(button: ZFRippleButton){
+        button.layer.cornerRadius = 0.5 * button.bounds.size.width
+        button.clipsToBounds = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBarController?.tabBar.isHidden = true
@@ -25,46 +36,48 @@ class SizeViewController: UIViewController {
         else {
             print("no nvc")
         }
-        
-        container35.shadowRippleEnable = true
-        container35.buttonCornerRadius = 10
-        container35.ripplePercent = 0.5
-        container35.rippleColor = .white
-        container35.shadowRippleRadius = 0.2
-        container35.rippleOverBounds = false
-        container35.trackTouchLocation = true
-        container35.touchUpAnimationTime = 1
+        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.topViewController?.title = "Choose a Container Size"
+        view.backgroundColor = UIColor(white: 0.22, alpha: 1)
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let arrayOfButtons = [container1, container2, container3, container4, container5, container6]
+        for i in 0..<arrayOfButtons.count {
+            formatButton(button: arrayOfButtons[i]!)
+        }
+    }
+    
+    func goToProfile() {
+        self.performSegue(withIdentifier: "profileSegue", sender: nil)
+    }
+    
     @IBAction func containerButtonPressed(_ sender: UIButton) {
         let buttonTitle = sender.titleLabel?.text
         var cupSize = 0
         // might have to clean this up!
         switch buttonTitle! {
-            case "35 ML":
-                cupSize = 35
-                break
-            case "40 ML":
-                cupSize = 40 
-                break;
-            case "45 ML":
-                cupSize = 45
-                break;
             case "50 ML":
                 cupSize = 50
+                break
+            case "100 ML":
+                cupSize = 100
                 break;
-            case "55 ML":
-                cupSize = 55
+            case "200 ML":
+                cupSize = 200
                 break;
-            case "60 ML":
-                cupSize = 60
+            case "400 ML":
+                cupSize = 400
                 break;
-            case "65 ML":
-                cupSize = 65
-                break;
-            case "70 ML":
-                cupSize = 70
+            case "500 ML":
+                cupSize = 500
                 break;
             default: break;
         }
@@ -74,6 +87,7 @@ class SizeViewController: UIViewController {
         let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
         baseRef.child("containerSize").setValue(cupSize)
         containerSize = cupSize
+        self.performSegue(withIdentifier: "profileSegue", sender: nil)
     }
     
     // MARK: - Navigation
