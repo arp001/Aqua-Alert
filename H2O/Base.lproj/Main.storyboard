@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vGP-lU-rNi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -395,26 +395,61 @@
                                     <action selector="plusButtonTapped:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="53G-wS-A5F"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1080 ML" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzr-jX-jZN">
+                                <rect key="frame" x="60" y="105" width="115" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2200 ML" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk3-Yh-vf8">
+                                <rect key="frame" x="209" y="105" width="115" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="/" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-ph-tLf">
+                                <rect key="frame" x="183" y="116" width="18" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPp-SV-gOb">
+                                <rect key="frame" x="16" y="289" width="31" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" image="ic_chevron_left_48pt"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBa-KL-a1I">
+                                <rect key="frame" x="328" y="289" width="31" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" image="ic_chevron_right_48pt"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="SKf-Lv-ch7"/>
                     <connections>
                         <outlet property="changeContainerButton" destination="RaS-rf-Wqs" id="wdV-aN-7GP"/>
+                        <outlet property="currentWaterLabel" destination="Kzr-jX-jZN" id="Ti5-VN-jYf"/>
                         <outlet property="minusButton" destination="z12-rN-s3z" id="6t9-AV-nnF"/>
                         <outlet property="plusButton" destination="lTu-Uz-cUa" id="mdu-fA-HrE"/>
                         <outlet property="progressLabel" destination="AqL-Or-Ehs" id="SmF-i4-vA4"/>
+                        <outlet property="waterTargetLabel" destination="kk3-Yh-vf8" id="F6S-Tl-WqA"/>
                         <segue destination="X3c-jG-orj" kind="show" identifier="showContainersSegue" id="UIh-wW-iKV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-Py-oAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4940" y="-217.24137931034485"/>
+            <point key="canvasLocation" x="5261.6000000000004" y="-217.24137931034485"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yST-7B-q1M">
             <objects>
-                <tabBarController id="vGP-lU-rNi" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="myTabBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vGP-lU-rNi" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="eBt-Eh-fxM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -471,6 +506,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_chevron_left_48pt" width="24" height="24"/>
+        <image name="ic_chevron_right_48pt" width="24" height="24"/>
         <image name="ic_equalizer_3x" width="36" height="36"/>
         <image name="ic_settings_3x" width="36" height="36"/>
         <image name="ic_timeline_3x" width="36" height="36"/>

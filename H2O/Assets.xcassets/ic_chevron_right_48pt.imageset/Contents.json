@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "rsz_droplet.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "ic_chevron_right_48pt.png",
       "scale" : "2x"
     },
     {

@@ -14,6 +14,8 @@ import PMAlertController
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var waterTargetLabel: UILabel!
+    @IBOutlet weak var currentWaterLabel: UILabel!
     @IBOutlet weak var changeContainerButton: ZFRippleButton!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var minusButton: ZFRippleButton!
@@ -47,43 +49,50 @@ class ProfileViewController: UIViewController {
         let uuid = defaults.string(forKey: "identifier")
         let keyForDate = customDate.formatDate()
         let dateRef = ref.child(uuid!).child("TimeInfo").child(keyForDate)
-        dateRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            print("snapshot.value is: \(snapshot.value)")
-            if snapshot.value as? NSDictionary == nil {
-                /* ok, so this means that this date hasn't yet been recorded in
-                 Firebase which means that the user opened the application
-                 on a completely new day ==> we have to reset the statistics.
-                 But, the water target, cup Size for today and yesterday remain same.
-                 First, we add the new entry to FireBase and then set the class objects
-                 to the right values using yesterday's information. */
-                
-                // base ref
-                defaults.set(false, forKey: "didShowDailyAlert")
-                let baseDateRef = self.ref.child(uuid!).child("TimeInfo")
-                let calendar = Calendar.current
-                let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())
-                let customYesterday = CustomDate(date: yesterday!)
-                var waterTarget = 0
-                var containerSize = 0
-                baseDateRef.child(customYesterday.formatDate()).observeSingleEvent(of: .value, with: { (snapshot) in
+        func getData(completion: @escaping () -> ()) {
+            dateRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                print("snapshot.value is: \(snapshot.value)")
+                if snapshot.value as? NSDictionary == nil {
+                    /* ok, so this means that this date hasn't yet been recorded in
+                     Firebase which means that the user opened the application
+                     on a completely new day ==> we have to reset the statistics.
+                     But, the water target, cup Size for today and yesterday remain same.
+                     First, we add the new entry to FireBase and then set the class objects
+                     to the right values using yesterday's information. */
+                    
+                    // base ref
+                    defaults.set(false, forKey: "didShowDailyAlert")
+                    let baseDateRef = self.ref.child(uuid!).child("TimeInfo")
+                    let calendar = Calendar.current
+                    let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())
+                    let customYesterday = CustomDate(date: yesterday!)
+                    var waterTarget = 0
+                    var containerSize = 0
+                    baseDateRef.child(customYesterday.formatDate()).observeSingleEvent(of: .value, with: { (snapshot) in
+                        let value = snapshot.value as? NSDictionary
+                        waterTarget = value?["waterTarget"] as! Int
+                        containerSize = value?["containerSize"] as! Int
+                        let waterEntry = WaterInfo()
+                        waterEntry.containerSize = containerSize
+                        waterEntry.waterTarget = waterTarget
+                        dateRef.setValue(waterEntry.toDict())
+                    })
+                }
+                else {
+                    // error prone
                     let value = snapshot.value as? NSDictionary
-                    waterTarget = value?["waterTarget"] as! Int
-                    containerSize = value?["containerSize"] as! Int
-                    let waterEntry = WaterInfo()
-                    waterEntry.containerSize = containerSize
-                    waterEntry.waterTarget = waterTarget
-                    dateRef.setValue(waterEntry.toDict())
-                })
-            }
-            else {
-                // error prone
-                let value = snapshot.value as? NSDictionary
-                print("value is: \(value)")
-                self.waterTarget = value?["waterTarget"] as! Int
-                self.currentWater = value?["currentWater"] as! Int
-                self.waterCupSize = value?["containerSize"] as! Int
-            }
-        })
+                    print("value is: \(value)")
+                    self.waterTarget = value?["waterTarget"] as! Int
+                    self.currentWater = value?["currentWater"] as! Int
+                    self.waterCupSize = value?["containerSize"] as! Int
+                }
+                completion()
+            })
+        }
+        
+        getData {
+            self.updateLabels()
+        }
     }
     
     func setupProgress() {
@@ -159,15 +168,32 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    func updateLabels() {
+        waterTargetLabel.text = String(waterTarget) + " ML"
+        currentWaterLabel.text = String(currentWater) + " ML"
+    }
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         let defaults = UserDefaults.standard
         defaults.set(true, forKey: "didLogin")
-        super.viewDidLoad()
         setupProgress()
         navigationController?.navigationBar.isHidden = false
         tabBarController?.tabBar.isHidden = false
         setupContainerButton()
         changeContainerButton.setTitle(String(waterCupSize) + " ML", for: .normal)
+    }
+    
+    func showPopupAlert(message: String, title: String) {
+        let alertVC = PMAlertController(title: title, description: message, image: nil, style: .alert)
+        let okaction = PMAlertAction(title: "OK", style: .default, action: {() -> Void in
+            // do something when OK is pressed
+        })
+        
+        alertVC.alertTitle.textColor = .black
+        alertVC.addAction(okaction)
+        alertVC.view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        self.present(alertVC, animated: true, completion: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -199,11 +225,23 @@ class ProfileViewController: UIViewController {
         currentWater += waterCupSize
         let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
         baseRef.child("currentWater").setValue(currentWater)
-        let ratio: Double = min(1.0,Double(currentWater) / Double(waterTarget))
+        let ratio: Double = Double(currentWater) / Double(waterTarget)
         defaults.set(ratio, forKey: "currentRatio")
+        let showRatio = min(1.0,ratio)
+        updateLabels()
         progressLabel.text = String(Int(ratio * 100.00)) + "%"
-        let toAngle: Double = ratio * 360.0
-        updateProgressColor(ratio: ratio)
+        if showRatio == 1.0 && defaults.bool(forKey: "didReach100%") == false {
+            defaults.set(true, forKey: "didReach100%")
+            showPopupAlert(message: "Good job! You're hydrated now 💧", title: "You met your daily target!")
+        }
+        
+        if ratio >= 1.3 && defaults.bool(forKey: "didCross130%") == false {
+            defaults.set(true, forKey: "didCross130%")
+            showPopupAlert(message: "Remember, too much water is not good for the body!", title: "Don't drink too much!")
+        }
+        
+        let toAngle: Double = showRatio * 360.0
+        updateProgressColor(ratio: showRatio)
         print("Current angle in plus: \(currentFromAngle)")
         print("To angle in plus: \(toAngle)")
         progress.animate(currentFromAngle, toAngle: toAngle, duration: 0.5) { completed in
@@ -225,9 +263,18 @@ class ProfileViewController: UIViewController {
         baseRef.child("currentWater").setValue(currentWater)
         let ratio: Double = Double(currentWater) / Double(waterTarget)
         defaults.set(ratio, forKey: "currentRatio")
+        updateLabels()
         progressLabel.text = String(Int(ratio * 100)) + "%"
-        let toAngle: Double = ratio * 360.0
+        if ratio >= 1.0 {
+            return
+        }
+        else {
+            defaults.set(false, forKey: "didReach100%")
+            defaults.set(false, forKey: "didCross130%")
+        }
+        
         updateProgressColor(ratio: ratio)
+        let toAngle: Double = ratio * 360.0
         print("Current angle in minus: \(currentFromAngle)")
         print("To angle in minus: \(toAngle)")
         progress.animate(currentFromAngle, toAngle: toAngle, duration: 0.5) { completed in
