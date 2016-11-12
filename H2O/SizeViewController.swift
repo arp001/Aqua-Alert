@@ -69,17 +69,20 @@ class SizeViewController: UIViewController {
                 break
             case "100 ML":
                 cupSize = 100
-                break;
+                break
+            case "150 ML":
+                cupSize = 150
+                break
             case "200 ML":
                 cupSize = 200
-                break;
+                break
             case "400 ML":
                 cupSize = 400
-                break;
+                break
             case "500 ML":
                 cupSize = 500
-                break;
-            default: break;
+                break
+            default: break
         }
         print("cupsize is: \(cupSize)")
         let defaults = UserDefaults.standard

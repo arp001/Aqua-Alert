@@ -24,6 +24,7 @@ PODS:
     - GoogleSymbolUtilities (~> 1.1)
   - KDCircularProgress (1.5.2)
   - PMAlertController (2.0.1)
+  - ScrollableGraphView (3.0.0)
   - ZFRippleButton (0.6)
 
 DEPENDENCIES:
@@ -32,6 +33,7 @@ DEPENDENCIES:
   - Former
   - KDCircularProgress
   - PMAlertController
+  - ScrollableGraphView
   - ZFRippleButton (= 0.6)
 
 SPEC CHECKSUMS:
@@ -46,8 +48,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
   PMAlertController: 8f809a67e740bd6ce1bb7d6017c12c94e997f64b
+  ScrollableGraphView: 9b0ff86f9193068ffaf7e7ea875dcd297d7e8ded
   ZFRippleButton: 62ea35e209757704dea697d66489fe69c13d7b77
 
-PODFILE CHECKSUM: 38fc6ec808e59ce6a6d5d72705749fbc4c625d4d
+PODFILE CHECKSUM: dcea34c041f4a6bddb9beccf8353f4dba0513a46
 
 COCOAPODS: 1.0.1

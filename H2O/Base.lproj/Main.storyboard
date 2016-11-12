@@ -99,7 +99,7 @@
         <!--Progress-->
         <scene sceneID="ZN8-lB-0ZV">
             <objects>
-                <viewController id="TLG-tb-HsZ" sceneMemberID="viewController">
+                <viewController id="TLG-tb-HsZ" customClass="ProgressViewController" customModule="H2O" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EvW-Sr-Sfo"/>
                         <viewControllerLayoutGuide type="bottom" id="5LU-1L-Ks4"/>
@@ -375,16 +375,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPp-SV-gOb">
-                                <rect key="frame" x="16" y="289" width="31" height="35"/>
+                                <rect key="frame" x="16" y="284" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" image="ic_chevron_left_48pt"/>
+                                <connections>
+                                    <action selector="leftAccessoryButtonPressed" destination="7Cb-Fy-smI" eventType="touchUpInside" id="1tU-hD-sKX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBa-KL-a1I">
-                                <rect key="frame" x="328" y="289" width="31" height="35"/>
+                                <rect key="frame" x="314" y="284" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <state key="normal" image="ic_chevron_right_48pt"/>
+                                <connections>
+                                    <action selector="rightAccessoryButtonPressed" destination="7Cb-Fy-smI" eventType="touchUpInside" id="cMr-Y4-FFK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -402,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-Py-oAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5148" y="-217"/>
+            <point key="canvasLocation" x="5338" y="-213"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yST-7B-q1M">
@@ -449,7 +455,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pj1-sX-NQv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="ic_timeline_3x" id="E43-5C-Dqk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="FAs-Ce-Tl9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="FAs-Ce-Tl9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -471,6 +477,6 @@
         <image name="ic_timeline_3x" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="f9t-bS-SEY"/>
+        <segue reference="Gbz-ZP-3oq"/>
     </inferredMetricsTieBreakers>
 </document>

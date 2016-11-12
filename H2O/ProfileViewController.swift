@@ -62,6 +62,7 @@ class ProfileViewController: UIViewController {
                     
                     // base ref
                     defaults.set(false, forKey: "didShowDailyAlert")
+                    defaults.set(0.0, forKey: "currentFromAngle")
                     let baseDateRef = self.ref.child(uuid!).child("TimeInfo")
                     let calendar = Calendar.current
                     let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())
@@ -104,7 +105,7 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = UIColor(white: 0.22, alpha: 1)
         progressLabel.text = String(Int(ratio * 100.0)) + "%"
         progress.startAngle = -90
-        progress.progressThickness = 0.6
+        progress.progressThickness = 0.4
         progress.trackThickness = 0.6
         progress.clockwise = true
         progress.gradientRotateSpeed = 2
@@ -286,6 +287,14 @@ class ProfileViewController: UIViewController {
             }
         }
         defaults.set(toAngle, forKey: "currentFromAngle")
+    }
+    
+    @IBAction func rightAccessoryButtonPressed() {
+        
+    }
+    
+    @IBAction func leftAccessoryButtonPressed() {
+        
     }
     
     @IBAction func changeContainerButtonPressed() {

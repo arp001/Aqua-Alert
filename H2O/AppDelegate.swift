@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // set it to the first one of TabBarController to show tabBar
-        if defaults.bool(forKey: "didLogin") == true {
+         if defaults.bool(forKey: "didLogin") == true {
             let myTabBarController = storyboard.instantiateViewController(withIdentifier: "myTabBarViewController") as! UITabBarController
             self.window?.rootViewController = myTabBarController
             self.window?.makeKeyAndVisible()

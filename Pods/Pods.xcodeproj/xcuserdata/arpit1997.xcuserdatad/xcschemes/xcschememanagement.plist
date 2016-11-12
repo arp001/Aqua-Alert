@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ScrollableGraphView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZFRippleButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5EE0CC084600238AF8AC0E15B839CA6F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6070CFF740E0D37F1110093F2FFD5B15</key>
+		<key>7FC07962DEBD0EA6FE5A3C953F88A3D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A24A791F4FA2668969524DAC076FAD9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C2AB96F7E8DD8856CD05BD74C0ABBF9C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E5AB1C0293AFBBE30818EC1F7565FA51</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9E780647D824F1FE273E5E3C8AC0A47</key>
 		<dict>
 			<key>primary</key>
 			<true/>

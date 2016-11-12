@@ -70,6 +70,10 @@ class InitialFormViewController: FormViewController {
         defaults.set(uniqueID, forKey: "identifier") // storing the UID in UserDefaults
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()

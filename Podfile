@@ -12,4 +12,5 @@ target 'H2O' do
   pod 'KDCircularProgress'
   pod 'ZFRippleButton','0.6'
   pod 'PMAlertController'
+  pod 'ScrollableGraphView'
 end
