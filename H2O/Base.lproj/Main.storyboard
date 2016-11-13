@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="2096.8000000000002" y="110.19490254872565"/>
         </scene>
-        <!--Progress-->
+        <!--Your Progress-->
         <scene sceneID="ZN8-lB-0ZV">
             <objects>
                 <viewController id="TLG-tb-HsZ" customClass="ProgressViewController" customModule="H2O" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,13 +107,32 @@
                     <view key="view" contentMode="scaleToFill" id="4Ei-SQ-jOL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yG-Cm-5UL">
+                                <rect key="frame" x="0.0" y="64" width="375" height="360"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="Ukc-CA-K7V"/>
+                                    <constraint firstAttribute="width" constant="375" id="ixi-yh-w3U"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5LU-1L-Ks4" firstAttribute="top" secondItem="2yG-Cm-5UL" secondAttribute="bottom" constant="194" id="Hvj-kN-6Ng"/>
+                            <constraint firstItem="2yG-Cm-5UL" firstAttribute="top" secondItem="EvW-Sr-Sfo" secondAttribute="bottom" id="JGY-uW-Cdk"/>
+                            <constraint firstItem="2yG-Cm-5UL" firstAttribute="leading" secondItem="4Ei-SQ-jOL" secondAttribute="leading" id="s06-yZ-g8Y"/>
+                            <constraint firstAttribute="trailing" secondItem="2yG-Cm-5UL" secondAttribute="trailing" id="yeQ-0D-i4C"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Progress" image="ic_equalizer_3x" id="L3D-rT-zJo"/>
+                    <navigationItem key="navigationItem" title="Your Progress" id="AEC-IS-plT"/>
+                    <connections>
+                        <outlet property="customView" destination="2yG-Cm-5UL" id="NvD-sr-UQu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lj4-t4-oyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4002" y="438"/>
+            <point key="canvasLocation" x="4940" y="437.63118440779613"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Vta-zD-5Ly">
@@ -408,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-Py-oAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5338" y="-213"/>
+            <point key="canvasLocation" x="4940" y="-217"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yST-7B-q1M">
@@ -422,7 +441,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Pj1-sX-NQv" kind="relationship" relationship="viewControllers" id="pcC-dy-DtL"/>
-                        <segue destination="TLG-tb-HsZ" kind="relationship" relationship="viewControllers" id="KSl-tn-ADN"/>
+                        <segue destination="llN-t7-TvP" kind="relationship" relationship="viewControllers" id="KSl-tn-ADN"/>
                         <segue destination="Flt-oF-fBT" kind="relationship" relationship="viewControllers" id="rdW-7n-yCh"/>
                     </connections>
                 </tabBarController>
@@ -455,7 +474,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pj1-sX-NQv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="ic_timeline_3x" id="E43-5C-Dqk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="FAs-Ce-Tl9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="FAs-Ce-Tl9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -467,6 +486,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vsv-zX-Gy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4000.8000000000002" y="-217.24137931034485"/>
+        </scene>
+        <!--Progress-->
+        <scene sceneID="qVH-Aw-9M1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="llN-t7-TvP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Progress" image="ic_equalizer_3x" id="L3D-rT-zJo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="RiA-id-riF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TLG-tb-HsZ" kind="relationship" relationship="rootViewController" id="vOz-6E-p1R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pYc-jQ-Vyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4000.8000000000002" y="437.63118440779613"/>
         </scene>
     </scenes>
     <resources>
