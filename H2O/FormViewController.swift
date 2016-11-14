@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InitialViewController.swift
 //  picker
 //
 //  Created by rbc on 2016-11-01.
@@ -70,20 +70,12 @@ class InitialFormViewController: FormViewController {
         defaults.set(uniqueID, forKey: "identifier") // storing the UID in UserDefaults
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
         let section = SectionFormer(rowFormer: nameTextField, weightInlinePickerRow,genderInlinePickerRow,suggestedWaterIntake)
             .set(headerViewFormer: header)
         former.append(sectionFormer: section)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        let defaults = UserDefaults.standard
     }
 }
 

@@ -396,7 +396,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPp-SV-gOb">
                                 <rect key="frame" x="16" y="284" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
                                 <state key="normal" title="left" image="ic_chevron_left_48pt"/>
                                 <connections>
                                     <action selector="accessoryButtonClicked:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="geu-7V-dic"/>
