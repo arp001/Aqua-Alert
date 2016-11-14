@@ -109,20 +109,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yG-Cm-5UL">
-                                <rect key="frame" x="0.0" y="64" width="375" height="360"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="360" id="Ukc-CA-K7V"/>
+                                    <constraint firstAttribute="height" constant="618" id="J6e-Aj-VwP"/>
                                     <constraint firstAttribute="width" constant="375" id="ixi-yh-w3U"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5LU-1L-Ks4" firstAttribute="top" secondItem="2yG-Cm-5UL" secondAttribute="bottom" constant="194" id="Hvj-kN-6Ng"/>
-                            <constraint firstItem="2yG-Cm-5UL" firstAttribute="top" secondItem="EvW-Sr-Sfo" secondAttribute="bottom" id="JGY-uW-Cdk"/>
-                            <constraint firstItem="2yG-Cm-5UL" firstAttribute="leading" secondItem="4Ei-SQ-jOL" secondAttribute="leading" id="s06-yZ-g8Y"/>
-                            <constraint firstAttribute="trailing" secondItem="2yG-Cm-5UL" secondAttribute="trailing" id="yeQ-0D-i4C"/>
+                            <constraint firstItem="5LU-1L-Ks4" firstAttribute="top" secondItem="2yG-Cm-5UL" secondAttribute="bottom" id="OVG-8p-LVq"/>
+                            <constraint firstAttribute="trailing" secondItem="2yG-Cm-5UL" secondAttribute="trailing" id="S0W-Pi-wgR"/>
+                            <constraint firstItem="2yG-Cm-5UL" firstAttribute="leading" secondItem="4Ei-SQ-jOL" secondAttribute="leading" id="V1x-eG-Ual"/>
+                            <constraint firstItem="2yG-Cm-5UL" firstAttribute="top" secondItem="4Ei-SQ-jOL" secondAttribute="top" id="nQ8-XB-aPT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Your Progress" id="AEC-IS-plT"/>
@@ -372,14 +372,14 @@
                                     <action selector="plusButtonTapped:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="53G-wS-A5F"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1080 ML" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzr-jX-jZN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Intake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzr-jX-jZN">
                                 <rect key="frame" x="60" y="105" width="115" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2200 ML" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk3-Yh-vf8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kk3-Yh-vf8">
                                 <rect key="frame" x="209" y="105" width="115" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
@@ -397,18 +397,20 @@
                                 <rect key="frame" x="16" y="284" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <state key="normal" image="ic_chevron_left_48pt"/>
+                                <state key="normal" title="left" image="ic_chevron_left_48pt"/>
                                 <connections>
-                                    <action selector="leftAccessoryButtonPressed" destination="7Cb-Fy-smI" eventType="touchUpInside" id="1tU-hD-sKX"/>
+                                    <action selector="accessoryButtonClicked:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="geu-7V-dic"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBa-KL-a1I">
                                 <rect key="frame" x="314" y="284" width="45" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <state key="normal" image="ic_chevron_right_48pt"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="right" image="ic_chevron_right_48pt">
+                                    <color key="titleColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                </state>
                                 <connections>
-                                    <action selector="rightAccessoryButtonPressed" destination="7Cb-Fy-smI" eventType="touchUpInside" id="cMr-Y4-FFK"/>
+                                    <action selector="accessoryButtonClicked:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="Yp7-6J-yhi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -418,6 +420,7 @@
                     <connections>
                         <outlet property="changeContainerButton" destination="RaS-rf-Wqs" id="wdV-aN-7GP"/>
                         <outlet property="currentWaterLabel" destination="Kzr-jX-jZN" id="Ti5-VN-jYf"/>
+                        <outlet property="dateTellerLabel" destination="9ng-QO-3FG" id="uAG-Ir-mfm"/>
                         <outlet property="minusButton" destination="z12-rN-s3z" id="6t9-AV-nnF"/>
                         <outlet property="plusButton" destination="lTu-Uz-cUa" id="mdu-fA-HrE"/>
                         <outlet property="progressLabel" destination="AqL-Or-Ehs" id="SmF-i4-vA4"/>
@@ -427,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-Py-oAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4940" y="-217"/>
+            <point key="canvasLocation" x="5273" y="-217"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yST-7B-q1M">

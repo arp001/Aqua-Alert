@@ -14,6 +14,7 @@ import PMAlertController
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var dateTellerLabel: UILabel!
     @IBOutlet weak var waterTargetLabel: UILabel!
     @IBOutlet weak var currentWaterLabel: UILabel!
     @IBOutlet weak var changeContainerButton: ZFRippleButton!
@@ -26,7 +27,9 @@ class ProfileViewController: UIViewController {
     var waterTarget = 20
     var waterCupSize = 35
     var currentWater = 0
-    func setupPlusButton() {
+    var profileOnDates : [String:NSDictionary]?
+    
+    private func setupPlusButton() {
         plusButton.rippleOverBounds = true
         plusButton.buttonCornerRadius = 12.0
         plusButton.clipsToBounds = true
@@ -34,7 +37,7 @@ class ProfileViewController: UIViewController {
         plusButton.shadowRippleEnable = true
     }
     
-    func setupMinusButton() {
+    private func setupMinusButton() {
         minusButton.rippleOverBounds = true
         minusButton.buttonCornerRadius = 12.0
         minusButton.clipsToBounds = true
@@ -43,8 +46,10 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setupPlusButton()
-        setupMinusButton()
+        print("viewWillAppear called!")
+        unhideRow()
+        UserDefaults.standard.set(0, forKey: "delta")
+        dateTellerLabel.text = CustomDate(date: Date()).formatDate()
         let defaults = UserDefaults.standard
         let uuid = defaults.string(forKey: "identifier")
         let keyForDate = customDate.formatDate()
@@ -53,30 +58,30 @@ class ProfileViewController: UIViewController {
             dateRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 print("snapshot.value is: \(snapshot.value)")
                 if snapshot.value as? NSDictionary == nil {
-                    /* ok, so this means that this date hasn't yet been recorded in
-                     Firebase which means that the user opened the application
-                     on a completely new day ==> we have to reset the statistics.
-                     But, the water target, cup Size for today and yesterday remain same.
-                     First, we add the new entry to FireBase and then set the class objects
-                     to the right values using yesterday's information. */
-                    
-                    // base ref
-                    defaults.set(false, forKey: "didShowDailyAlert")
-                    defaults.set(0.0, forKey: "currentFromAngle")
-                    let baseDateRef = self.ref.child(uuid!).child("TimeInfo")
-                    let calendar = Calendar.current
-                    let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())
-                    let customYesterday = CustomDate(date: yesterday!)
-                    var waterTarget = 0
-                    var containerSize = 0
+                        /* ok, so this means that this date hasn't yet been recorded in
+                         Firebase which means that the user opened the application
+                         on a completely new day ==> we have to reset the statistics.
+                         But, the water target, cup Size for today and yesterday remain same.
+                         First, we add the new entry to FireBase and then set the class objects
+                         to the right values using yesterday's information. */
+                        
+                        // base ref
+                        defaults.set(false, forKey: "didShowDailyAlert")
+                        defaults.set(0.0, forKey: "currentFromAngle")
+                        defaults.set(0.0, forKey: "currentRatio")
+                        let baseDateRef = self.ref.child(uuid!).child("TimeInfo")
+                        let calendar = Calendar.current
+                        let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())
+                        let customYesterday = CustomDate(date: yesterday!)
                     baseDateRef.child(customYesterday.formatDate()).observeSingleEvent(of: .value, with: { (snapshot) in
                         let value = snapshot.value as? NSDictionary
-                        waterTarget = value?["waterTarget"] as! Int
-                        containerSize = value?["containerSize"] as! Int
+                        self.waterTarget = value?["waterTarget"] as! Int
+                        self.waterCupSize = value?["containerSize"] as! Int
                         let waterEntry = WaterInfo()
-                        waterEntry.containerSize = containerSize
-                        waterEntry.waterTarget = waterTarget
+                        waterEntry.containerSize = self.waterCupSize
+                        waterEntry.waterTarget = self.waterTarget
                         dateRef.setValue(waterEntry.toDict())
+                        completion()
                     })
                 }
                 else {
@@ -86,20 +91,29 @@ class ProfileViewController: UIViewController {
                     self.waterTarget = value?["waterTarget"] as! Int
                     self.currentWater = value?["currentWater"] as! Int
                     self.waterCupSize = value?["containerSize"] as! Int
+                    let ratio = (Double(self.currentWater)/Double(self.waterTarget))
+                    let currentFromAngle = ratio * 360.0
+                    UserDefaults.standard.set(currentFromAngle, forKey: "currentFromAngle")
+                    UserDefaults.standard.set(ratio, forKey: "currentRatio")
+                    completion()
                 }
-                completion()
             })
         }
         
         getData {
+            print("in completion")
+            self.setupProgress()
             self.updateLabels()
+            self.setupContainerButton()
         }
+        setupPlusButton()
+        setupMinusButton()
     }
     
-    func setupProgress() {
+    private func setupProgress() {
         let defaults = UserDefaults.standard
-        let target = defaults.double(forKey: "currentFromAngle")
         let ratio = defaults.double(forKey: "currentRatio")
+        let showRatio = min(1.0,ratio)
         print("in setupProgress")
         progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
         view.backgroundColor = UIColor(white: 0.22, alpha: 1)
@@ -115,8 +129,9 @@ class ProfileViewController: UIViewController {
         updateProgressColor(ratio: ratio)
         progress.center = CGPoint(x: view.center.x, y: view.center.y - 25)
         view.addSubview(progress)
-        print("target is: \(target)")
-        progress.animate(0.0, toAngle: target, duration: 0.5, completion: { (completed) in
+        let target = showRatio * 360.0
+        defaults.set(target, forKey: "currentFromAngle")
+        progress.animate(0.0, toAngle: target, duration: 1.3, completion: { (completed) in
             
             if completed {
                 print("animation stopped, completed")
@@ -128,8 +143,9 @@ class ProfileViewController: UIViewController {
         print("out setupProgress")
     }
     
-    func setupContainerButton() {
+    private func setupContainerButton() {
         // need to figure this out later
+        changeContainerButton.setTitle(String(waterCupSize) + " ML", for: .normal)
         changeContainerButton.shadowRippleEnable = true
         changeContainerButton.buttonCornerRadius = 15
         changeContainerButton.ripplePercent = 0.5
@@ -139,7 +155,7 @@ class ProfileViewController: UIViewController {
         changeContainerButton.touchUpAnimationTime = 0
     }
     
-    func showDailyMessage() {
+    private func showDailyMessage() {
         
         func prepareToShowAlert(completion: @escaping (String) -> Void) {
             var desc = ""
@@ -169,24 +185,43 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func updateLabels() {
+    private func updateLabels() {
         waterTargetLabel.text = String(waterTarget) + " ML"
         currentWaterLabel.text = String(currentWater) + " ML"
+        print("waterTargetLabel.text: \(waterTargetLabel.text)")
+        print("currentWaterLabel.text: \(currentWaterLabel.text)")
+    }
+    
+    private func populateProfileOnDates() {
+        func getData(completion: @escaping () -> ()) {
+            let timeRef = ref.child(Constants.uuid!).child("TimeInfo")
+            print("timeRef is: \(timeRef)")
+            timeRef.observe(.value, with: { (snapshot) in
+                let value = snapshot.value as? [String:NSDictionary]
+                print("ppod value is: \(value)")
+                self.profileOnDates = value
+                completion()
+            })
+        }
+        getData {
+            print("profileondates is: \(self.profileOnDates)")
+        }
+    }
+    
+    private func setupNavAndTab() {
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        navigationController?.navigationBar.isHidden = false
+        tabBarController?.tabBar.isHidden = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = UserDefaults.standard
-        defaults.set(true, forKey: "didLogin")
-        setupProgress()
-        self.navigationItem.setHidesBackButton(true, animated: false)
-        navigationController?.navigationBar.isHidden = false
-        tabBarController?.tabBar.isHidden = false
-        setupContainerButton()
-        changeContainerButton.setTitle(String(waterCupSize) + " ML", for: .normal)
+        UserDefaults.standard.set(true, forKey: "didLogin")
+        populateProfileOnDates()
+        setupNavAndTab()
     }
     
-    func showPopupAlert(message: String, title: String) {
+    private func showPopupAlert(message: String, title: String) {
         let alertVC = PMAlertController(title: title, description: message, image: nil, style: .alert)
         let okaction = PMAlertAction(title: "OK", style: .default, action: {() -> Void in
             // do something when OK is pressed
@@ -207,7 +242,7 @@ class ProfileViewController: UIViewController {
         }
     }
 
-    func updateProgressColor(ratio: Double) -> Void {
+    private func updateProgressColor(ratio: Double) -> Void {
         if ratio < 0.3 {
             progress.set(.red)
         }
@@ -244,8 +279,6 @@ class ProfileViewController: UIViewController {
         
         let toAngle: Double = showRatio * 360.0
         updateProgressColor(ratio: showRatio)
-        print("Current angle in plus: \(currentFromAngle)")
-        print("To angle in plus: \(toAngle)")
         progress.animate(currentFromAngle, toAngle: toAngle, duration: 0.5) { completed in
             if completed {
                 print("animation stopped, completed")
@@ -289,13 +322,72 @@ class ProfileViewController: UIViewController {
         defaults.set(toAngle, forKey: "currentFromAngle")
     }
     
-    @IBAction func rightAccessoryButtonPressed() {
-        
+    private func hideRow() {
+        plusButton.isHidden = true
+        minusButton.isHidden = true
+        changeContainerButton.isHidden = true
     }
     
-    @IBAction func leftAccessoryButtonPressed() {
-        
+    private func unhideRow() {
+        plusButton.isHidden = false
+        minusButton.isHidden = false
+        changeContainerButton.isHidden = false
     }
+    
+    @IBAction func accessoryButtonClicked(_ sender: UIButton) {
+        // assume user clicks on left accessory
+        let defaults = UserDefaults.standard
+        var delta = defaults.integer(forKey: "delta")
+        switch sender.currentTitle! {
+            case "left":
+                delta -= 1
+                break
+            case "right":
+                delta += 1
+                break
+            default: break
+        }
+        let calendar = Calendar.current
+        let newDate = calendar.date(byAdding: .day, value: delta, to: Date())
+        let customNewDate = CustomDate(date: newDate!)
+        
+        if profileOnDates == nil {
+            // fail gracefully 
+            return
+        }
+        
+        for (date,info) in profileOnDates! {
+            if date == customNewDate.formatDate() {
+                if delta != 0 {
+                    hideRow()
+                }
+                else {
+                    unhideRow()
+                }
+                
+                let currentWater = info["currentWater"] as! Int
+                let waterTarget = info["waterTarget"] as! Int
+                let ratio = Double(currentWater) / Double(waterTarget)
+                progressLabel.text = String(Int(ratio * 100.0)) + "%"
+                currentWaterLabel.text = String(currentWater) + " ML"
+                waterTargetLabel.text = String(waterTarget) + " ML"
+                dateTellerLabel.text = date
+                let showRatio = min(1.0,ratio)
+                let toAngle: Double = showRatio * 360.0
+                updateProgressColor(ratio: showRatio)
+                progress.animate(0.0, toAngle: toAngle, duration: 1.3) { completed in
+                    if completed {
+                        print("animation stopped, completed")
+                    } else {
+                        print("animation stopped, was interrupted")
+                    }
+                }
+                defaults.set(delta, forKey: "delta")
+                break
+            }
+        }
+    }
+    
     
     @IBAction func changeContainerButtonPressed() {
         performSegue(withIdentifier: "showContainersSegue", sender: nil)

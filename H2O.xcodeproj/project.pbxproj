@@ -11,6 +11,7 @@
 		761409171DC84B0500D241C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 761409161DC84B0500D241C5 /* GoogleService-Info.plist */; };
 		761409191DC84DE600D241C5 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761409181DC84DE600D241C5 /* UserInfo.swift */; };
 		761D92631DD69937009390D6 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761D92621DD69937009390D6 /* ProgressViewController.swift */; };
+		761D92671DD95960009390D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761D92661DD95960009390D6 /* Constants.swift */; };
 		762EF89D1DC57CD000FF6D0C /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */; };
 		762EF89E1DC57CD000FF6D0C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 762EF8971DC57CD000FF6D0C /* Info.plist */; };
 		762EF89F1DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 762EF8991DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig */; };
@@ -33,6 +34,7 @@
 		761409161DC84B0500D241C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		761409181DC84DE600D241C5 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		761D92621DD69937009390D6 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		761D92661DD95960009390D6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		762EF8951DC57CCF00FF6D0C /* H2O-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "H2O-Bridging-Header.h"; sourceTree = "<group>"; };
 		762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		762EF8971DC57CD000FF6D0C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				761D92621DD69937009390D6 /* ProgressViewController.swift */,
 				764A0E191DCAE262009D0CB6 /* ProfileViewController.swift */,
+				761D92661DD95960009390D6 /* Constants.swift */,
 				76F2421D1DCE5F1E00BE6F58 /* SizeViewController.swift */,
 				396E93021DC9AC6C0048690E /* FormViewController.swift */,
 				763265201DC575050077CCEE /* AppDelegate.swift */,
@@ -311,6 +314,7 @@
 				761409191DC84DE600D241C5 /* UserInfo.swift in Sources */,
 				76F242241DCFE02900BE6F58 /* CustomDate.swift in Sources */,
 				763265211DC575050077CCEE /* AppDelegate.swift in Sources */,
+				761D92671DD95960009390D6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

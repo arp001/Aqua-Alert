@@ -34,7 +34,7 @@ class ProgressViewController: UIViewController {
         graphView.shouldAnimateOnStartup = true
         graphView.adaptAnimationType = ScrollableGraphViewAnimationType.easeOut
         graphView.animationDuration = 0.5
-        graphView.rangeMax = 3000
+        graphView.rangeMax = 4000
         graphView.shouldRangeAlwaysStartAtZero = true
         return graphView
     }
@@ -91,8 +91,6 @@ class ProgressViewController: UIViewController {
                 data.append(val)
                 labels.append(name)
             }
-            data.reverse()
-            labels.reverse()
             self.graphView.set(data, withLabels: labels)
             self.customView.addSubview(self.graphView)
         }
