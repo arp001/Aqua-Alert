@@ -25,7 +25,7 @@ class ProgressViewController: UIViewController {
         graphView.shouldDrawDataPoint = false
         graphView.lineWidth = 0.0
         graphView.backgroundFillColor = UIColor(white: 0.22, alpha: 1.0)
-        graphView.barColor = .black
+        graphView.barColor = .blue
         graphView.referenceLineLabelFont = UIFont.boldSystemFont(ofSize: 8)
         graphView.referenceLineColor = UIColor.white.withAlphaComponent(0.2)
         graphView.referenceLineLabelColor = UIColor.white
@@ -70,29 +70,37 @@ class ProgressViewController: UIViewController {
         let ref = FIRDatabase.database().reference()
         let uuid = defaults.string(forKey: "identifier")
         var baseRef = ref.child(uuid!).child("TimeInfo")
-        var dict = [String: Double]()
-        func getData(completion: @escaping ([String:Double]) -> ()) {
+        func getData(completion: @escaping (() -> ())) {
             baseRef.observe(.value, with: { (snapshot) in
+                var delta = 0
+                var data: [Double] = []
+                var labels: [String] = []
                 let value = snapshot.value as? [String:NSDictionary]
+                let calendar = Calendar.current
                 print("array is: \(value)")
-                for (date,info) in value! {
-                    let info = value?[date]
-                    let toAppendInt = info?["currentWater"] as! Int
-                    let toAppendDouble = Double(toAppendInt)
-                    dict[date] = toAppendDouble
+                for (_,_) in value! {
+                    let prevDate = calendar.date(byAdding: .day, value: delta, to: Date())
+                    let customPrevDate = CustomDate(date: prevDate!)
+                    let date = customPrevDate.formatDate()
+                    if let info = value?[date] {
+                        let toAppendInt = info["currentWater"] as! Int
+                        let toAppendDouble = Double(toAppendInt)
+                        labels.append(date)
+                        data.append(toAppendDouble)
+                        delta -= 1
+                    }
+                    else {
+                        break
+                    }
                 }
-                completion(dict)
+                data.reverse()
+                labels.reverse()
+                self.graphView.set(data, withLabels: labels)
+                self.customView.addSubview(self.graphView)
             })
         }
-        getData { (dictionary) in
-            var data: [Double] = []
-            var labels: [String] = []
-            for (name,val) in dict {
-                data.append(val)
-                labels.append(name)
-            }
-            self.graphView.set(data, withLabels: labels)
-            self.customView.addSubview(self.graphView)
+        getData {
+
         }
     }
     
