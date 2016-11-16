@@ -12,6 +12,10 @@ import Firebase
 
 class InitialFormViewController: FormViewController {
     var ref: FIRDatabaseReference!
+    var recommendedWaterIntake = 0
+    var weight = 0.0
+    var gender = "Male"
+    
     let nameTextField = TextFieldRowFormer<FormTextFieldCell>().configure { (row) in
         row.placeholder = "Name"
         }.onSelected { (row) in
@@ -35,7 +39,7 @@ class InitialFormViewController: FormViewController {
 //            // Do Something
 //    }
     
-    let suggestedWaterIntake = TextFieldRowFormer<FormTextFieldCell>().configure { (row) in
+    let suggestedWaterIntakeTextField = TextFieldRowFormer<FormTextFieldCell>().configure { (row) in
         row.placeholder = "Water intake/day Target (ml) "
     }
     let genderInlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, String>() {
@@ -48,6 +52,17 @@ class InitialFormViewController: FormViewController {
     
     let header = LabelViewFormer<FormLabelHeaderView>() { view in
         view.titleLabel.text = "Label Header"
+    }
+    
+    func calculateWaterIntake() {
+        weight = Double(weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title)!
+        gender = genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title
+        let weightLbs = weight * 2.20462
+        recommendedWaterIntake = Int(round(weightLbs * 0.43 * 29.5735))
+        if gender == "Female" {
+            recommendedWaterIntake += Int(round(0.08 * Double(recommendedWaterIntake)))
+         }
+        suggestedWaterIntakeTextField.text = String(recommendedWaterIntake) + " ML"
     }
     
     @IBAction func confirmButtonPressed() {
@@ -63,7 +78,7 @@ class InitialFormViewController: FormViewController {
         
         // storing water related info in Firebase
         let waterInfo = WaterInfo()
-        waterInfo.waterTarget = Int(suggestedWaterIntake.text!)!
+        waterInfo.waterTarget = Int(suggestedWaterIntakeTextField.text!)!
         let customDate = CustomDate(date: Date())
         let dateRef = ref.child(uniqueID).child("TimeInfo").child(customDate.formatDate())
         dateRef.setValue(waterInfo.toDict())
@@ -73,7 +88,7 @@ class InitialFormViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
-        let section = SectionFormer(rowFormer: nameTextField, weightInlinePickerRow,genderInlinePickerRow,suggestedWaterIntake)
+        let section = SectionFormer(rowFormer: nameTextField, weightInlinePickerRow,genderInlinePickerRow,suggestedWaterIntakeTextField)
             .set(headerViewFormer: header)
         former.append(sectionFormer: section)
     }

@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVp-fY-TOm">
-                                <rect key="frame" x="127" y="527" width="121" height="67"/>
+                                <rect key="frame" x="127" y="283" width="121" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
                                 <state key="normal" title="Confirm"/>
@@ -477,7 +477,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pj1-sX-NQv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="ic_timeline_3x" id="E43-5C-Dqk"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="FAs-Ce-Tl9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="FAs-Ce-Tl9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -496,7 +496,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="llN-t7-TvP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Progress" image="ic_equalizer_3x" id="L3D-rT-zJo"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="RiA-id-riF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="RiA-id-riF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

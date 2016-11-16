@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
         }
         
-        defaults.set(true, forKey: "didShowDailyAlert")
+        defaults.set(false, forKey: "didShowDailyAlert")
         return true
     }
 
