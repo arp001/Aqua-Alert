@@ -304,27 +304,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z12-rN-s3z" userLabel="Minus Button" customClass="ZFRippleButton" customModule="ZFRippleButton">
-                                <rect key="frame" x="255" y="560" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
-                                <state key="normal" title="-">
-                                    <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
-                                        <color key="value" name="knobColor" catalog="System" colorSpace="catalog"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rippleOverBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="minusButtonTapped:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="6MJ-g3-lT0"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AqL-Or-Ehs" userLabel="Progress Label">
                                 <rect key="frame" x="133" y="269" width="119" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -340,7 +319,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaS-rf-Wqs" customClass="ZFRippleButton" customModule="ZFRippleButton">
-                                <rect key="frame" x="128" y="560" width="119" height="40"/>
+                                <rect key="frame" x="129" y="502" width="127" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.13339799642562866" green="0.28992751240730286" blue="0.98491829633712769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
@@ -352,7 +331,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTu-Uz-cUa" customClass="ZFRippleButton" customModule="ZFRippleButton">
-                                <rect key="frame" x="80" y="560" width="40" height="40"/>
+                                <rect key="frame" x="81" y="502" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
                                 <state key="normal" title="+">
@@ -413,6 +392,35 @@
                                     <action selector="accessoryButtonClicked:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="Yp7-6J-yhi"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vn4-ee-eiv">
+                                <rect key="frame" x="304" y="72" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="segue"/>
+                                <connections>
+                                    <segue destination="8AT-Dn-QgW" kind="show" id="OsY-sB-pZc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z12-rN-s3z" userLabel="Minus Button" customClass="ZFRippleButton" customModule="ZFRippleButton">
+                                <rect key="frame" x="264" y="502" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="35"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="rippleColor">
+                                        <color key="value" name="knobColor" catalog="System" colorSpace="catalog"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonCornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rippleOverBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadowRippleEnable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="minusButtonTapped:" destination="7Cb-Fy-smI" eventType="touchUpInside" id="6MJ-g3-lT0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -430,7 +438,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Puq-Py-oAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5273" y="-217"/>
+            <point key="canvasLocation" x="5272.8000000000002" y="-217.24137931034485"/>
+        </scene>
+        <!--Daily History Table View Controller-->
+        <scene sceneID="loQ-bu-kmP">
+            <objects>
+                <tableViewController id="8AT-Dn-QgW" customClass="DailyHistoryTableViewController" customModule="H2O" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" id="u1j-OT-hIx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="67" id="jCl-lq-zMt" customClass="CustomTableViewCell" customModule="H2O">
+                                <rect key="frame" x="0.0" y="28" width="375" height="67"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jCl-lq-zMt" id="EWV-Tl-aEz">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_local_drink_3x" translatesAutoresizingMaskIntoConstraints="NO" id="Mh6-DR-rxN">
+                                            <rect key="frame" x="18" y="8" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="1rQ-Pd-kAJ"/>
+                                                <constraint firstAttribute="width" constant="50" id="M5A-nR-UF1"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drank 500 ML at 3:45 PM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAf-yU-RBH">
+                                            <rect key="frame" x="76" y="17" width="266" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="mT6-jj-mlb"/>
+                                                <constraint firstAttribute="width" constant="266" id="qKI-61-EKp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Mh6-DR-rxN" secondAttribute="bottom" constant="1" id="48v-Vq-zBh"/>
+                                        <constraint firstItem="WAf-yU-RBH" firstAttribute="leading" secondItem="Mh6-DR-rxN" secondAttribute="trailing" constant="8" id="IpB-45-Xql"/>
+                                        <constraint firstItem="Mh6-DR-rxN" firstAttribute="leading" secondItem="EWV-Tl-aEz" secondAttribute="leadingMargin" constant="10" id="Jpq-2k-kH7"/>
+                                        <constraint firstItem="WAf-yU-RBH" firstAttribute="top" secondItem="EWV-Tl-aEz" secondAttribute="topMargin" constant="9" id="c5d-JY-aAT"/>
+                                        <constraint firstItem="Mh6-DR-rxN" firstAttribute="top" secondItem="EWV-Tl-aEz" secondAttribute="topMargin" id="fZV-K5-XE9"/>
+                                        <constraint firstItem="WAf-yU-RBH" firstAttribute="leading" secondItem="Mh6-DR-rxN" secondAttribute="trailing" constant="8" id="keT-xE-ctg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="WAf-yU-RBH" secondAttribute="trailing" constant="25" id="vVf-rH-fJY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="WAf-yU-RBH" secondAttribute="bottom" constant="10" id="xne-Tr-ZNd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descLabel" destination="WAf-yU-RBH" id="u69-p8-3OL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8AT-Dn-QgW" id="Oth-am-TJo"/>
+                            <outlet property="delegate" destination="8AT-Dn-QgW" id="gKn-Gc-rff"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VBo-6F-DGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6116" y="-212.74362818590706"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yST-7B-q1M">
@@ -514,6 +583,7 @@
         <image name="ic_chevron_left_48pt" width="24" height="24"/>
         <image name="ic_chevron_right_48pt" width="24" height="24"/>
         <image name="ic_equalizer_3x" width="36" height="36"/>
+        <image name="ic_local_drink_3x" width="36" height="36"/>
         <image name="ic_settings_3x" width="36" height="36"/>
         <image name="ic_timeline_3x" width="36" height="36"/>
     </resources>

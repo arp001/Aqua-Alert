@@ -33,6 +33,7 @@ class ProfileViewController: UIViewController {
         plusButton.rippleOverBounds = true
         plusButton.buttonCornerRadius = 12.0
         plusButton.clipsToBounds = true
+        plusButton.layer.cornerRadius = 0.5 * plusButton.bounds.size.width
         plusButton.backgroundColor = .black
         plusButton.shadowRippleEnable = true
     }
@@ -41,6 +42,7 @@ class ProfileViewController: UIViewController {
         minusButton.rippleOverBounds = true
         minusButton.buttonCornerRadius = 12.0
         minusButton.clipsToBounds = true
+        minusButton.layer.cornerRadius = 0.5 * minusButton.bounds.size.width
         minusButton.backgroundColor = .black
         minusButton.shadowRippleEnable = true
     }
@@ -254,8 +256,35 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    private func syncWithDailyHistory() {
+        let calendar = Calendar.current
+        let hours = calendar.component(.hour, from: Date())
+        let minutes = calendar.component(.minute, from: Date())
+        let time = String(hours) + ":" + String(minutes)
+        let newElement = Record(time: time, amount: String(waterCupSize))
+        let arrayData = UserDefaults.standard.object(forKey: "histArray") as? Data
+        if let arrayData = arrayData {
+            let unarchivedArray = NSKeyedUnarchiver.unarchiveObject(with: arrayData) as? [Record]
+            if var array = unarchivedArray {
+                array.append(newElement)
+                let arrayArchived = NSKeyedArchiver.archivedData(withRootObject: array)
+                UserDefaults.standard.set(arrayArchived, forKey: "histArray")
+                UserDefaults.standard.synchronize()
+            }
+        }
+        else {
+            print("it's nil!")
+            var array = [Record]()
+            array.append(newElement)
+            let arrayArchived = NSKeyedArchiver.archivedData(withRootObject: array)
+            UserDefaults.standard.set(arrayArchived, forKey: "histArray")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
     @IBAction func plusButtonTapped(_ sender: ZFRippleButton) {
         print("water cup size here is \(waterCupSize)")
+        syncWithDailyHistory()
         let defaults = UserDefaults.standard
         let uuid = defaults.string(forKey: "identifier")
         let currentFromAngle = defaults.double(forKey: "currentFromAngle")
