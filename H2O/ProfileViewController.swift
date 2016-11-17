@@ -50,9 +50,10 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("viewWillAppear called!")
         unhideRow()
-        UserDefaults.standard.set(0, forKey: "delta")
         dateTellerLabel.text = CustomDate(date: Date()).formatDate()
+        tabBarController?.tabBar.isHidden = false
         let defaults = UserDefaults.standard
+        defaults.set(0, forKey: "delta")
         let uuid = defaults.string(forKey: "identifier")
         let keyForDate = customDate.formatDate()
         let dateRef = ref.child(uuid!).child("TimeInfo").child(keyForDate)
@@ -71,6 +72,10 @@ class ProfileViewController: UIViewController {
                         defaults.set(false, forKey: "didShowDailyAlert")
                         defaults.set(0.0, forKey: "currentFromAngle")
                         defaults.set(0.0, forKey: "currentRatio")
+                        let array = [Record]()
+                        let arrayArchived = NSKeyedArchiver.archivedData(withRootObject: array)
+                        defaults.set(arrayArchived, forKey: "histArray")
+                        defaults.synchronize()
                         let baseDateRef = self.ref.child(uuid!).child("TimeInfo")
                         let calendar = Calendar.current
                         let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())
@@ -260,7 +265,15 @@ class ProfileViewController: UIViewController {
         let calendar = Calendar.current
         let hours = calendar.component(.hour, from: Date())
         let minutes = calendar.component(.minute, from: Date())
-        let time = String(hours) + ":" + String(minutes)
+        var time = ""
+        if minutes % 10 == minutes {
+           time = String(hours) + ":" + "0" + String(minutes) + "."
+        }
+        
+        else {
+            time = String(hours) + ":" + String(minutes) + "."
+        }
+        
         let newElement = Record(time: time, amount: String(waterCupSize))
         let arrayData = UserDefaults.standard.object(forKey: "histArray") as? Data
         if let arrayData = arrayData {

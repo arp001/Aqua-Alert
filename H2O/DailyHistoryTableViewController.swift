@@ -76,6 +76,28 @@ class DailyHistoryTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let alertVC = UIAlertController(title: "Undo this?", message: "This will be reflected on your profile.", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: {(action) in
+            // do something when yes is pressed
+            self.histArray.remove(at: indexPath.row)
+            let arrayArchived = NSKeyedArchiver.archivedData(withRootObject: self.histArray)
+            UserDefaults.standard.set(arrayArchived, forKey: "histArray")
+            UserDefaults.standard.synchronize()
+            tableView.reloadData()
+            let uuid = UserDefaults.standard.string(forKey: "identifier")
+            //let ref = FIRDatabase.database().reference().child(uuid!)
+
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in
+            
+        })
+        
+        alertVC.addAction(yesAction)
+        alertVC.addAction(cancelAction)
+        self.present(alertVC, animated: true, completion: nil)
+    }
 
     /*
     // Override to support conditional editing of the table view.
