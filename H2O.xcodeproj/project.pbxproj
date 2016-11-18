@@ -119,8 +119,8 @@
 			children = (
 				76A57B561DDD5F6E000FD4B4 /* DailyHistoryTableViewController.swift */,
 				764A0E191DCAE262009D0CB6 /* ProfileViewController.swift */,
-				761D92621DD69937009390D6 /* ProgressViewController.swift */,
 				761D92661DD95960009390D6 /* Constants.swift */,
+				761D92621DD69937009390D6 /* ProgressViewController.swift */,
 				76F2421D1DCE5F1E00BE6F58 /* SizeViewController.swift */,
 				396E93021DC9AC6C0048690E /* FormViewController.swift */,
 				763265201DC575050077CCEE /* AppDelegate.swift */,

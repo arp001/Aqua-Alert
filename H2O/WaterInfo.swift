@@ -13,6 +13,12 @@ class WaterInfo {
     var currentWater = 0
     var containerSize = 35
     
+    init(wt: Int, cw: Int, cs: Int){
+        waterTarget = wt
+        currentWater = cw
+        containerSize = cs 
+    }
+    
     func toDict() -> Any {
         return ["waterTarget":waterTarget, "currentWater": currentWater, "containerSize":containerSize]
     }

@@ -85,8 +85,7 @@ class SizeViewController: UIViewController {
             default: break
         }
         print("cupsize is: \(cupSize)")
-        let defaults = UserDefaults.standard
-        let uuid = defaults.string(forKey: "identifier")
+        let uuid = Constants.uuid
         let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
         baseRef.child("containerSize").setValue(cupSize)
         containerSize = cupSize
@@ -99,7 +98,6 @@ class SizeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let destination = segue.destination as! ProfileViewController
-        destination.waterCupSize = containerSize
+        UserDefaults.standard.set(containerSize, forKey: Constants.cupSizeKey)
     }
 }

@@ -76,13 +76,17 @@ class InitialFormViewController: FormViewController {
         let profileRef = ref.child(uniqueID).child("Personal")
         profileRef.setValue(profile.toDict())
         
-        // storing water related info in Firebase
-        let waterInfo = WaterInfo()
-        waterInfo.waterTarget = Int(suggestedWaterIntakeTextField.text!)!
+        // storing water related info in Firebase (for graphing purposes)
+        let waterInfo = WaterInfo(wt: Int(suggestedWaterIntakeTextField.text!)!, cw: 0, cs: 50)
         let customDate = CustomDate(date: Date())
         let dateRef = ref.child(uniqueID).child("TimeInfo").child(customDate.formatDate())
         dateRef.setValue(waterInfo.toDict())
         defaults.set(uniqueID, forKey: "identifier") // storing the UID in UserDefaults
+        
+        // storing water info into UD
+        defaults.set(waterInfo.containerSize, forKey: Constants.cupSizeKey)
+        defaults.set(waterInfo.currentWater, forKey: Constants.currentWaterKey)
+        defaults.set(waterInfo.waterTarget, forKey: Constants.waterTargetKey)
     }
     
     override func viewDidLoad() {

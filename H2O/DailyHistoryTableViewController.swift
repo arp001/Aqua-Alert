@@ -32,7 +32,7 @@ class DailyHistoryTableViewController: UITableViewController {
     
     var histArray = [Record]()
     private func getArray() {
-        let arrayData = UserDefaults.standard.object(forKey: "histArray") as? Data
+        let arrayData = UserDefaults.standard.object(forKey: Constants.histArrayKey) as? Data
         if let arrayData = arrayData {
             let unarchivedArray = NSKeyedUnarchiver.unarchiveObject(with: arrayData) as? [Record]
             if let array = unarchivedArray {
@@ -77,17 +77,20 @@ class DailyHistoryTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let defaults = UserDefaults.standard
         let alertVC = UIAlertController(title: "Undo this?", message: "This will be reflected on your profile.", preferredStyle: .alert)
-        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: {(action) in
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: {(action) in
             // do something when yes is pressed
+            var prevWater = defaults.integer(forKey: Constants.currentWaterKey)
+            let amtString: String = self.histArray[indexPath.row].amount
+            let amtInt = Int(amtString)!
+            prevWater -= amtInt
+            defaults.set(prevWater, forKey: Constants.currentWaterKey)
             self.histArray.remove(at: indexPath.row)
             let arrayArchived = NSKeyedArchiver.archivedData(withRootObject: self.histArray)
-            UserDefaults.standard.set(arrayArchived, forKey: "histArray")
-            UserDefaults.standard.synchronize()
+            defaults.set(arrayArchived, forKey: Constants.histArrayKey)
+            defaults.synchronize()
             tableView.reloadData()
-            let uuid = UserDefaults.standard.string(forKey: "identifier")
-            //let ref = FIRDatabase.database().reference().child(uuid!)
-
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in

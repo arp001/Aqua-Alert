@@ -11,4 +11,13 @@ import Firebase
 
 struct Constants {
     static let uuid = UserDefaults.standard.string(forKey: "identifier")
+    static let currentWaterKey = "currentWaterKey"
+    static let waterTargetKey = "waterTargetKey"
+    static let cupSizeKey = "cupSizeKey"
+    static let deltaKey = "deltaKey"
+    static let currentRatioKey = "currentRatioKey"
+    static let currentFromAngleKey = "currentFromAngleKey"
+    static let didShowDailyAlertKey = "didShowDailyAlertKey"
+    static let histArrayKey = "histArrayKey"
+    static let didLoginKey = "didLoginKey"
 }

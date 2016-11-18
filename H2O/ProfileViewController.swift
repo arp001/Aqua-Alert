@@ -24,9 +24,9 @@ class ProfileViewController: UIViewController {
     let customDate = CustomDate(date: Date())
     var progress: KDCircularProgress!
     let ref = FIRDatabase.database().reference()
-    var waterTarget = 20
-    var waterCupSize = 35
-    var currentWater = 0
+    var waterTarget = UserDefaults.standard.integer(forKey: Constants.waterTargetKey)
+    var waterCupSize = UserDefaults.standard.integer(forKey: Constants.cupSizeKey)
+    var currentWater = UserDefaults.standard.integer(forKey: Constants.currentWaterKey)
     var profileOnDates : [String:NSDictionary]?
     
     private func setupPlusButton() {
@@ -53,55 +53,44 @@ class ProfileViewController: UIViewController {
         dateTellerLabel.text = CustomDate(date: Date()).formatDate()
         tabBarController?.tabBar.isHidden = false
         let defaults = UserDefaults.standard
-        defaults.set(0, forKey: "delta")
-        let uuid = defaults.string(forKey: "identifier")
+        defaults.set(0, forKey: Constants.deltaKey)
+        let uuid = Constants.uuid
         let keyForDate = customDate.formatDate()
         let dateRef = ref.child(uuid!).child("TimeInfo").child(keyForDate)
         func getData(completion: @escaping () -> ()) {
             dateRef.observeSingleEvent(of: .value, with: { (snapshot) in
                 print("snapshot.value is: \(snapshot.value)")
                 if snapshot.value as? NSDictionary == nil {
-                        /* ok, so this means that this date hasn't yet been recorded in
-                         Firebase which means that the user opened the application
-                         on a completely new day ==> we have to reset the statistics.
-                         But, the water target, cup Size for today and yesterday remain same.
-                         First, we add the new entry to FireBase and then set the class objects
-                         to the right values using yesterday's information. */
-                        
-                        // base ref
-                        defaults.set(false, forKey: "didShowDailyAlert")
-                        defaults.set(0.0, forKey: "currentFromAngle")
-                        defaults.set(0.0, forKey: "currentRatio")
-                        let array = [Record]()
-                        let arrayArchived = NSKeyedArchiver.archivedData(withRootObject: array)
-                        defaults.set(arrayArchived, forKey: "histArray")
-                        defaults.synchronize()
-                        let baseDateRef = self.ref.child(uuid!).child("TimeInfo")
-                        let calendar = Calendar.current
-                        let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())
-                        let customYesterday = CustomDate(date: yesterday!)
-                    baseDateRef.child(customYesterday.formatDate()).observeSingleEvent(of: .value, with: { (snapshot) in
-                        let value = snapshot.value as? NSDictionary
-                        self.waterTarget = value?["waterTarget"] as! Int
-                        self.waterCupSize = value?["containerSize"] as! Int
-                        let waterEntry = WaterInfo()
-                        waterEntry.containerSize = self.waterCupSize
-                        waterEntry.waterTarget = self.waterTarget
-                        dateRef.setValue(waterEntry.toDict())
-                        completion()
-                    })
+                    /* ok, so this means that this date hasn't yet been recorded in
+                     Firebase which means that the user opened the application
+                     on a completely new day ==> we have to reset the statistics.
+                     But, the water target, cup Size for today and prev days remain same.
+                     First, we add the new entry to FireBase and then set the class objects
+                     to the right values using prev days' information. */
+                    
+                    defaults.set(false, forKey: Constants.didShowDailyAlertKey)
+                    defaults.set(0.0, forKey: Constants.currentFromAngleKey)
+                    defaults.set(0.0, forKey: Constants.currentRatioKey)
+                    let array = [Record]()
+                    let arrayArchived = NSKeyedArchiver.archivedData(withRootObject: array)
+                    defaults.set(arrayArchived, forKey: Constants.histArrayKey)
+                    defaults.synchronize()
+                    self.waterTarget = defaults.integer(forKey: Constants.waterTargetKey)
+                    self.waterCupSize = defaults.integer(forKey: Constants.cupSizeKey)
+                    self.currentWater = 0
+                    defaults.set(0, forKey: Constants.currentWaterKey)
+                    let waterEntry = WaterInfo(wt: self.waterTarget, cw: 0, cs: self.waterCupSize)
+                    dateRef.setValue(waterEntry.toDict())
+                    completion()
                 }
                 else {
-                    // error prone
-                    let value = snapshot.value as? NSDictionary
-                    print("value is: \(value)")
-                    self.waterTarget = value?["waterTarget"] as! Int
-                    self.currentWater = value?["currentWater"] as! Int
-                    self.waterCupSize = value?["containerSize"] as! Int
+                    self.waterTarget = defaults.integer(forKey: Constants.waterTargetKey)
+                    self.waterCupSize = defaults.integer(forKey: Constants.cupSizeKey)
+                    self.currentWater = defaults.integer(forKey: Constants.currentWaterKey)
                     let ratio = (Double(self.currentWater)/Double(self.waterTarget))
                     let currentFromAngle = ratio * 360.0
-                    UserDefaults.standard.set(currentFromAngle, forKey: "currentFromAngle")
-                    UserDefaults.standard.set(ratio, forKey: "currentRatio")
+                    UserDefaults.standard.set(currentFromAngle, forKey: Constants.currentFromAngleKey)
+                    UserDefaults.standard.set(ratio, forKey: Constants.currentRatioKey)
                     completion()
                 }
             })
@@ -119,7 +108,7 @@ class ProfileViewController: UIViewController {
     
     private func setupProgress() {
         let defaults = UserDefaults.standard
-        let ratio = defaults.double(forKey: "currentRatio")
+        let ratio = defaults.double(forKey: Constants.currentRatioKey)
         let showRatio = min(1.0,ratio)
         print("in setupProgress")
         progress = KDCircularProgress(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
@@ -137,7 +126,7 @@ class ProfileViewController: UIViewController {
         progress.center = CGPoint(x: view.center.x, y: view.center.y - 25)
         view.addSubview(progress)
         let target = showRatio * 360.0
-        defaults.set(target, forKey: "currentFromAngle")
+        defaults.set(target, forKey: Constants.currentFromAngleKey)
         progress.animate(0.0, toAngle: target, duration: 1.3, completion: { (completed) in
             
             if completed {
@@ -223,7 +212,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.set(true, forKey: "didLogin")
+        UserDefaults.standard.set(true, forKey: Constants.didLoginKey)
         populateProfileOnDates()
         setupNavAndTab()
     }
@@ -243,9 +232,9 @@ class ProfileViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // if the user didn't already receive a daily popup, then show one
-        if !(UserDefaults.standard.bool(forKey: "didShowDailyAlert")) {
+        if !(UserDefaults.standard.bool(forKey: Constants.didShowDailyAlertKey)) {
             showDailyMessage()
-            UserDefaults.standard.set(true, forKey: "didShowDailyAlert")
+            UserDefaults.standard.set(true, forKey: Constants.didShowDailyAlertKey)
         }
     }
 
@@ -275,13 +264,13 @@ class ProfileViewController: UIViewController {
         }
         
         let newElement = Record(time: time, amount: String(waterCupSize))
-        let arrayData = UserDefaults.standard.object(forKey: "histArray") as? Data
+        let arrayData = UserDefaults.standard.object(forKey: Constants.histArrayKey) as? Data
         if let arrayData = arrayData {
             let unarchivedArray = NSKeyedUnarchiver.unarchiveObject(with: arrayData) as? [Record]
             if var array = unarchivedArray {
                 array.append(newElement)
                 let arrayArchived = NSKeyedArchiver.archivedData(withRootObject: array)
-                UserDefaults.standard.set(arrayArchived, forKey: "histArray")
+                UserDefaults.standard.set(arrayArchived, forKey: Constants.histArrayKey)
                 UserDefaults.standard.synchronize()
             }
         }
@@ -290,7 +279,7 @@ class ProfileViewController: UIViewController {
             var array = [Record]()
             array.append(newElement)
             let arrayArchived = NSKeyedArchiver.archivedData(withRootObject: array)
-            UserDefaults.standard.set(arrayArchived, forKey: "histArray")
+            UserDefaults.standard.set(arrayArchived, forKey: Constants.histArrayKey)
             UserDefaults.standard.synchronize()
         }
     }
@@ -299,13 +288,14 @@ class ProfileViewController: UIViewController {
         print("water cup size here is \(waterCupSize)")
         syncWithDailyHistory()
         let defaults = UserDefaults.standard
-        let uuid = defaults.string(forKey: "identifier")
-        let currentFromAngle = defaults.double(forKey: "currentFromAngle")
+        let uuid = Constants.uuid
+        let currentFromAngle = defaults.double(forKey: Constants.currentFromAngleKey)
         currentWater += waterCupSize
+        defaults.set(currentWater, forKey: Constants.currentWaterKey)
         let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
         baseRef.child("currentWater").setValue(currentWater)
         let ratio: Double = Double(currentWater) / Double(waterTarget)
-        defaults.set(ratio, forKey: "currentRatio")
+        defaults.set(ratio, forKey: Constants.currentRatioKey)
         let showRatio = min(1.0,ratio)
         updateLabels()
         progressLabel.text = String(Int(ratio * 100.00)) + "%"
@@ -328,18 +318,18 @@ class ProfileViewController: UIViewController {
                 print("animation stopped, was interrupted")
             }
         }
-        defaults.set(toAngle, forKey: "currentFromAngle")
+        defaults.set(toAngle, forKey: Constants.currentFromAngleKey)
     }
 
     @IBAction func minusButtonTapped(_ sender: ZFRippleButton) {
         let defaults = UserDefaults.standard
-        let uuid = defaults.string(forKey: "identifier")
-        let currentFromAngle = defaults.double(forKey: "currentFromAngle")
+        let uuid = Constants.uuid
+        let currentFromAngle = defaults.double(forKey: Constants.currentFromAngleKey)
         currentWater = max(currentWater - waterCupSize, 0)
         let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
         baseRef.child("currentWater").setValue(currentWater)
         let ratio: Double = Double(currentWater) / Double(waterTarget)
-        defaults.set(ratio, forKey: "currentRatio")
+        defaults.set(ratio, forKey: Constants.currentRatioKey)
         updateLabels()
         progressLabel.text = String(Int(ratio * 100)) + "%"
         if ratio >= 1.0 {
@@ -361,7 +351,7 @@ class ProfileViewController: UIViewController {
                 print("animation stopped, was interrupted")
             }
         }
-        defaults.set(toAngle, forKey: "currentFromAngle")
+        defaults.set(toAngle, forKey: Constants.currentFromAngleKey)
     }
     
     private func hideRow() {
@@ -379,7 +369,7 @@ class ProfileViewController: UIViewController {
     @IBAction func accessoryButtonClicked(_ sender: UIButton) {
         // assume user clicks on left accessory
         let defaults = UserDefaults.standard
-        var delta = defaults.integer(forKey: "delta")
+        var delta = defaults.integer(forKey: Constants.deltaKey)
         switch sender.currentTitle! {
             case "left":
                 delta -= 1
@@ -424,7 +414,7 @@ class ProfileViewController: UIViewController {
                         print("animation stopped, was interrupted")
                     }
                 }
-                defaults.set(delta, forKey: "delta")
+                defaults.set(delta, forKey: Constants.deltaKey)
                 break
             }
         }

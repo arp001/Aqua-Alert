@@ -68,7 +68,7 @@ class ProgressViewController: UIViewController {
         // assert len (data) == len (labels) 
         
         let ref = FIRDatabase.database().reference()
-        let uuid = defaults.string(forKey: "identifier")
+        let uuid = Constants.uuid
         var baseRef = ref.child(uuid!).child("TimeInfo")
         func getData(completion: @escaping (() -> ())) {
             baseRef.observe(.value, with: { (snapshot) in
