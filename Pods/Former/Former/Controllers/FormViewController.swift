@@ -14,7 +14,7 @@ open class FormViewController: UIViewController {
     
     public let tableView: UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: .grouped)
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = UIColor(white: 0.22, alpha: 1.0)
         tableView.contentInset.bottom = 10
         tableView.sectionHeaderHeight = 0
         tableView.sectionFooterHeight = 0
@@ -33,7 +33,7 @@ open class FormViewController: UIViewController {
     // MARK: Private
     
     private final func setup() {
-        view.backgroundColor = .groupTableViewBackground
+        view.backgroundColor = UIColor(white: 0.22, alpha: 1.0)
         view.insertSubview(tableView, at: 0)
         let tableConstraints = [
           NSLayoutConstraint.constraints(

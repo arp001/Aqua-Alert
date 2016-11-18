@@ -12,9 +12,20 @@ import Firebase
 
 class InitialFormViewController: FormViewController {
     var ref: FIRDatabaseReference!
-    var recommendedWaterIntake = 0
-    var weight = 0.0
-    var gender = "Male"
+    static var recommendedWaterIntake = 0
+    static var weight = 0.0
+    static var gender = "Male"
+    
+    static func calculateWaterIntake() {
+        weight = Double(weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title)!
+        gender = genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title
+        let weightLbs = weight * 2.20462
+        recommendedWaterIntake = Int(round(weightLbs * 0.43 * 29.5735))
+        if gender == "Female" {
+            recommendedWaterIntake += Int(round(0.08 * Double(recommendedWaterIntake)))
+        }
+        suggestedWaterIntakeTextField.text = String(recommendedWaterIntake) + " ML"
+    }
     
     let nameTextField = TextFieldRowFormer<FormTextFieldCell>().configure { (row) in
         row.placeholder = "Name"
@@ -22,27 +33,21 @@ class InitialFormViewController: FormViewController {
             
     }
     
-    let weightInlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
+    var weightInlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, Int>() {
         $0.titleLabel.text = "Weight"
         }.configure { row in
             row.pickerItems = (30...120).map {
                 InlinePickerItem(title: "\($0)" + "kg", value: Int($0))
             }
         }.onValueChanged { item in
-            print("got here?")
-    }
+             
+        }
     
-//    let labelRow = LabelRowFormer<FormLabelCell>()
-//        .configure { row in
-//            row.text = "Halloween!"
-//        }.onSelected { row in
-//            // Do Something
-//    }
-    
-    let suggestedWaterIntakeTextField = TextFieldRowFormer<FormTextFieldCell>().configure { (row) in
+    static let suggestedWaterIntakeTextField = TextFieldRowFormer<FormTextFieldCell>().configure { (row) in
         row.placeholder = "Water intake/day Target (ml) "
     }
-    let genderInlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, String>() {
+    
+    static let genderInlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, String>() {
         $0.titleLabel.text = "Gender"
         }.configure { row in
             row.pickerItems =  [InlinePickerItem(title: "Male", value: ""), InlinePickerItem(title: "Female", value: "")]
@@ -50,20 +55,11 @@ class InitialFormViewController: FormViewController {
             print("got here?")
     }
     
+    
     let header = LabelViewFormer<FormLabelHeaderView>() { view in
         view.titleLabel.text = "Label Header"
     }
-    
-    func calculateWaterIntake() {
-        weight = Double(weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title)!
-        gender = genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title
-        let weightLbs = weight * 2.20462
-        recommendedWaterIntake = Int(round(weightLbs * 0.43 * 29.5735))
-        if gender == "Female" {
-            recommendedWaterIntake += Int(round(0.08 * Double(recommendedWaterIntake)))
-         }
-        suggestedWaterIntakeTextField.text = String(recommendedWaterIntake) + " ML"
-    }
+
     
     @IBAction func confirmButtonPressed() {
         // handle incomplete profile here!
