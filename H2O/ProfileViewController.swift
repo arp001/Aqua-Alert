@@ -19,7 +19,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var currentWaterLabel: UILabel!
     @IBOutlet weak var changeContainerButton: ZFRippleButton!
     @IBOutlet weak var progressLabel: UILabel!
-    @IBOutlet weak var minusButton: ZFRippleButton!
     @IBOutlet weak var plusButton: ZFRippleButton!
     let customDate = CustomDate(date: Date())
     var progress: KDCircularProgress!
@@ -36,15 +35,6 @@ class ProfileViewController: UIViewController {
         plusButton.layer.cornerRadius = 0.5 * plusButton.bounds.size.width
         plusButton.backgroundColor = .black
         plusButton.shadowRippleEnable = true
-    }
-    
-    private func setupMinusButton() {
-        minusButton.rippleOverBounds = true
-        minusButton.buttonCornerRadius = 12.0
-        minusButton.clipsToBounds = true
-        minusButton.layer.cornerRadius = 0.5 * minusButton.bounds.size.width
-        minusButton.backgroundColor = .black
-        minusButton.shadowRippleEnable = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,7 +93,6 @@ class ProfileViewController: UIViewController {
             self.setupContainerButton()
         }
         setupPlusButton()
-        setupMinusButton()
     }
     
     private func setupProgress() {
@@ -320,49 +309,14 @@ class ProfileViewController: UIViewController {
         }
         defaults.set(toAngle, forKey: Constants.currentFromAngleKey)
     }
-
-    @IBAction func minusButtonTapped(_ sender: ZFRippleButton) {
-        let defaults = UserDefaults.standard
-        let uuid = Constants.uuid
-        let currentFromAngle = defaults.double(forKey: Constants.currentFromAngleKey)
-        currentWater = max(currentWater - waterCupSize, 0)
-        let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
-        baseRef.child("currentWater").setValue(currentWater)
-        let ratio: Double = Double(currentWater) / Double(waterTarget)
-        defaults.set(ratio, forKey: Constants.currentRatioKey)
-        updateLabels()
-        progressLabel.text = String(Int(ratio * 100)) + "%"
-        if ratio >= 1.0 {
-            return
-        }
-        else {
-            defaults.set(false, forKey: "didReach100%")
-            defaults.set(false, forKey: "didCross130%")
-        }
-        
-        updateProgressColor(ratio: ratio)
-        let toAngle: Double = ratio * 360.0
-        print("Current angle in minus: \(currentFromAngle)")
-        print("To angle in minus: \(toAngle)")
-        progress.animate(currentFromAngle, toAngle: toAngle, duration: 0.5) { completed in
-            if completed {
-                print("animation stopped, completed")
-            } else {
-                print("animation stopped, was interrupted")
-            }
-        }
-        defaults.set(toAngle, forKey: Constants.currentFromAngleKey)
-    }
     
     private func hideRow() {
         plusButton.isHidden = true
-        minusButton.isHidden = true
         changeContainerButton.isHidden = true
     }
     
     private func unhideRow() {
         plusButton.isHidden = false
-        minusButton.isHidden = false
         changeContainerButton.isHidden = false
     }
     

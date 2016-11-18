@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Firebase
 class Record: NSObject, NSCoding {
     var time: String
     var amount: String
@@ -86,6 +86,9 @@ class DailyHistoryTableViewController: UITableViewController {
             let amtInt = Int(amtString)!
             prevWater -= amtInt
             defaults.set(prevWater, forKey: Constants.currentWaterKey)
+            let uuid = Constants.uuid
+            let baseRef = FIRDatabase.database().reference().child(uuid!).child("TimeInfo").child(CustomDate(date: Date()).formatDate()).child("currentWater")
+            baseRef.setValue(prevWater)
             self.histArray.remove(at: indexPath.row)
             let arrayArchived = NSKeyedArchiver.archivedData(withRootObject: self.histArray)
             defaults.set(arrayArchived, forKey: Constants.histArrayKey)
@@ -94,12 +97,16 @@ class DailyHistoryTableViewController: UITableViewController {
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in
-            
+            tableView.deselectRow(at: indexPath, animated: true)
         })
         
         alertVC.addAction(yesAction)
         alertVC.addAction(cancelAction)
         self.present(alertVC, animated: true, completion: nil)
+    }
+
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     /*
