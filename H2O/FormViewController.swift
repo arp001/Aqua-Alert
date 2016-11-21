@@ -12,11 +12,11 @@ import Firebase
 
 class InitialFormViewController: FormViewController {
     var ref: FIRDatabaseReference!
-    static var recommendedWaterIntake = 0
-    static var weight = 0.0
-    static var gender = "Male"
+    var recommendedWaterIntake = 0
+    var weight = 0.0
+    var gender = "Male"
     
-    static func calculateWaterIntake() {
+    func calculateWaterIntake() {
         weight = Double(weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title)!
         gender = genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title
         let weightLbs = weight * 2.20462
@@ -43,11 +43,11 @@ class InitialFormViewController: FormViewController {
              
         }
     
-    static let suggestedWaterIntakeTextField = TextFieldRowFormer<FormTextFieldCell>().configure { (row) in
+    let suggestedWaterIntakeTextField = TextFieldRowFormer<FormTextFieldCell>().configure { (row) in
         row.placeholder = "Water intake/day Target (ml) "
     }
     
-    static let genderInlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, String>() {
+    let genderInlinePickerRow = InlinePickerRowFormer<FormInlinePickerCell, String>() {
         $0.titleLabel.text = "Gender"
         }.configure { row in
             row.pickerItems =  [InlinePickerItem(title: "Male", value: ""), InlinePickerItem(title: "Female", value: "")]

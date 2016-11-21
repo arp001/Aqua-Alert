@@ -28,11 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // set it to the first one of TabBarController to show tabBar
-         /* if defaults.bool(forKey: Constants.didLoginKey) == true {
+         if defaults.bool(forKey: Constants.didLoginKey) == true {
             let myTabBarController = storyboard.instantiateViewController(withIdentifier: "myTabBarViewController") as! UITabBarController
             self.window?.rootViewController = myTabBarController
             self.window?.makeKeyAndVisible()
-        } */
+        }
         
         defaults.set(false, forKey: Constants.didShowDailyAlertKey)
         return true
