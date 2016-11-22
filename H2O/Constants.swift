@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 struct Constants {
-    static let uuid = UserDefaults.standard.string(forKey: "identifier")
+    static var uuid = UserDefaults.standard.string(forKey: "identifier")
     static let currentWaterKey = "currentWaterKey"
     static let waterTargetKey = "waterTargetKey"
     static let cupSizeKey = "cupSizeKey"

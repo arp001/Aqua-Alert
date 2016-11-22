@@ -15,6 +15,8 @@ class InitialFormViewController: FormViewController {
     var recommendedWaterIntake = 0
     var weight = 0.0
     var gender = "Male"
+    var name = "Looool"
+    var cameFromSettings = false 
     
     func calculateWaterIntake() {
         weight = Double(weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title)!
@@ -37,7 +39,7 @@ class InitialFormViewController: FormViewController {
         $0.titleLabel.text = "Weight"
         }.configure { row in
             row.pickerItems = (30...120).map {
-                InlinePickerItem(title: "\($0)" + "kg", value: Int($0))
+                InlinePickerItem(title: "\($0)" + " kg", value: Int($0))
             }
         }.onValueChanged { item in
              
@@ -64,8 +66,15 @@ class InitialFormViewController: FormViewController {
     @IBAction func confirmButtonPressed() {
         // handle incomplete profile here!
         
-        let uniqueID = UUID().uuidString // creating a unique identifier for the person
+        var uniqueID = "" // creating a unique identifier for the person
         let defaults = UserDefaults.standard
+        
+        if cameFromSettings {
+            uniqueID = Constants.uuid!
+        }
+        else {
+            uniqueID = UUID().uuidString
+        }
         
         // storing the profile info in Database
         let profile = UserInfo(name: nameTextField.text!, weight: weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title,  gender: genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title)
@@ -77,12 +86,20 @@ class InitialFormViewController: FormViewController {
         let customDate = CustomDate(date: Date())
         let dateRef = ref.child(uniqueID).child("TimeInfo").child(customDate.formatDate())
         dateRef.setValue(waterInfo.toDict())
-        defaults.set(uniqueID, forKey: "identifier") // storing the UID in UserDefaults
+        defaults.set(uniqueID, forKey: "identifier")
+        Constants.uuid = uniqueID // storing the UID in UserDefaults
         
         // storing water info into UD
         defaults.set(waterInfo.containerSize, forKey: Constants.cupSizeKey)
         defaults.set(waterInfo.currentWater, forKey: Constants.currentWaterKey)
         defaults.set(waterInfo.waterTarget, forKey: Constants.waterTargetKey)
+        
+        if cameFromSettings {
+            _ = navigationController?.popViewController(animated: true)
+        }
+        else {
+            performSegue(withIdentifier: "showTabBarVC", sender: nil)
+        }
     }
     
     override func viewDidLoad() {
@@ -90,7 +107,32 @@ class InitialFormViewController: FormViewController {
         ref = FIRDatabase.database().reference()
         let section = SectionFormer(rowFormer: nameTextField, weightInlinePickerRow,genderInlinePickerRow,suggestedWaterIntakeTextField)
             .set(headerViewFormer: header)
-        former.append(sectionFormer: section)
+        if Constants.uuid == nil {
+            Constants.uuid = "Not set"
+        }
+        
+        let personalRef = ref.child(Constants.uuid!).child("Personal")
+        personalRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? [String:String]
+            print("value is: \(value)")
+            self.name = (value?["name"]) ?? ""
+            print("name is: \(self.name)")
+            self.gender = (value?["gender"]) ?? "Male"
+            let weightWithKg = value?["weight"]
+            let weightWithoutKgArray = weightWithKg?.components(separatedBy: " ")
+            let weightWithoutKg = weightWithoutKgArray?[0] ?? "30"
+            self.weight = Double(weightWithoutKg)!
+            self.nameTextField.text = self.name
+            self.weightInlinePickerRow.selectedRow = Int(self.weight - 30)
+            self.suggestedWaterIntakeTextField.text = String(UserDefaults.standard.integer(forKey: Constants.waterTargetKey))
+            if self.gender == "Male" {
+               self.genderInlinePickerRow.selectedRow = 0
+            }
+            else {
+               self.genderInlinePickerRow.selectedRow = 1
+            }
+            self.former.append(sectionFormer: section)
+        })
     }
 }
 

@@ -342,35 +342,48 @@ class ProfileViewController: UIViewController {
             return
         }
         
-        for (date,info) in profileOnDates! {
-            if date == customNewDate.formatDate() {
-                if delta != 0 {
-                    hideRow()
+        if delta != 0 {
+            hideRow()
+        }
+        else {
+            unhideRow()
+        }
+        
+        if let info = profileOnDates?[customNewDate.formatDate()] {
+            
+            let currentWater = info["currentWater"] as! Int
+            let waterTarget = info["waterTarget"] as! Int
+            let ratio = Double(currentWater) / Double(waterTarget)
+            progressLabel.text = String(Int(ratio * 100.0)) + "%"
+            currentWaterLabel.text = String(currentWater) + " ML"
+            waterTargetLabel.text = String(waterTarget) + " ML"
+            dateTellerLabel.text = customNewDate.formatDate()
+            let showRatio = min(1.0,ratio)
+            let toAngle: Double = showRatio * 360.0
+            updateProgressColor(ratio: showRatio)
+            progress.animate(0.0, toAngle: toAngle, duration: 1.3) { completed in
+                if completed {
+                    print("animation stopped, completed")
+                } else {
+                    print("animation stopped, was interrupted")
                 }
-                else {
-                    unhideRow()
-                }
-                
-                let currentWater = info["currentWater"] as! Int
-                let waterTarget = info["waterTarget"] as! Int
-                let ratio = Double(currentWater) / Double(waterTarget)
-                progressLabel.text = String(Int(ratio * 100.0)) + "%"
-                currentWaterLabel.text = String(currentWater) + " ML"
-                waterTargetLabel.text = String(waterTarget) + " ML"
-                dateTellerLabel.text = date
-                let showRatio = min(1.0,ratio)
-                let toAngle: Double = showRatio * 360.0
-                updateProgressColor(ratio: showRatio)
-                progress.animate(0.0, toAngle: toAngle, duration: 1.3) { completed in
-                    if completed {
-                        print("animation stopped, completed")
-                    } else {
-                        print("animation stopped, was interrupted")
-                    }
-                }
-                defaults.set(delta, forKey: Constants.deltaKey)
-                break
             }
+            defaults.set(delta, forKey: Constants.deltaKey)
+        }
+        else {
+            progressLabel.text = "0 %"
+            currentWaterLabel.text = " - "
+            waterTargetLabel.text = " - "
+            dateTellerLabel.text = customNewDate.formatDate()
+            updateProgressColor(ratio: 0.0)
+            progress.animate(0.0, toAngle: 0.0, duration: 1.3) { completed in
+                if completed {
+                    print("animation stopped, completed")
+                } else {
+                    print("animation stopped, was interrupted")
+                }
+            }
+            defaults.set(delta, forKey: Constants.deltaKey)
         }
     }
     

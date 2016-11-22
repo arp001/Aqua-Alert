@@ -77,8 +77,9 @@ class ProgressViewController: UIViewController {
                 var labels: [String] = []
                 let value = snapshot.value as? [String:NSDictionary]
                 let calendar = Calendar.current
+                var count = 0
                 print("array is: \(value)")
-                for (_,_) in value! {
+                while true {
                     let prevDate = calendar.date(byAdding: .day, value: delta, to: Date())
                     let customPrevDate = CustomDate(date: prevDate!)
                     let date = customPrevDate.formatDate()
@@ -87,6 +88,10 @@ class ProgressViewController: UIViewController {
                         let toAppendDouble = Double(toAppendInt)
                         labels.append(date)
                         data.append(toAppendDouble)
+                        delta -= 1
+                        count += 1
+                    }
+                    else if count < (value?.count)! {
                         delta -= 1
                     }
                     else {
