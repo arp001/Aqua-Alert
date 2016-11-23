@@ -65,7 +65,7 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
-        <!--Profile-->
+        <!--Personal Info-->
         <scene sceneID="0Ne-Dw-0cJ">
             <objects>
                 <viewController storyboardIdentifier="PersonalDetails" id="5iI-Rc-VBF" customClass="InitialFormViewController" customModule="H2O" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,7 +89,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.21958315372467041" green="0.21962565183639526" blue="0.21957409381866455" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="HO8-fU-ea2"/>
+                    <navigationItem key="navigationItem" title="Personal Info" id="HO8-fU-ea2"/>
                     <connections>
                         <segue destination="vGP-lU-rNi" kind="show" identifier="showTabBarVC" id="j7G-th-m8Y"/>
                     </connections>
@@ -173,7 +173,7 @@
                                         <rect key="frame" x="0.0" y="144" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J2T-jm-ecL" id="S4B-tC-KYu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow Notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6W-hW-48C">
@@ -195,7 +195,7 @@
                                         <rect key="frame" x="0.0" y="184" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sAq-M6-guS" id="KVO-9J-K51">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wj-qj-PQU">
@@ -217,7 +217,7 @@
                                         <rect key="frame" x="0.0" y="272" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j8l-At-ndG" id="Wkc-VP-Wvv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow in-app sounds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfu-S9-BWw">
@@ -245,12 +245,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="CrV-6O-beW"/>
                     <connections>
-                        <segue destination="U8e-Oc-P9K" kind="show" identifier="showInitialFormSegue" id="k5d-TT-X7d"/>
+                        <segue destination="5iI-Rc-VBF" kind="show" identifier="showInitialFormSegue" id="oDj-Kh-Teb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxI-3H-nFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4940" y="1132.9835082458771"/>
+            <point key="canvasLocation" x="4193" y="1242"/>
         </scene>
         <!--Size View Controller-->
         <scene sceneID="fhJ-dM-9cJ">
@@ -620,6 +620,7 @@
         <!--Profile-->
         <scene sceneID="Qvr-dA-NAk">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vsv-zX-Gy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pj1-sX-NQv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="ic_timeline_3x" id="E43-5C-Dqk"/>
                     <toolbarItems/>
@@ -632,7 +633,6 @@
                         <segue destination="7Cb-Fy-smI" kind="relationship" relationship="rootViewController" id="Gbz-ZP-3oq"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vsv-zX-Gy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4000.8000000000002" y="-217.24137931034485"/>
         </scene>
@@ -673,7 +673,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiQ-Kr-ZfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4000.8000000000002" y="1132.9835082458771"/>
+            <point key="canvasLocation" x="3217" y="1288"/>
         </scene>
     </scenes>
     <resources>
@@ -687,6 +687,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Gbz-ZP-3oq"/>
-        <segue reference="k5d-TT-X7d"/>
+        <segue reference="oDj-Kh-Teb"/>
     </inferredMetricsTieBreakers>
 </document>

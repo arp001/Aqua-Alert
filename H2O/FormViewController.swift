@@ -81,6 +81,17 @@ class InitialFormViewController: FormViewController {
         let profileRef = ref.child(uniqueID).child("Personal")
         profileRef.setValue(profile.toDict())
         
+        if cameFromSettings {
+            defaults.set(Int(suggestedWaterIntakeTextField.text!)!, forKey: Constants.waterTargetKey)
+            let confirmationAlert = UIAlertController(title: "Success", message: "Your changes have been saved.", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "OK", style: .default, handler: { (result) in
+                _ = self.navigationController?.popViewController(animated: true)
+            })
+            confirmationAlert.addAction(okButton)
+            self.present(confirmationAlert, animated: true, completion: nil)
+            return
+        }
+        
         // storing water related info in Firebase (for graphing purposes)
         let waterInfo = WaterInfo(wt: Int(suggestedWaterIntakeTextField.text!)!, cw: 0, cs: 50)
         let customDate = CustomDate(date: Date())
@@ -93,17 +104,12 @@ class InitialFormViewController: FormViewController {
         defaults.set(waterInfo.containerSize, forKey: Constants.cupSizeKey)
         defaults.set(waterInfo.currentWater, forKey: Constants.currentWaterKey)
         defaults.set(waterInfo.waterTarget, forKey: Constants.waterTargetKey)
-        
-        if cameFromSettings {
-            _ = navigationController?.popViewController(animated: true)
-        }
-        else {
-            performSegue(withIdentifier: "showTabBarVC", sender: nil)
-        }
+        performSegue(withIdentifier: "showTabBarVC", sender: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.setHidesBackButton(true, animated: false)
         ref = FIRDatabase.database().reference()
         let section = SectionFormer(rowFormer: nameTextField, weightInlinePickerRow,genderInlinePickerRow,suggestedWaterIntakeTextField)
             .set(headerViewFormer: header)

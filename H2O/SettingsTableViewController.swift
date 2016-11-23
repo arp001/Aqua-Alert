@@ -15,6 +15,8 @@ class SettingsTableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        tabBarController?.tabBar.isHidden = false
     }
 
     // MARK: - Table view data source
@@ -101,11 +103,8 @@ class SettingsTableViewController: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "showInitialFormSegue" {
-           let destinationNVC = segue.destination as? UINavigationController
-           let formVC = destinationNVC?.topViewController as? InitialFormViewController
-           formVC?.cameFromSettings = true
+           let destinationVC = segue.destination as? InitialFormViewController
+           destinationVC?.cameFromSettings = true
         }
     }
-    
-
 }
