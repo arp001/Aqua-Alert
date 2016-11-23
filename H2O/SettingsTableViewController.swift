@@ -8,6 +8,7 @@
 
 
 import UIKit
+import PMAlertController
 
 class SettingsTableViewController: UITableViewController {
 
@@ -38,6 +39,19 @@ class SettingsTableViewController: UITableViewController {
         }
     }
 
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.section == 1 && indexPath.row == 0 {
+            return nil
+        }
+        else if indexPath.section == 2 {
+            return nil
+        }
+        
+        return indexPath
+    }
+
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("indexPath is: \(indexPath)")
         let cell = tableView.cellForRow(at: indexPath)! as UITableViewCell
@@ -46,8 +60,44 @@ class SettingsTableViewController: UITableViewController {
             case "changeCell":
                 performSegue(withIdentifier: "showInitialFormSegue", sender: nil)
                 break
+            case "freqCell":
+                let choices = PMAlertController(title: "Choose an interval", description: "", image: nil, style: .walkthrough)
+                choices.gravityDismissAnimation = false
+                choices.alertTitle.textColor = .blue
+                let minutes = [15,30,45]
+            
+                for i in minutes {
+                    let alertAction = PMAlertAction(title: "Every " + String(i) + " minutes", style: .default, action: { (result) in
+                        print("i: \(i)")
+                    })
+                    choices.addAction(alertAction)
+                }
+            
+                let hours = [1,2,3,4]
+            
+                for i in hours {
+                    var time = ""
+                    if i == 1 {
+                        time = " hour"
+                    }
+                    else {
+                        time = " hours"
+                    }
+                    
+                    let alertAction = PMAlertAction(title: "Every " + String(i) + time, style: .default, action: { (result) in
+                        print("i: \(i)")
+                    })
+                    choices.addAction(alertAction)
+                }
+                
+                self.present(choices, animated: true, completion: nil)
+                break
             default: break
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     /*
