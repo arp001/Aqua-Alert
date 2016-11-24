@@ -9,6 +9,7 @@
 
 import UIKit
 import PMAlertController
+import UserNotifications
 
 class SettingsTableViewController: UITableViewController {
 
@@ -50,12 +51,27 @@ class SettingsTableViewController: UITableViewController {
         
         return indexPath
     }
-
+    
+    func scheduleLocal(freq: Int) {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        let content = UNMutableNotificationContent()
+        content.title = "Water Reminder"
+        content.body = "It's time to drink a glass of water!"
+        content.categoryIdentifier = "notif"
+        content.userInfo = ["customData": "fillerInfo"]
+        content.sound = UNNotificationSound.default()
+        var dateComponents = DateComponents()
+        dateComponents.hour = freq/60
+        dateComponents.minute = freq%60
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("indexPath is: \(indexPath)")
         let cell = tableView.cellForRow(at: indexPath)! as UITableViewCell
-        
         switch cell.reuseIdentifier! {
             case "changeCell":
                 performSegue(withIdentifier: "showInitialFormSegue", sender: nil)
@@ -69,6 +85,7 @@ class SettingsTableViewController: UITableViewController {
                 for i in minutes {
                     let alertAction = PMAlertAction(title: "Every " + String(i) + " minutes", style: .default, action: { (result) in
                         print("i: \(i)")
+                        self.scheduleLocal(freq: i)
                     })
                     choices.addAction(alertAction)
                 }
@@ -85,7 +102,7 @@ class SettingsTableViewController: UITableViewController {
                     }
                     
                     let alertAction = PMAlertAction(title: "Every " + String(i) + time, style: .default, action: { (result) in
-                        print("i: \(i)")
+                        self.scheduleLocal(freq: i*60)
                     })
                     choices.addAction(alertAction)
                 }
@@ -99,52 +116,6 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
     
     // MARK: - Navigation
 

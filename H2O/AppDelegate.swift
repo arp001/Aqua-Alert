@@ -8,12 +8,13 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
     
     override init() {
         super.init()
@@ -26,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let defaults = UserDefaults.standard
         
+        registerLocal()
         
         // set it to the first one of TabBarController to show tabBar
          if defaults.bool(forKey: Constants.didLoginKey) == true {
@@ -59,7 +61,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    // MARK: - Notification Methods
+    
+    func registerLocal() {
+        if UserDefaults.standard.bool(forKey: Constants.didAllowNotifKey) {
+            return
+        }
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert,.badge,.sound], completionHandler: {(granted,error) in
+            if granted {
+                UserDefaults.standard.set(true, forKey: Constants.didAllowNotifKey)
+                self.scheduleLocal()
+            }
+            else {
+                UserDefaults.standard.set(false, forKey: Constants.didAllowNotifKey)
+            }
+        })
+        
+    }
+    
+    func scheduleLocal() {
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = "Water Reminder"
+        content.body = "It's time to drink a glass of water!"
+        content.categoryIdentifier = "notif"
+        content.userInfo = ["customData": "fillerInfo"]
+        content.sound = UNNotificationSound.default()
+        var dateComponents = DateComponents()
+        dateComponents.hour = 10
+        dateComponents.minute = 30
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+        registerCategories()
+    }
+    
+    func registerCategories() {
+        let center = UNUserNotificationCenter.current()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        center.delegate = vc
+        let drink = UNNotificationAction(identifier: "drink", title: "Drink", options: .foreground)
+        let category = UNNotificationCategory(identifier: "notif", actions: [drink], intentIdentifiers: [])
+        center.setNotificationCategories([category])
+    }
 }
 

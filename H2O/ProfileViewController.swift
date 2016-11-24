@@ -11,8 +11,9 @@ import KDCircularProgress
 import ZFRippleButton
 import Firebase
 import PMAlertController
+import UserNotifications
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UNUserNotificationCenterDelegate {
     
     @IBOutlet weak var dateTellerLabel: UILabel!
     @IBOutlet weak var waterTargetLabel: UILabel!
@@ -27,6 +28,31 @@ class ProfileViewController: UIViewController {
     var waterCupSize = UserDefaults.standard.integer(forKey: Constants.cupSizeKey)
     var currentWater = UserDefaults.standard.integer(forKey: Constants.currentWaterKey)
     var profileOnDates : [String:NSDictionary]?
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // pull out the buried userInfo dictionary
+        let userInfo = response.notification.request.content.userInfo
+        
+        if let customData = userInfo["customData"] as? String {
+            print("Custom data received: \(customData)")
+            
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier:
+                // the user swiped to unlock
+                print("Swiped!")
+                
+            case "drink":
+                print("Touched on Drink!")
+                break
+                
+            default:
+                break
+            }
+        }
+        
+        // you must call the completion handler when you're done
+        completionHandler()
+    }
     
     private func setupPlusButton() {
         plusButton.rippleOverBounds = true

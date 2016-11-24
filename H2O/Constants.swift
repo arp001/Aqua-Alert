@@ -20,4 +20,5 @@ struct Constants {
     static let didShowDailyAlertKey = "didShowDailyAlertKey"
     static let histArrayKey = "histArrayKey"
     static let didLoginKey = "didLoginKey"
+    static let didAllowNotifKey = "didAllowNotifKey"
 }
