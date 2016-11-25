@@ -21,4 +21,5 @@ struct Constants {
     static let histArrayKey = "histArrayKey"
     static let didLoginKey = "didLoginKey"
     static let didAllowNotifKey = "didAllowNotifKey"
+    static let didAllowPopupKey = "didAllowPopupKey"
 }

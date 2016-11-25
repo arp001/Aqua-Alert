@@ -220,7 +220,7 @@ class ProfileViewController: UIViewController, UNUserNotificationCenterDelegate 
     }
     
     private func setupNavAndTab() {
-        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.leftBarButtonItem = nil
         navigationController?.navigationBar.isHidden = false
         tabBarController?.tabBar.isHidden = false
     }
@@ -247,7 +247,11 @@ class ProfileViewController: UIViewController, UNUserNotificationCenterDelegate 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // if the user didn't already receive a daily popup, then show one
-        if !(UserDefaults.standard.bool(forKey: Constants.didShowDailyAlertKey)) {
+        let showedAlert = UserDefaults.standard.bool(forKey: Constants.didShowDailyAlertKey)
+        let allowedAlert = UserDefaults.standard.bool(forKey: Constants.didAllowPopupKey)
+        print("showedAlert: \(showedAlert)")
+        print("allowedAlert: \(allowedAlert)")
+        if !showedAlert && allowedAlert {
             showDailyMessage()
             UserDefaults.standard.set(true, forKey: Constants.didShowDailyAlertKey)
         }

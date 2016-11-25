@@ -39,28 +39,6 @@ class ProgressViewController: UIViewController {
         return graphView
     }
     
-    private func setupConstraints() {
-        
-        self.graphView.translatesAutoresizingMaskIntoConstraints = false
-        graphConstraints.removeAll()
-        
-        let topConstraint = NSLayoutConstraint(item: self.graphView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.customView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
-        let rightConstraint = NSLayoutConstraint(item: self.graphView, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: self.customView, attribute: NSLayoutAttribute.right, multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: self.graphView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.customView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
-        let leftConstraint = NSLayoutConstraint(item: self.graphView, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: self.customView, attribute: NSLayoutAttribute.left, multiplier: 1, constant: 0)
-        
-        //let heightConstraint = NSLayoutConstraint(item: self.graphView, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
-        
-        graphConstraints.append(topConstraint)
-        graphConstraints.append(bottomConstraint)
-        graphConstraints.append(leftConstraint)
-        graphConstraints.append(rightConstraint)
-        
-        //graphConstraints.append(heightConstraint)
-        
-        self.customView.addConstraints(graphConstraints)
-    }
-    
     func setupBarGraph() {
         let defaults = UserDefaults.standard
         let rect = CGRect(x: 0.0, y: 0.0 , width: customView.frame.width, height: customView.frame.height)

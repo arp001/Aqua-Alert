@@ -19,9 +19,11 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        let defaults = UserDefaults.standard
+        defaults.set(false, forKey: Constants.didShowDailyAlertKey)
+        defaults.set(true, forKey: Constants.didAllowPopupKey)
         super.viewDidLoad()
         uploadGIF()
     }
-
 }
 

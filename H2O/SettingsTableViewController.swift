@@ -13,12 +13,46 @@ import UserNotifications
 
 class SettingsTableViewController: UITableViewController {
 
+    @IBOutlet weak var notificationSwitch: UISwitch!
+    @IBOutlet weak var popUpSwitch: UISwitch!
+    
+    func notifSwitchTrig(mySwitch: UISwitch) {
+        let state = mySwitch.isOn
+        if state {
+            print("notif currently on")
+            scheduleLocal(freq: 15)
+        }
+        else {
+            print("notif currently off")
+            unscheduleNotif()
+        }
+    }
+    
+    func popUpSwitchTrig(mySwitch: UISwitch) {
+        let state = mySwitch.isOn
+        if state {
+            print("popup currently on")
+            UserDefaults.standard.set(true, forKey: Constants.didAllowPopupKey)
+        }
+        else {
+            print("popup currently off")
+            UserDefaults.standard.set(false, forKey: Constants.didAllowPopupKey)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.navigationItem.setHidesBackButton(true, animated: false)
         tabBarController?.tabBar.isHidden = false
+        notificationSwitch.addTarget(self, action: #selector(notifSwitchTrig), for: .valueChanged)
+        popUpSwitch.addTarget(self, action: #selector(popUpSwitchTrig), for: .valueChanged)
     }
 
     // MARK: - Table view data source
@@ -52,7 +86,12 @@ class SettingsTableViewController: UITableViewController {
         return indexPath
     }
     
-    func scheduleLocal(freq: Int) {
+    private func unscheduleNotif() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+    }
+    
+    private func scheduleLocal(freq: Int) {
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         let content = UNMutableNotificationContent()

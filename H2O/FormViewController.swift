@@ -18,15 +18,18 @@ class InitialFormViewController: FormViewController {
     var name = "Looool"
     var cameFromSettings = false 
     
-    func calculateWaterIntake() {
-        weight = Double(weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title)!
+    func calculateWaterIntake() -> String {
+        let pickerWeight = weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title
+        let weightInNumArray = pickerWeight.components(separatedBy: " ")
+        let weightString = weightInNumArray[0]
+        weight = Double(weightString)!
         gender = genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title
         let weightLbs = weight * 2.20462
         recommendedWaterIntake = Int(round(weightLbs * 0.43 * 29.5735))
         if gender == "Female" {
             recommendedWaterIntake += Int(round(0.08 * Double(recommendedWaterIntake)))
         }
-        suggestedWaterIntakeTextField.text = String(recommendedWaterIntake) + " ML"
+        return String(recommendedWaterIntake)
     }
     
     let nameTextField = TextFieldRowFormer<FormTextFieldCell>().configure { (row) in
@@ -65,7 +68,6 @@ class InitialFormViewController: FormViewController {
     
     @IBAction func confirmButtonPressed() {
         // handle incomplete profile here!
-        
         var uniqueID = "" // creating a unique identifier for the person
         let defaults = UserDefaults.standard
         
@@ -75,12 +77,14 @@ class InitialFormViewController: FormViewController {
         else {
             uniqueID = UUID().uuidString
         }
+    
         
         // storing the profile info in Database
         let profile = UserInfo(name: nameTextField.text!, weight: weightInlinePickerRow.pickerItems[weightInlinePickerRow.selectedRow].title,  gender: genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title)
         let profileRef = ref.child(uniqueID).child("Personal")
+        let timeRef = ref.child(uniqueID).child("TimeInfo").child(CustomDate(date: Date()).formatDate())
         profileRef.setValue(profile.toDict())
-        
+        timeRef.child("waterTarget").setValue(Int(suggestedWaterIntakeTextField.text!)!)
         if cameFromSettings {
             defaults.set(Int(suggestedWaterIntakeTextField.text!)!, forKey: Constants.waterTargetKey)
             let confirmationAlert = UIAlertController(title: "Success", message: "Your changes have been saved.", preferredStyle: .alert)
@@ -92,24 +96,49 @@ class InitialFormViewController: FormViewController {
             return
         }
         
-        // storing water related info in Firebase (for graphing purposes)
-        let waterInfo = WaterInfo(wt: Int(suggestedWaterIntakeTextField.text!)!, cw: 0, cs: 50)
-        let customDate = CustomDate(date: Date())
-        let dateRef = ref.child(uniqueID).child("TimeInfo").child(customDate.formatDate())
-        dateRef.setValue(waterInfo.toDict())
-        defaults.set(uniqueID, forKey: "identifier")
-        Constants.uuid = uniqueID // storing the UID in UserDefaults
+        let rec = calculateWaterIntake()
+        func showRec(completion: @escaping () -> ()) {
+            let alert = UIAlertController(title: "Recommended Water Intake", message: "According to your weight and gender, the recommended water intake for you is \(rec) ML per day. Would you like to use this estimate instead? You can edit it later in Settings.", preferredStyle: .alert)
+            
+            let yes = UIAlertAction(title: "Yes", style: .default, handler: { (result) in
+                self.suggestedWaterIntakeTextField.text = rec
+                completion()
+            })
+            
+            let no = UIAlertAction(title: "No", style: .default, handler: { (result) in
+                completion()
+            })
+            
+            alert.addAction(no)
+            alert.addAction(yes)
+            self.present(alert, animated: true, completion: nil)
+        }
         
-        // storing water info into UD
-        defaults.set(waterInfo.containerSize, forKey: Constants.cupSizeKey)
-        defaults.set(waterInfo.currentWater, forKey: Constants.currentWaterKey)
-        defaults.set(waterInfo.waterTarget, forKey: Constants.waterTargetKey)
-        performSegue(withIdentifier: "showTabBarVC", sender: nil)
+        showRec {
+            // storing water related info in Firebase (for graphing purposes)
+            let waterInfo = WaterInfo(wt: Int(self.suggestedWaterIntakeTextField.text!)!, cw: 0, cs: 50)
+            let customDate = CustomDate(date: Date())
+            let dateRef = self.ref.child(uniqueID).child("TimeInfo").child(customDate.formatDate())
+            dateRef.setValue(waterInfo.toDict())
+            defaults.set(uniqueID, forKey: "identifier")
+            Constants.uuid = uniqueID // storing the UID in UserDefaults
+            
+            // storing water info into UD
+            defaults.set(waterInfo.containerSize, forKey: Constants.cupSizeKey)
+            defaults.set(waterInfo.currentWater, forKey: Constants.currentWaterKey)
+            defaults.set(waterInfo.waterTarget, forKey: Constants.waterTargetKey)
+            self.performSegue(withIdentifier: "showTabBarVC", sender: nil)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.leftBarButtonItem = nil
         ref = FIRDatabase.database().reference()
         let section = SectionFormer(rowFormer: nameTextField, weightInlinePickerRow,genderInlinePickerRow,suggestedWaterIntakeTextField)
             .set(headerViewFormer: header)

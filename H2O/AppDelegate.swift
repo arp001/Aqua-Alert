@@ -35,8 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = myTabBarController
             self.window?.makeKeyAndVisible()
         }
-        
-        defaults.set(false, forKey: Constants.didShowDailyAlertKey)
         return true
     }
 
@@ -91,9 +89,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         content.userInfo = ["customData": "fillerInfo"]
         content.sound = UNNotificationSound.default()
         var dateComponents = DateComponents()
-        dateComponents.hour = 10
-        dateComponents.minute = 30
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        dateComponents.hour = 1
+        dateComponents.minute = 0
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
         registerCategories()

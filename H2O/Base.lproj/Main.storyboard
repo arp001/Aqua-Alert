@@ -245,6 +245,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="CrV-6O-beW"/>
                     <connections>
+                        <outlet property="notificationSwitch" destination="uXq-hK-1C2" id="18f-Gh-X8A"/>
+                        <outlet property="popUpSwitch" destination="Q5V-1L-dgR" id="QDT-5v-5G1"/>
                         <segue destination="5iI-Rc-VBF" kind="show" identifier="showInitialFormSegue" id="oDj-Kh-Teb"/>
                     </connections>
                 </tableViewController>
