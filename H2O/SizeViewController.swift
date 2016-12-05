@@ -14,7 +14,6 @@ class SizeViewController: UIViewController {
 
     let ref = FIRDatabase.database().reference()
     let customDate = CustomDate(date: Date())
-    var containerSize = 0
     
     @IBOutlet weak var container1: ZFRippleButton!
     @IBOutlet weak var container2: ZFRippleButton!
@@ -56,48 +55,24 @@ class SizeViewController: UIViewController {
     }
     
     func goToProfile() {
-        self.performSegue(withIdentifier: "profileSegue", sender: nil)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func containerButtonPressed(_ sender: UIButton) {
         let buttonTitle = sender.titleLabel?.text
         var cupSize = 0
-        // might have to clean this up!
-        switch buttonTitle! {
-            case "50 ML":
-                cupSize = 50
-                break
-            case "100 ML":
-                cupSize = 100
-                break
-            case "150 ML":
-                cupSize = 150
-                break
-            case "200 ML":
-                cupSize = 200
-                break
-            case "400 ML":
-                cupSize = 400
-                break
-            case "500 ML":
-                cupSize = 500
-                break
-            default: break
-        }
+        let arrayOfStrings = buttonTitle?.components(separatedBy: " ")
+        let numberString = arrayOfStrings?[0]
+        cupSize = Int(numberString!)!
         print("cupsize is: \(cupSize)")
         let uuid = Constants.uuid
         let baseRef = ref.child(uuid!).child("TimeInfo").child(customDate.formatDate())
         baseRef.child("containerSize").setValue(cupSize)
-        containerSize = cupSize
-        self.performSegue(withIdentifier: "profileSegue", sender: nil)
+        UserDefaults.standard.set(cupSize, forKey: Constants.cupSizeKey)
+        goToProfile()
     }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        UserDefaults.standard.set(containerSize, forKey: Constants.cupSizeKey)
-    }
 }

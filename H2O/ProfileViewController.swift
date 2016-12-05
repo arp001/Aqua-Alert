@@ -138,7 +138,7 @@ class ProfileViewController: UIViewController, UNUserNotificationCenterDelegate 
         progress.glowMode = .forward
         progress.glowAmount = 0.9
         updateProgressColor(ratio: ratio)
-        progress.center = CGPoint(x: view.center.x, y: view.center.y - 25)
+        progress.center = CGPoint(x: view.center.x, y: view.center.y)
         view.addSubview(progress)
         let target = showRatio * 360.0
         defaults.set(target, forKey: Constants.currentFromAngleKey)
