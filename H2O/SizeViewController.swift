@@ -71,8 +71,4 @@ class SizeViewController: UIViewController {
         UserDefaults.standard.set(cupSize, forKey: Constants.cupSizeKey)
         goToProfile()
     }
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
 }

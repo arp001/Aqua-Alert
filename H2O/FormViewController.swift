@@ -25,7 +25,7 @@ class InitialFormViewController: FormViewController {
         weight = Double(weightString)!
         gender = genderInlinePickerRow.pickerItems[genderInlinePickerRow.selectedRow].title
         let weightLbs = weight * 2.20462
-        recommendedWaterIntake = Int(round(weightLbs * 0.43 * 29.5735))
+        recommendedWaterIntake = Int(round(weightLbs * 0.55 * 29.5735))
         if gender == "Female" {
             recommendedWaterIntake += Int(round(0.08 * Double(recommendedWaterIntake)))
         }

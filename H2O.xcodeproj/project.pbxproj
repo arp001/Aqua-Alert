@@ -14,8 +14,6 @@
 		761D92671DD95960009390D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761D92661DD95960009390D6 /* Constants.swift */; };
 		762EF89D1DC57CD000FF6D0C /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */; };
 		762EF89E1DC57CD000FF6D0C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 762EF8971DC57CD000FF6D0C /* Info.plist */; };
-		762EF89F1DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 762EF8991DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig */; };
-		762EF8A01DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 762EF89A1DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m */; };
 		763265211DC575050077CCEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763265201DC575050077CCEE /* AppDelegate.swift */; };
 		763265231DC575050077CCEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763265221DC575050077CCEE /* LoginViewController.swift */; };
 		763265261DC575050077CCEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 763265241DC575050077CCEE /* Main.storyboard */; };
@@ -24,6 +22,8 @@
 		764A0E1A1DCAE262009D0CB6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764A0E191DCAE262009D0CB6 /* ProfileViewController.swift */; };
 		76523CE91DDD699B00BE70DC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76523CE81DDD699B00BE70DC /* CustomTableViewCell.swift */; };
 		765D364B1DE413F700F3659B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765D364A1DE413F700F3659B /* SettingsTableViewController.swift */; };
+		76A3EB871E1EF40A00DD350A /* SwiftGifOrigin-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 76A3EB821E1EF40A00DD350A /* SwiftGifOrigin-dummy.m */; };
+		76A3EB881E1EF40B00DD350A /* SwiftGifOrigin.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 76A3EB861E1EF40A00DD350A /* SwiftGifOrigin.xcconfig */; };
 		76A57B571DDD5F6E000FD4B4 /* DailyHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A57B561DDD5F6E000FD4B4 /* DailyHistoryTableViewController.swift */; };
 		76F2421E1DCE5F1E00BE6F58 /* SizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F2421D1DCE5F1E00BE6F58 /* SizeViewController.swift */; };
 		76F242201DCFDDA600BE6F58 /* WaterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F2421F1DCFDDA600BE6F58 /* WaterInfo.swift */; };
@@ -39,14 +39,8 @@
 		761D92621DD69937009390D6 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		761D92661DD95960009390D6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		761D92681DD9704F009390D6 /* H2O.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = H2O.entitlements; sourceTree = "<group>"; };
-		762EF8951DC57CCF00FF6D0C /* H2O-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "H2O-Bridging-Header.h"; sourceTree = "<group>"; };
 		762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		762EF8971DC57CD000FF6D0C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		762EF8981DC57CD000FF6D0C /* SwiftGifOrigin.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = SwiftGifOrigin.modulemap; sourceTree = "<group>"; };
-		762EF8991DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = SwiftGifOrigin.xcconfig; sourceTree = "<group>"; };
-		762EF89A1DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SwiftGifOrigin-dummy.m"; sourceTree = "<group>"; };
-		762EF89B1DC57CD000FF6D0C /* SwiftGifOrigin-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-prefix.pch"; sourceTree = "<group>"; };
-		762EF89C1DC57CD000FF6D0C /* SwiftGifOrigin-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SwiftGifOrigin-umbrella.h"; sourceTree = "<group>"; };
 		7632651D1DC575050077CCEE /* H2O.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = H2O.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		763265201DC575050077CCEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		763265221DC575050077CCEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +51,12 @@
 		764A0E191DCAE262009D0CB6 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		76523CE81DDD699B00BE70DC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		765D364A1DE413F700F3659B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		76A3EB821E1EF40A00DD350A /* SwiftGifOrigin-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SwiftGifOrigin-dummy.m"; path = "GIF Files/SwiftGifOrigin-dummy.m"; sourceTree = "<group>"; };
+		76A3EB831E1EF40A00DD350A /* SwiftGifOrigin-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SwiftGifOrigin-prefix.pch"; path = "GIF Files/SwiftGifOrigin-prefix.pch"; sourceTree = "<group>"; };
+		76A3EB841E1EF40A00DD350A /* SwiftGifOrigin-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SwiftGifOrigin-umbrella.h"; path = "GIF Files/SwiftGifOrigin-umbrella.h"; sourceTree = "<group>"; };
+		76A3EB851E1EF40A00DD350A /* SwiftGifOrigin.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = SwiftGifOrigin.modulemap; path = "GIF Files/SwiftGifOrigin.modulemap"; sourceTree = "<group>"; };
+		76A3EB861E1EF40A00DD350A /* SwiftGifOrigin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = SwiftGifOrigin.xcconfig; path = "GIF Files/SwiftGifOrigin.xcconfig"; sourceTree = "<group>"; };
+		76A3EB8D1E1EF51300DD350A /* H2O-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "H2O-Bridging-Header.h"; sourceTree = "<group>"; };
 		76A57B561DDD5F6E000FD4B4 /* DailyHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyHistoryTableViewController.swift; sourceTree = "<group>"; };
 		76F2421D1DCE5F1E00BE6F58 /* SizeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeViewController.swift; sourceTree = "<group>"; };
 		76F2421F1DCFDDA600BE6F58 /* WaterInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterInfo.swift; sourceTree = "<group>"; };
@@ -137,12 +137,12 @@
 			children = (
 				762EF8961DC57CD000FF6D0C /* UIImage+Gif.swift */,
 				762EF8971DC57CD000FF6D0C /* Info.plist */,
-				762EF8981DC57CD000FF6D0C /* SwiftGifOrigin.modulemap */,
-				762EF8991DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig */,
-				762EF89A1DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m */,
-				762EF89B1DC57CD000FF6D0C /* SwiftGifOrigin-prefix.pch */,
-				762EF89C1DC57CD000FF6D0C /* SwiftGifOrigin-umbrella.h */,
-				762EF8951DC57CCF00FF6D0C /* H2O-Bridging-Header.h */,
+				76A3EB821E1EF40A00DD350A /* SwiftGifOrigin-dummy.m */,
+				76A3EB831E1EF40A00DD350A /* SwiftGifOrigin-prefix.pch */,
+				76A3EB841E1EF40A00DD350A /* SwiftGifOrigin-umbrella.h */,
+				76A3EB851E1EF40A00DD350A /* SwiftGifOrigin.modulemap */,
+				76A3EB861E1EF40A00DD350A /* SwiftGifOrigin.xcconfig */,
+				76A3EB8D1E1EF51300DD350A /* H2O-Bridging-Header.h */,
 			);
 			name = "Swift-GIF";
 			sourceTree = "<group>";
@@ -222,7 +222,7 @@
 					7632651C1DC575040077CCEE = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = CQDJWATK2L;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -255,7 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				762EF89F1DC57CD000FF6D0C /* SwiftGifOrigin.xcconfig in Resources */,
+				76A3EB881E1EF40B00DD350A /* SwiftGifOrigin.xcconfig in Resources */,
 				761409171DC84B0500D241C5 /* GoogleService-Info.plist in Resources */,
 				762EF89E1DC57CD000FF6D0C /* Info.plist in Resources */,
 				7632652B1DC575050077CCEE /* LaunchScreen.storyboard in Resources */,
@@ -324,7 +324,7 @@
 				76F242201DCFDDA600BE6F58 /* WaterInfo.swift in Sources */,
 				396E93031DC9AC6C0048690E /* FormViewController.swift in Sources */,
 				761D92631DD69937009390D6 /* ProgressViewController.swift in Sources */,
-				762EF8A01DC57CD000FF6D0C /* SwiftGifOrigin-dummy.m in Sources */,
+				76A3EB871E1EF40A00DD350A /* SwiftGifOrigin-dummy.m in Sources */,
 				763265231DC575050077CCEE /* LoginViewController.swift in Sources */,
 				764A0E1A1DCAE262009D0CB6 /* ProfileViewController.swift in Sources */,
 				76F2421E1DCE5F1E00BE6F58 /* SizeViewController.swift in Sources */,
@@ -460,7 +460,7 @@
 				DEVELOPMENT_TEAM = CQDJWATK2L;
 				INFOPLIST_FILE = H2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Arpit.H2O;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Arpit.AquaAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "H2O-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -478,7 +478,7 @@
 				DEVELOPMENT_TEAM = CQDJWATK2L;
 				INFOPLIST_FILE = H2O/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Arpit.H2O;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Arpit.AquaAlert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "H2O-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
