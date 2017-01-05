@@ -1,6 +1,6 @@
 # Aqua-Alert
-An iphone application to keep track of your daily water drinking habits.
-## [ Please see 'Screenshots' to learn more.]
+# An iphone application to keep track of your daily water drinking habits.
+### [ Please see 'Screenshots' to learn more]
 ## Overview:  
 ### 1. Log a 'drink' by clicking on the '+' button
 ### 2. View daily progress (indicated by a progress bar indicator)  
@@ -10,4 +10,4 @@ An iphone application to keep track of your daily water drinking habits.
 ### 6. View statistical information for various days indicated by a bar graph
 
 #### Database used: Google Firebase
-#### Updated on: January 05 5:38 PM 
+#### Updated on: January 05 5:39 PM 
