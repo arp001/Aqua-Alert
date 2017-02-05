@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-![picture alt] (https://github.com/arp001/Aqua-Alert/blob/master/Screenshots/Initial%20VC.png) ......... ![picture alt]  (https://github.com/arp001/Aqua-Alert/blob/master/Screenshots/Initial%20VC.png)
+#### ![picture alt] (https://github.com/arp001/Aqua-Alert/blob/master/Screenshots/Initial%20VC.png) ![picture alt]  (https://github.com/arp001/Aqua-Alert/blob/master/Screenshots/Initial%20VC.png)
 
 # An iphone application to keep track of your daily water drinking habits.
 ## Overview:  
